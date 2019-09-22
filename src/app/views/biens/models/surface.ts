@@ -1,4 +1,4 @@
-export class Surface {
+export interface Surface {
     surfaceRDC: number;
     surfaceRDCFonderee: number;
     surfaceVente: boolean;

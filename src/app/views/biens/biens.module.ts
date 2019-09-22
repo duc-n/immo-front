@@ -6,9 +6,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreerBienComponent } from './creer-bien/creer-bien.component';
 import { SharedComponentsModule } from 'src/app/shared/components/shared-components.module';
 import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directives.module';
+import { BienFormComponent } from './creer-bien/bien-form/bien-form.component';
+import { ConsultantResponsableComponent } from './creer-bien/bien-form/consultant-responsable/consultant-responsable.component';
+import { DetailBienComponent } from './creer-bien/bien-form/detail-bien/detail-bien.component';
 
 @NgModule({
-  declarations: [CreerBienComponent],
+  declarations: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent],
   imports: [
     CommonModule,
     SharedComponentsModule,
@@ -17,6 +20,6 @@ import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directi
     NgbModule,
     BiensRoutingModule
   ],
-  exports: [CreerBienComponent]
+  exports: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent]
 })
 export class BiensModule { }

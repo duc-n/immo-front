@@ -1,4 +1,4 @@
-export class AdresseBien {
+export interface AdresseBien {
     adresse: string;
     ville: string;
     codePostal: string;

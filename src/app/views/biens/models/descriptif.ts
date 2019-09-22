@@ -1,4 +1,4 @@
-export class Descriptif {
+export interface Descriptif {
     localIdealPour: string;
     longueurFacade: number;
     facadeAngle: boolean;

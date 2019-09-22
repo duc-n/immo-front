@@ -1,4 +1,4 @@
-export class Emplacements {
+export interface Emplacements {
     aDefinir: boolean;
     numero1: boolean;
     numero1Alimentaire: boolean;

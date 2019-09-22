@@ -1,4 +1,4 @@
-export class Mandat {
+export interface Mandat {
     transaction: string;
     panneau: boolean;
     prixVente: number;

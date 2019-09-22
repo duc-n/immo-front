@@ -11,7 +11,7 @@ import { Descriptif } from './descriptif';
 import { Photos } from './photos';
 import { Videos } from './videos';
 
-export class Bien {
+export interface Bien {
     titulaire: Titulaire;
     adresseBien: AdresseBien;
     typeBien: string;

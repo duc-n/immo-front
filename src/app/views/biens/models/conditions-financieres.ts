@@ -1,4 +1,4 @@
-export class ConditionsFinancieres {
+export interface ConditionsFinancieres {
     conditionsFinancieres: string;
     honorairesAgence: number;
     paiementHonoraires: number;

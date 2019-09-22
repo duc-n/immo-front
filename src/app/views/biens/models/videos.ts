@@ -1,3 +1,3 @@
-export class Videos {
+export interface Videos {
     video: string;
 }

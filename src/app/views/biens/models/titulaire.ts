@@ -1,7 +1,7 @@
 import { Activites } from './activites';
 import { Emplacements } from './emplacements';
 
-export class Titulaire {
+export interface Titulaire {
     nomTitulaire: string;
     prenomTitulaire: string;
     adresse: string;

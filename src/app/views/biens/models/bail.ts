@@ -1,4 +1,4 @@
-export class Bail {
+export interface Bail {
     typeBail: string;
     bailNotarie: boolean;
     chargeMensuel: number;

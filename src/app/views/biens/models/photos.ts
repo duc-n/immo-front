@@ -1,3 +1,3 @@
-export class Photos {
+export interface Photos {
     photo: string;
 }

@@ -1,4 +1,4 @@
-export class Activites {
+export interface Activites {
     licence: boolean;
     liquidationJudiciaire: boolean;
     popupStore: boolean;
