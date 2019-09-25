@@ -1,7 +1,6 @@
 import { Activites } from './activites';
 import { Emplacements } from './emplacements';
 import { AdresseBien } from './adresse-bien';
-import { Titulaire } from './titulaire';
 import { Mandat } from './mandat';
 import { Bail } from './bail';
 import { ConditionsFinancieres } from './conditions-financieres';
@@ -12,7 +11,7 @@ import { Photos } from './photos';
 import { Videos } from './videos';
 
 export interface Bien {
-    titulaire: Titulaire;
+    nomTitulaire: string;
     adresseBien: AdresseBien;
     typeBien: string;
     activite: string;

@@ -8,12 +8,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class DetailBienComponent implements OnInit {
 
-  public detailBienForm: FormGroup;
+  @Input() public adresseBienForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.detailBienForm = this.initDetailBienFormModel();
+    // this.detailBienForm = this.initDetailBienFormModel();
   }
   private initDetailBienFormModel() {
     return this.fb.group({

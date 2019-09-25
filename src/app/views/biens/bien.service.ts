@@ -1,28 +1,51 @@
 import { Injectable } from '@angular/core';
-import { Bien } from './models/bien';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import 'rxjs/add/operator/pluck';
-import { pluck } from 'rxjs/operators';
-import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
-export interface State {
-  bien: Bien;
-}
+import { FormBuilder, Validators } from '@angular/forms';
+import { map } from 'rxjs/operators';
 
-const state: State = {
-  bien: null,
-};
 
 @Injectable({
   providedIn: 'root'
 })
 export class BienService {
-  private subject = new BehaviorSubject<State>(state);
-  store = this.subject.asObservable();
 
-  select<T>(name: string): Observable<T> {
-    return this.store.pipe(pluck('name'));
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly http: HttpClient
+  ) { }
+
+  getBienForm() {
+    return this.getBien().pipe(
+      map((apiResponse: any) => this.fb.group({
+        nomTitulaire: [apiResponse.nomTitulaire],
+        adresseBien: this.fb.group({
+          adresse: [apiResponse.adresse],
+          ville: [apiResponse.ville],
+          codePostal: [apiResponse.codePostal],
+          quatier: [apiResponse.quatier],
+          metro: [apiResponse.metro],
+          rer: [apiResponse.rer],
+          bus: [apiResponse.bus],
+          parking: [apiResponse.parking],
+          typeBien: [apiResponse.typeBien],
+          activite: [apiResponse.activite],
+          nomMagasin: [apiResponse.nomMagasin],
+          enseigneProximite: [apiResponse.enseigneProximite],
+          activites: this.fb.group({
+
+          }),
+          emplacements: this.fb.group({
+
+          })
+
+        }),
+      }))
+    );
   }
 
-  constructor() { }
+  private getBien() {
+    return this.http.get('/assets/bien.json');
+  }
+
+
 }

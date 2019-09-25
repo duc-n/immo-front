@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedAnimations } from 'src/app/shared/animations/shared-animations';
+import { BienService } from '../bien.service';
+import { Observable } from 'rxjs/internal/Observable';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-creer-bien',
@@ -9,9 +12,14 @@ import { SharedAnimations } from 'src/app/shared/animations/shared-animations';
 })
 export class CreerBienComponent implements OnInit {
 
-  constructor() { }
+  form$: Observable<FormGroup> = this.bienService.getBienForm();
+
+  constructor(private readonly bienService: BienService) { }
 
   ngOnInit() {
   }
 
+  onSubmit(value) {
+    console.log(value);
+  }
 }

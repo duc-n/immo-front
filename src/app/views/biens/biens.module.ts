@@ -7,8 +7,8 @@ import { CreerBienComponent } from './creer-bien/creer-bien.component';
 import { SharedComponentsModule } from 'src/app/shared/components/shared-components.module';
 import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directives.module';
 import { BienFormComponent } from './creer-bien/bien-form/bien-form.component';
-import { ConsultantResponsableComponent } from './creer-bien/bien-form/consultant-responsable/consultant-responsable.component';
-import { DetailBienComponent } from './creer-bien/bien-form/detail-bien/detail-bien.component';
+import { ConsultantResponsableComponent } from './creer-bien/consultant-responsable/consultant-responsable.component';
+import { DetailBienComponent } from './creer-bien/detail-bien/detail-bien.component';
 
 @NgModule({
   declarations: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent],

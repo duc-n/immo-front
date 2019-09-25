@@ -1,0 +1,17 @@
+{
+  "nomTitulaire": "nomTitulaire",
+  "adresseBien": {
+    "adresse": "nomTitulaire",
+    "ville": "nomTitulaire",
+    "codePostal": "nomTitulaire",
+    "quatier": "nomTitulaire",
+    "metro": "nomTitulaire",
+    "rer": "nomTitulaire",
+    "bus": "nomTitulaire",
+    "parking": "nomTitulaire",
+    "typeBien": "nomTitulaire",
+    "activite": "nomTitulaire",
+    "nomMagasin": "nomTitulaire",
+    "enseigneProximite": "nomTitulaire"
+  }
+}
