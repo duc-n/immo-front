@@ -1,23 +1,140 @@
   <div [formGroup]="detailBienForm">
-    <div formGroupName="adresseBien">
-      <!-- Adresse -->
-      <div class="form-group row">
-        <label class="col-2">Adresse<em class="text-danger">*</em></label>
-        <div class="col-8">
-          <input type="text" placeholder="Adresse" class="form-control" formControlName="adresse" />
+    <div class="container">
+      <div class="row vdivide">
+        <div class="col-sm-6">
+          <div class="card mb-5">
+            <div class="card-body">
+              <!-- Type de bien -->
+              <div class="form-group row">
+                <label for="inputTypeBien" class="col-sm-3 col-form-label">Type de bien<em class="text-danger">*</em></label>
+                <div class="col-sm-9">
+                  <select formControlName="typeBien" class="form-control" id="inputTypeBien">
+                    <option [ngValue]="null" disabled>Selectionner type de bien</option>
+                    <option value="Commerce">Commerce</option>
+                    <option>Option 1</option>
+                    <option>Option 1</option>
+
+                  </select>
+                </div>
+              </div>
+              <!-- /Type de bien -->
+              <!-- Activite actuel -->
+              <div class="form-group row">
+                <label for="inputActivite" class="col-sm-3 col-form-label">Activité actuel<em class="text-danger">*</em></label>
+                <div class="col-sm-9">
+                  <select formControlName="activite" class="form-control" id="inputActivite">
+                    <option>Option 1</option>
+                    <option>Option 1</option>
+                    <option>Option 1</option>
+                  </select>
+                </div>
+              </div>
+              <!-- /Activite actuel-->
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-6 border-left">
+          <div class="card mb-5">
+            <div class="card-body">
+              <div formGroupName="adresseBien">
+                <!-- Adresse -->
+                <div class="form-group row">
+                  <label for="inputAdresse" class="col-sm-3 col-form-label">Adresse<em class="text-danger">*</em></label>
+                  <div class="col-sm-9">
+                    <input type="text" formControlName="adresse" class="form-control" id="inputAdresse" placeholder="Adresse">
+                  </div>
+                </div>
+                <!-- /Adresse -->
+                <!-- Ville -->
+                <div class="form-group row">
+                  <label for="inputVille" class="col-sm-3 col-form-label">Ville<em class="text-danger">*</em></label>
+                  <div class="col-sm-9">
+                    <input type="text" formControlName="ville" class="form-control" id="inputVille" placeholder="Ville">
+                  </div>
+                </div>
+                <!-- /Ville -->
+                <!-- CP -->
+                <div class="form-group row">
+                  <label for="inputCodePostal" class="col-sm-3 col-form-label">CP<em class="text-danger">*</em></label>
+                  <div class="col-sm-3">
+                    <input type="text" formControlName="codePostal" class="form-control" id="inputCodePostal" placeholder="Code Postal">
+                  </div>
+                </div>
+                <!-- /CP -->
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <!-- /Adresse -->
     </div>
 
-    <!-- Ville -->
-    <div class="form-group row">
-      <label class="col-2">Ville<em class="text-danger">*</em></label>
-      <div class="col-8">
-        <input type="text" placeholder="Ville" class="form-control" formControlName="ville" />
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Left Label Alignment</h4>
+        <p>A form control layout using row with left label alignment.</p>
+        <div class="card mb-5">
+          <div class="card-body">
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+              </div>
+            </div>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                      First radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                      Second radio
+                    </label>
+                  </div>
+                  <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                    <label class="form-check-label" for="gridRadios3">
+                      Third disabled radio
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="form-group row">
+              <div class="col-sm-2">Checkbox</div>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck1">
+                  <label class="form-check-label" for="gridCheck1">
+                    Example checkbox
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- /Ville -->
 
     <div class="container">
       <div class="row vdivide">

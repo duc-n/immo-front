@@ -1,8 +1,8 @@
 {
   "nomTitulaire": "nomTitulaire",
   "detailBien": {
-    "typeBien": "nomTitulaire",
-    "activite": "nomTitulaire",
+    "typeBien": "Commerce",
+    "activite": "activite",
     "nomMagasin": "nomTitulaire",
     "enseigneProximite": "nomTitulaire",
     "adresseBien": {

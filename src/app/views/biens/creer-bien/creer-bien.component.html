@@ -1,4 +1,4 @@
-<div class="d-flex align-items-baseline justify-content-between">
+<div class="d-flex align-items-baseline border-bottom justify-content-between">
   <div>
     <h3 class="text-secondary">Edition d'un bien</h3>
   </div>
@@ -8,7 +8,7 @@
 
   </div>
 </div>
-
+<div class="border-top mb-4"></div>
 <form *ngIf="bienForm$ | async as bienForm" [formGroup]="bienForm" (submit)="onSubmit(bienForm.value)">
   <div>
 
