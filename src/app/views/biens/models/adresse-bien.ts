@@ -1,3 +1,5 @@
+import { Emplacements } from './emplacements';
+
 export interface AdresseBien {
     adresse: string;
     ville: string;
@@ -7,4 +9,6 @@ export interface AdresseBien {
     rer: string;
     bus: string;
     parking: string;
+    emplacements: Emplacements;
+    origine: string;
 }

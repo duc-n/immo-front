@@ -1,6 +1,3 @@
-import { Activites } from './activites';
-import { Emplacements } from './emplacements';
-import { AdresseBien } from './adresse-bien';
 import { Mandat } from './mandat';
 import { Bail } from './bail';
 import { ConditionsFinancieres } from './conditions-financieres';
@@ -9,17 +6,11 @@ import { Surface } from './surface';
 import { Descriptif } from './descriptif';
 import { Photos } from './photos';
 import { Videos } from './videos';
+import { DetailBien } from './detail-bien';
 
 export interface Bien {
     nomTitulaire: string;
-    adresseBien: AdresseBien;
-    typeBien: string;
-    activite: string;
-    activites: Activites;
-    nomMagasin: string;
-    enseigneProximite: string;
-    emplacements: Emplacements;
-    origine: string;
+    detailBien: DetailBien;
     mandat: Mandat;
     bail: Bail;
     conditionsFinancieres: ConditionsFinancieres;

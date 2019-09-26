@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-consultant-responsable',
@@ -7,20 +7,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./consultant-responsable.component.scss']
 })
 export class ConsultantResponsableComponent implements OnInit {
+  @Input() public consultantResponsableForm: FormGroup;
 
-  public consultantResponsableForm: FormGroup;
-
-  constructor(private fb: FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
-    this.consultantResponsableForm = this.initConsultantResponsableFormModel();
-  }
-  private initConsultantResponsableFormModel() {
-    return this.fb.group({
-
-
-    });
-
   }
 
 }

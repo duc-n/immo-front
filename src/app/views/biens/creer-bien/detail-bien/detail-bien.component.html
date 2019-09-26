@@ -1,30 +1,32 @@
-<div [formGroup]="adresseBienForm">
-  <!-- Adresse -->
-  <div class="form-group row">
-    <label class="col-2">Adresse<em class="text-danger">*</em></label>
-    <div class="col-8">
-      <input type="text" placeholder="Adresse" class="form-control" formControlName="adresse" />
-    </div>
-  </div>
-  <!-- /Adresse -->
-
-  <!-- Ville -->
-  <div class="form-group row">
-    <label class="col-2">Ville<em class="text-danger">*</em></label>
-    <div class="col-8">
-      <input type="text" placeholder="Ville" class="form-control" formControlName="ville" />
-    </div>
-  </div>
-  <!-- /Ville -->
-
-  <div class="container">
-    <div class="row vdivide">
-      <div class="col-sm-6 text-center"><h1>One</h1>
+  <div [formGroup]="detailBienForm">
+    <div formGroupName="adresseBien">
+      <!-- Adresse -->
+      <div class="form-group row">
+        <label class="col-2">Adresse<em class="text-danger">*</em></label>
+        <div class="col-8">
+          <input type="text" placeholder="Adresse" class="form-control" formControlName="adresse" />
+        </div>
       </div>
-      <div class="col-sm-6 text-center border-left"><h1>Two</h1>
+      <!-- /Adresse -->
+    </div>
+
+    <!-- Ville -->
+    <div class="form-group row">
+      <label class="col-2">Ville<em class="text-danger">*</em></label>
+      <div class="col-8">
+        <input type="text" placeholder="Ville" class="form-control" formControlName="ville" />
       </div>
     </div>
+    <!-- /Ville -->
+
+    <div class="container">
+      <div class="row vdivide">
+        <div class="col-sm-6 text-center"><h1>One</h1>
+        </div>
+        <div class="col-sm-6 text-center border-left"><h1>Two</h1>
+        </div>
+      </div>
+    </div>
+
+
   </div>
-
-
-</div>

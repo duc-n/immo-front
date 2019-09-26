@@ -1,17 +1,35 @@
 {
   "nomTitulaire": "nomTitulaire",
-  "adresseBien": {
-    "adresse": "nomTitulaire",
-    "ville": "nomTitulaire",
-    "codePostal": "nomTitulaire",
-    "quatier": "nomTitulaire",
-    "metro": "nomTitulaire",
-    "rer": "nomTitulaire",
-    "bus": "nomTitulaire",
-    "parking": "nomTitulaire",
+  "detailBien": {
     "typeBien": "nomTitulaire",
     "activite": "nomTitulaire",
     "nomMagasin": "nomTitulaire",
-    "enseigneProximite": "nomTitulaire"
+    "enseigneProximite": "nomTitulaire",
+    "adresseBien": {
+      "adresse": "nomTitulaire",
+      "ville": "nomTitulaire",
+      "codePostal": "nomTitulaire",
+      "quatier": "nomTitulaire",
+      "metro": "nomTitulaire",
+      "rer": "nomTitulaire",
+      "bus": "nomTitulaire",
+      "parking": "nomTitulaire",
+      "origine": "origine",
+      "emplacements": {
+        "aDefinir": true,
+        "numero1": true,
+        "numero1Alimentaire": true,
+        "numero1PretPorte": true,
+        "empRueCommercante": true,
+        "fluxPietons": true,
+        "axeVoitures": true,
+        "ruePietonne": true,
+        "zoneTouristique": true,
+        "zoneBureau": true,
+        "zoneResidentiel": true,
+        "zoneCommercial": true,
+        "zac": true
+      }
+    }
   }
 }
