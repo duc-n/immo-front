@@ -9,9 +9,10 @@ import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directi
 import { BienFormComponent } from './creer-bien/bien-form/bien-form.component';
 import { ConsultantResponsableComponent } from './creer-bien/consultant-responsable/consultant-responsable.component';
 import { DetailBienComponent } from './creer-bien/detail-bien/detail-bien.component';
+import { MandatComponent } from './creer-bien/mandat/mandat.component';
 
 @NgModule({
-  declarations: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent],
+  declarations: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent, MandatComponent],
   imports: [
     CommonModule,
     SharedComponentsModule,
@@ -20,6 +21,6 @@ import { DetailBienComponent } from './creer-bien/detail-bien/detail-bien.compon
     NgbModule,
     BiensRoutingModule
   ],
-  exports: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent]
+  exports: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent, MandatComponent]
 })
 export class BiensModule { }
