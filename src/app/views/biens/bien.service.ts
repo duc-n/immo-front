@@ -56,6 +56,4 @@ export class BienService {
   private getBien() {
     return this.http.get('/assets/bien.json');
   }
-
-
 }
