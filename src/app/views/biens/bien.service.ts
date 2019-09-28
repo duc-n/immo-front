@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
+import { Activites } from './models/activites';
+import { Bien } from './models/bien';
+import { AdresseBien } from './models/adresse-bien';
+import { Emplacements } from './models/emplacements';
 
 @Injectable({
   providedIn: 'root'
@@ -15,44 +19,71 @@ export class BienService {
 
   getBienForm() {
     return this.getBien().pipe(
-      map((apiResponse: any) => this.fb.group({
-        nomTitulaire: [apiResponse.nomTitulaire],
+      map((bien: Bien) => this.fb.group({
+        nomTitulaire: [bien.nomTitulaire],
         detailBien: this.fb.group({
-          'typeBien': [apiResponse.detailBien.typeBien],
-          'activite': [apiResponse.detailBien.activite],
-          'nomMagasin': [apiResponse.detailBien.nomMagasin],
-          'enseigneProximite': [apiResponse.detailBien.enseigneProximite],
-          'adresseBien': this.fb.group({
-            'adresse': [apiResponse.detailBien.adresseBien.adresse],
-            'ville': [apiResponse.detailBien.adresseBien.ville],
-            'codePostal': [apiResponse.detailBien.adresseBien.codePostal],
-            'quatier': [apiResponse.detailBien.adresseBien.quatier],
-            'metro': [apiResponse.detailBien.adresseBien.metro],
-            'rer': [apiResponse.detailBien.adresseBien.rer],
-            'bus': [apiResponse.detailBien.adresseBien.bus],
-            'parking': [apiResponse.detailBien.adresseBien.parking],
-            'origine': [apiResponse.detailBien.adresseBien.origine],
-            'emplacements': {
-              'aDefinir': [apiResponse.detailBien.adresseBien.emplacements.aDefinir],
-              'numero1': [apiResponse.detailBien.adresseBien.emplacements.numero1],
-              'numero1Alimentaire': [apiResponse.detailBien.adresseBien.emplacements.numero1Alimentaire],
-              'numero1PretPorte': [apiResponse.detailBien.adresseBien.emplacements.numero1PretPorte],
-              'empRueCommercante': [apiResponse.detailBien.adresseBien.emplacements.empRueCommercante],
-              'fluxPietons': [apiResponse.detailBien.adresseBien.emplacements.fluxPietons],
-              'axeVoitures': [apiResponse.detailBien.adresseBien.emplacements.axeVoitures],
-              'ruePietonne': [apiResponse.detailBien.adresseBien.emplacements.ruePietonne],
-              'zoneTouristique': [apiResponse.detailBien.adresseBien.emplacements.zoneTouristique],
-              'zoneBureau': [apiResponse.detailBien.adresseBien.emplacements.zoneBureau],
-              'zoneResidentiel': [apiResponse.detailBien.adresseBien.emplacements.zoneResidentiel],
-              'zoneCommercial': [apiResponse.detailBien.adresseBien.emplacements.zoneCommercial],
-              'zac': [apiResponse.detailBien.adresseBien.emplacements.zac]
-            }
-          }),
+          'typeBien': [bien.detailBien.typeBien],
+          'activite': [bien.detailBien.activite],
+          'nomMagasin': [bien.detailBien.nomMagasin],
+          'enseigneProximite': [bien.detailBien.enseigneProximite],
+          'activites': this.generateActivitesForm(bien.detailBien.activites),
+          'adresseBien': this.generateAdresseBienForm(bien.detailBien.adresseBien),
         }),
       }))
     );
   }
+  private generateActivitesForm(activities: Activites) {
 
+    const activitiesForm = this.fb.group({
+      'licence': [activities.licence],
+      'liquidationJudiciaire': [activities.liquidationJudiciaire],
+      'popupStore': [activities.popupStore],
+      'restaurantConduitChemine': [activities.restaurantConduitChemine],
+      'restaurantSansNuisance': [activities.restaurantSansNuisance],
+      'terrasse': [activities.terrasse]
+    });
+
+    return activitiesForm;
+  }
+
+  private generateAdresseBienForm(adresseBien: AdresseBien) {
+
+    const adresseBienForm = this.fb.group({
+      'adresse': [adresseBien.adresse],
+      'ville': [adresseBien.ville],
+      'codePostal': [adresseBien.codePostal],
+      'quatier': [adresseBien.quatier],
+      'metro': [adresseBien.metro],
+      'rer': [adresseBien.rer],
+      'bus': [adresseBien.bus],
+      'parking': [adresseBien.parking],
+      'origine': [adresseBien.origine],
+      'emplacements': this.generateEmplacementsForm(adresseBien.emplacements)
+    });
+
+    return adresseBienForm;
+  }
+
+  private generateEmplacementsForm(emplacements: Emplacements) {
+
+    const emplacementsForm = this.fb.group({
+      'aDefinir': [emplacements.aDefinir],
+      'numero1': [emplacements.numero1],
+      'numero1Alimentaire': [emplacements.numero1Alimentaire],
+      'numero1PretPorter': [emplacements.numero1PretPorter],
+      'rueCommercante': [emplacements.rueCommercante],
+      'fluxPietons': [emplacements.fluxPietons],
+      'axeVoiture': [emplacements.axeVoiture],
+      'ruePietonne': [emplacements.ruePietonne],
+      'zoneTouristique': [emplacements.zoneTouristique],
+      'zoneBureau': [emplacements.zoneBureau],
+      'zoneResidentielle': [emplacements.zoneResidentielle],
+      'centreCommercial': [emplacements.centreCommercial],
+      'zac': [emplacements.zac]
+    });
+
+    return emplacementsForm;
+  }
   private getBien() {
     return this.http.get('/assets/bien.json');
   }
