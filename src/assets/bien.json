@@ -39,5 +39,16 @@
         "zac": true
       }
     }
+  },
+  "bail": {
+    "typeBail": "bail",
+    "bailNotarie": true,
+    "chargeMensuel": 1000,
+    "periodLoyer": "period",
+    "depotGarantie": "string",
+    "cautionSup": "string",
+    "taxFonctiere": 300,
+    "paiementTaxFonctiere": "string",
+    "paiement606": "string"
   }
 }

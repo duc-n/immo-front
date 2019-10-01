@@ -6,6 +6,7 @@ import { Activites } from './models/activites';
 import { Bien } from './models/bien';
 import { AdresseBien } from './models/adresse-bien';
 import { Emplacements } from './models/emplacements';
+import { Bail } from './models/bail';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +28,10 @@ export class BienService {
           'nomMagasin': [bien.detailBien.nomMagasin],
           'enseigneProximite': [bien.detailBien.enseigneProximite],
           'activites': this.generateActivitesForm(bien.detailBien.activites),
-          'adresseBien': this.generateAdresseBienForm(bien.detailBien.adresseBien),
+          'adresseBien': this.generateAdresseBienForm(bien.detailBien.adresseBien)
         }),
+        bail: this.generateBailForm(bien.bail)
+
       }))
     );
   }
@@ -83,6 +86,16 @@ export class BienService {
     });
 
     return emplacementsForm;
+  }
+
+  private generateBailForm(bail: Bail) {
+
+    const bailForm = this.fb.group({
+      'typeBail': [bail.typeBail],
+
+    });
+
+    return bailForm;
   }
   private getBien() {
     return this.http.get('/assets/bien.json');

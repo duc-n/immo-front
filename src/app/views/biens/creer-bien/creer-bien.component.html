@@ -51,7 +51,7 @@
       <ngb-panel title="Bail">
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-mandat></app-mandat>
+            <app-bail [bailForm]="bienForm.controls['bail']"></app-bail>
           </div>
         </ng-template>
       </ngb-panel>

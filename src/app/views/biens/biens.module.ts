@@ -10,9 +10,10 @@ import { BienFormComponent } from './creer-bien/bien-form/bien-form.component';
 import { ConsultantResponsableComponent } from './creer-bien/consultant-responsable/consultant-responsable.component';
 import { DetailBienComponent } from './creer-bien/detail-bien/detail-bien.component';
 import { MandatComponent } from './creer-bien/mandat/mandat.component';
+import { BailComponent } from './creer-bien/bail/bail.component';
 
 @NgModule({
-  declarations: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent, MandatComponent],
+  declarations: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent, MandatComponent, BailComponent],
   imports: [
     CommonModule,
     SharedComponentsModule,
@@ -21,6 +22,6 @@ import { MandatComponent } from './creer-bien/mandat/mandat.component';
     NgbModule,
     BiensRoutingModule
   ],
-  exports: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent, MandatComponent]
+  exports: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent, MandatComponent, BailComponent]
 })
 export class BiensModule { }
