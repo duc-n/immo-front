@@ -11,9 +11,14 @@ import { ConsultantResponsableComponent } from './creer-bien/consultant-responsa
 import { DetailBienComponent } from './creer-bien/detail-bien/detail-bien.component';
 import { MandatComponent } from './creer-bien/mandat/mandat.component';
 import { BailComponent } from './creer-bien/bail/bail.component';
+import { ConditionsFinancieresComponent } from './creer-bien/conditions-financieres/conditions-financieres.component';
+import { VisiteComponent } from './creer-bien/visite/visite.component';
+import { DescriptifComponent } from './creer-bien/descriptif/descriptif.component';
+import { CommnunicationComponent } from './creer-bien/commnunication/commnunication.component';
+import { SurfaceComponent } from './creer-bien/surface/surface.component';
 
 @NgModule({
-  declarations: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent, MandatComponent, BailComponent],
+  declarations: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent, MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent],
   imports: [
     CommonModule,
     SharedComponentsModule,
@@ -22,6 +27,6 @@ import { BailComponent } from './creer-bien/bail/bail.component';
     NgbModule,
     BiensRoutingModule
   ],
-  exports: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent, MandatComponent, BailComponent]
+  exports: [CreerBienComponent, BienFormComponent, ConsultantResponsableComponent, DetailBienComponent, MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent]
 })
 export class BiensModule { }

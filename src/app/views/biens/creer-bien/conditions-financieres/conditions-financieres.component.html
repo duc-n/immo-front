@@ -1,0 +1,72 @@
+<div [formGroup]="conditionsFinancieresForm">
+  <div class="container">
+    <div class="row vdivide">
+      <div class="col-sm-6">
+        <div class="card mb-5">
+          <div class="card-body">
+
+            <!-- Conditions Fianancières -->
+            <div class="form-group row">
+              <label for="conditionsFinancieres" class="col-sm-4 col-form-label">Autres conditions fiancières</label>
+              <div class="col-sm-8">
+
+                <textarea formControlName="conditionsFinancieres" name="conditionsFinancieres" id="conditionsFinancieres" cols="30" rows="10"></textarea>
+
+              </div>
+            </div>
+            <!-- /Conditions Fianancières-->
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-6 border-left">
+        <div class="card mb-5">
+          <div class="card-body">
+
+            <!-- Honoraire de l'agence -->
+            <div class="form-group row">
+              <label for="honorairesAgence" class="col-sm-4 col-form-label">Honoraire Agence</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="honorairesAgence" class="form-control" id="honorairesAgence" placeholder="Honoraire Agence">
+              </div>
+            </div>
+            <!-- /Honoraire de l'agence -->
+
+            <!-- Paiement Honoraire -->
+            <div class="form-group row">
+              <label for="paiementHonoraires" class="col-sm-4 col-form-label">Paiement taxe foncière</label>
+              <div class="col-sm-8">
+                <select formControlName="paiementHonoraires" class="form-control" id="paiementHonoraires" name="paiementHonoraires">
+                  <option value="locataire">Locataire</option>
+                  <option value="propriete">Propriétaire</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Paiement Honoraire -->
+
+            <!-- TVA Loyer -->
+            <div class="form-group row">
+              <label for="tvaLoyer" class="col-sm-4 col-form-label">TVA sur Loyer</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <input formControlName="tvaLoyer" class="form-check-input" type="radio" name="tvaLoyer" id="tvaLoyer1" value="true">
+                  <label class="form-check-label" for="tvaLoyer">
+                    Oui
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input formControlName="tvaLoyer" class="form-check-input" type="radio" name="tvaLoyer" id="tvaLoyer2" value="false">
+                  <label class="form-check-label" for="tvaLoyer">
+                    Non
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /TVA Loyer -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

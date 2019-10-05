@@ -1,4 +1,4 @@
-export interface Viste {
+export interface Visite {
     cle: string;
     commentaire: string;
     digicode1: string;
@@ -6,3 +6,4 @@ export interface Viste {
     interphone: string;
     etage: string;
 }
+
