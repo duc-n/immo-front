@@ -1,0 +1,79 @@
+<div [formGroup]="visiteForm">
+  <div class="container">
+    <div class="row vdivide">
+      <div class="col-sm-6">
+        <div class="card mb-5">
+          <div class="card-body">
+
+            <!-- Clé visite -->
+            <div class="form-group row">
+              <label for="cle" class="col-sm-4 col-form-label">Clé visite</label>
+              <div class="col-sm-8">
+                <select formControlName="cle" class="form-control" id="cle" name="cle">
+                  <option value="oui">Oui</option>
+                  <option value="Non">Non</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Clé visite-->
+            <!-- /Commentaire-->
+            <div class="form-group row">
+              <label for="commentaire" class="col-sm-4 col-form-label">Commentaires</label>
+              <div class="col-sm-8">
+
+                <textarea formControlName="commentaire" name="commentaire" id="commentaire" cols="30" rows="10"></textarea>
+
+              </div>
+            </div>
+            <!-- /Commentaire-->
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-6 border-left">
+        <div class="card mb-5">
+          <div class="card-body">
+
+            <!-- Digicode 1 -->
+            <div class="form-group row">
+              <label for="digicode1" class="col-sm-4 col-form-label">Digicode 1</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="digicode1" class="form-control" id="digicode1" placeholder="Digicode 1">
+              </div>
+            </div>
+            <!-- /Digicode 1 -->
+
+            <!-- Digicode 2 -->
+            <div class="form-group row">
+              <label for="digicode2" class="col-sm-4 col-form-label">Digicode 2</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="digicode2" class="form-control" id="digicode2" placeholder="Digicode 2">
+              </div>
+            </div>
+            <!-- /Digicode 2 -->
+
+            <!-- Interphone -->
+            <div class="form-group row">
+              <label for="interphone" class="col-sm-4 col-form-label">Interphone</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="interphone" class="form-control" id="interphone" placeholder="interphone">
+              </div>
+            </div>
+            <!-- /Interphone -->
+
+            <!-- Etage -->
+            <div class="form-group row">
+              <label for="etage" class="col-sm-4 col-form-label">Etage</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="etage" class="form-control" id="etage" placeholder="Etage">
+              </div>
+            </div>
+            <!-- /Etage -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

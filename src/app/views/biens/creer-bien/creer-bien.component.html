@@ -51,7 +51,7 @@
       <ngb-panel title="Bail">
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-mandat></app-mandat>
+            <app-bail [bailForm]="bienForm.controls['bail']"></app-bail>
           </div>
         </ng-template>
       </ngb-panel>
@@ -61,7 +61,7 @@
       <ngb-panel title="Condition financières">
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-mandat></app-mandat>
+            <app-conditions-financieres [conditionsFinancieresForm]="bienForm.controls['conditionsFinancieres']"></app-conditions-financieres>
           </div>
         </ng-template>
       </ngb-panel>
@@ -71,7 +71,7 @@
       <ngb-panel title="Accès/Visite">
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-mandat></app-mandat>
+            <app-visite [visiteForm]="bienForm.controls['visite']"></app-visite>
           </div>
         </ng-template>
       </ngb-panel>
@@ -81,7 +81,7 @@
       <ngb-panel title="Surface">
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-mandat></app-mandat>
+            <app-surface [surfaceForm]="bienForm.controls['surface']"></app-surface>
           </div>
         </ng-template>
       </ngb-panel>
@@ -91,7 +91,7 @@
       <ngb-panel title="Descritif">
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-mandat></app-mandat>
+            <app-descriptif [descriptifForm]="bienForm.controls['descriptif']"></app-descriptif>
           </div>
         </ng-template>
       </ngb-panel>
@@ -131,7 +131,7 @@
       <ngb-panel title="Communication">
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-mandat></app-mandat>
+            <app-commnunication [communicationForm]="bienForm.controls['communication']"></app-commnunication>
           </div>
         </ng-template>
       </ngb-panel>

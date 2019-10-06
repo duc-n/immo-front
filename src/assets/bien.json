@@ -39,5 +39,67 @@
         "zac": true
       }
     }
+  },
+  "bail": {
+    "typeBail": "bail",
+    "bailNotarie": true,
+    "chargeMensuel": 1000,
+    "periodLoyer": "3",
+    "depotGarantie": "3",
+    "cautionSup": "3",
+    "taxFonctiere": 300,
+    "paiementTaxFonctiere": "locataire",
+    "paiement606": "propriete"
+  },
+  "conditionsFinancieres": {
+    "conditionsFinancieres": "Autres conditions financières",
+    "honorairesAgence": 33000,
+    "paiementHonoraires": "locataire",
+    "tvaLoyer": true
+  },
+  "visite": {
+    "cle": "non",
+    "commentaire": "Local est idéalment pour les opticients",
+    "digicode1": "1333",
+    "digicode2": "345T434",
+    "interphone": "Boutique A",
+    "etage": "RDC"
+  },
+  "descriptif": {
+    "localIdealPour": "string",
+    "longueurFacade": "3",
+    "facadeAngle": true,
+    "description": "description description",
+    "espaceExterieur": true,
+    "hsp2m80": true,
+    "pointEau": true,
+    "wc": true,
+    "disponible": true,
+    "noteConfidentielle": "noteConfidentielle"
+  },
+  "communication": {
+    "siteWeb": false,
+    "parselle": false,
+    "bureauLocal": true,
+    "groupeSeloger": true,
+    "lebonCoin": false,
+    "territoireMaking": false,
+    "transactionCommerce": false,
+    "alertesEmailRapprochement": true,
+    "informationsMandats": true
+  },
+  "surface": {
+    "surfaceRDC": 140,
+    "surfaceRDCFonderee": 150,
+    "surfaceVente": true,
+    "surfaceSousSol": 50,
+    "surfaceSousSolFonderee": 150,
+    "surface1Etage": 30,
+    "surface1Fonderee": 45,
+    "surfaceAutre": 20,
+    "surfaceTotale": 400,
+    "surfaceFonderee": 300,
+    "nouvelleSurfaceFonderee": 300
   }
+
 }
