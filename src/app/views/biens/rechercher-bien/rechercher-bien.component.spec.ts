@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BienFormComponent } from './bien-form.component';
+import { RechercherBienComponent } from './rechercher-bien.component';
 
-describe('BienFormComponent', () => {
-  let component: BienFormComponent;
-  let fixture: ComponentFixture<BienFormComponent>;
+describe('RechercherBienComponent', () => {
+  let component: RechercherBienComponent;
+  let fixture: ComponentFixture<RechercherBienComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BienFormComponent ]
+      declarations: [ RechercherBienComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BienFormComponent);
+    fixture = TestBed.createComponent(RechercherBienComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
