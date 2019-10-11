@@ -5,13 +5,13 @@ import { Observable } from 'rxjs/internal/Observable';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-creer-bien',
-  templateUrl: './creer-bien.component.html',
-  styleUrls: ['./creer-bien.component.scss'],
+  selector: 'app-bien',
+  templateUrl: './bien.component.html',
+  styleUrls: ['./bien.component.scss'],
   animations: [SharedAnimations],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CreerBienComponent implements OnInit {
+export class BienComponent implements OnInit {
 
   bienForm$: Observable<FormGroup> = this.bienService.getBienForm();
 
