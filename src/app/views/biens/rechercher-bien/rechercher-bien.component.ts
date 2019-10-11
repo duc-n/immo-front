@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./rechercher-bien.component.scss']
 })
 export class RechercherBienComponent implements OnInit {
+  loading: boolean;
   rechercherBienForm: FormGroup;
   constructor(
     private fb: FormBuilder,
@@ -20,6 +21,10 @@ export class RechercherBienComponent implements OnInit {
     this.rechercherBienForm = this.fb.group({
       nomTitulare: []
     });
+  }
+
+  rechercherBien() {
+
   }
 
 }
