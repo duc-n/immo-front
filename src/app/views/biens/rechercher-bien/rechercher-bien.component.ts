@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
   selector: 'app-rechercher-bien',
@@ -8,9 +9,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class RechercherBienComponent implements OnInit {
   loading: boolean;
+  products$;
+  viewMode: 'search' | 'result' = 'search';
+
   rechercherBienForm: FormGroup;
   constructor(
     private fb: FormBuilder,
+    private productService: ProductService
   ) { }
 
   ngOnInit() {
@@ -24,7 +29,8 @@ export class RechercherBienComponent implements OnInit {
   }
 
   rechercherBien() {
-
+    this.products$ = this.productService.getProducts();
+    this.viewMode = 'result';
   }
 
 }

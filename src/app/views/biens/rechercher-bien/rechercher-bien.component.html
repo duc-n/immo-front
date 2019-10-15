@@ -1,25 +1,68 @@
-<form [formGroup]="rechercherBienForm">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-body">
-          <div class="d-flex mb-5">
-            <span class="m-auto"></span>
-            <btn-loading btnClass="btn-primary" type="submit" [loading]="loading" (click)="rechercherBien()">Rechercher</btn-loading>
-          </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
 
-          <div class="row justify-content-between">
-            <div class="col-md-6">
-              <h4 class="font-weight-bold">Nom titulaire</h4>
-              <div class="col-sm-4 form-group mb-3 pl-0">
-                <label for="nomTitulaire">Nom titulaire</label>
-                <input formControlName="nomTitulaire" type="text" class="form-control" id="nomTitulaire">
+        <div class="d-flex mb-5" *ngIf="viewMode === 'search'">
+          <span class="m-auto"></span>
+          <btn-loading btnClass="btn-primary" type="submit" [loading]="loading" (click)="rechercherBien()">Rechercher</btn-loading>
+        </div>
+        <div class="d-flex mb-5" *ngIf="viewMode !== 'search'">
+          <span class="m-auto"></span>
+          <btn-loading btnClass="btn-primary" [loading]="loading" (click)="viewMode = 'search'">Retourner à la page de recherche</btn-loading>
+        </div>
+        <!-- Search Mode -->
+        <div *ngIf="viewMode === 'search'">
+          <form [formGroup]="rechercherBienForm">
+            <div class="row justify-content-between">
+              <div class="col-md-6">
+                <h4 class="font-weight-bold">Nom titulaire</h4>
+                <div class="col-sm-4 form-group mb-3 pl-0">
+                  <label for="nomTitulaire">Nom titulaire</label>
+                  <input formControlName="nomTitulaire" type="text" class="form-control" id="nomTitulaire">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- /Search Mode -->
+
+        <!-- Result Mode -->
+        <div *ngIf="viewMode === 'result'">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card o-hidden">
+                <ngx-datatable style="height: calc(100vh - 270px); box-shadow: none" class="material fullscreen" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="60" [scrollbarV]="true" [limit]="10" [rows]="products$ | async">
+                  <ngx-datatable-column name="photo" [width]="80" [maxWidth]="100">
+                    <ng-template ngx-datatable-header-template>
+                      Thumbnail
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                      <img height="32px" width="32px" style="border-radius: 4px" [src]="value" alt="">
+                        </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="name" [width]="300">
+                    <ng-template ngx-datatable-header-template>
+                      Title
+                    </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="category">
+                    <ng-template ngx-datatable-header-template>
+                      Category
+                    </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="subtitle">
+                    <ng-template ngx-datatable-header-template>
+                      Description
+                    </ng-template>
+                  </ngx-datatable-column>
+                </ngx-datatable>
               </div>
             </div>
           </div>
-
         </div>
+        <!-- /Result Mode -->
       </div>
     </div>
   </div>
-</form>
+</div>
