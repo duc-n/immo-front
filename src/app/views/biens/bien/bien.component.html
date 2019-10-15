@@ -1,6 +1,6 @@
 <div class="d-flex align-items-baseline border-bottom justify-content-between">
   <div>
-    <h3 class="text-secondary">Edition d'un bien</h3>
+    <h3 class="text-secondary font-weight-bold">Edition d'un bien</h3>
   </div>
   <div>
     <button type="button" class="btn btn-outline-info m-2">Enregistrer comme brouillon</button>
@@ -15,7 +15,10 @@
     <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0">
 
       <!-- Consultant Responsable Accordion -->
-      <ngb-panel title="Consultants Responsables">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold" >Consultants Responsables</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-consultant-responsable [consultantResponsableForm]="bienForm.controls['nomTitulaire']"></app-consultant-responsable>
@@ -27,7 +30,7 @@
       <!-- Detail Bien Accordion -->
       <ngb-panel>
         <ng-template ngbPanelTitle>
-          <span>Detail Bien</span>
+          <span class="font-weight-bold">Detail Bien</span>
         </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
@@ -38,7 +41,10 @@
       <!-- /Detail Bien Accordion -->
 
       <!-- Mandat Accordion -->
-      <ngb-panel title="Mandat">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold" >Mandat</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-mandat></app-mandat>
@@ -48,7 +54,10 @@
       <!-- /Mandat Accordion -->
 
       <!-- Bail Accordion -->
-      <ngb-panel title="Bail">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Bail</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-bail [bailForm]="bienForm.controls['bail']"></app-bail>
@@ -58,7 +67,10 @@
       <!-- /Bail Accordion -->
 
       <!-- Conditions financieres Accordion -->
-      <ngb-panel title="Condition financières">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Condition financières</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-conditions-financieres [conditionsFinancieresForm]="bienForm.controls['conditionsFinancieres']"></app-conditions-financieres>
@@ -68,7 +80,10 @@
       <!-- /Conditions financieres Accordion -->
 
       <!-- Acces/Visite Accordion -->
-      <ngb-panel title="Accès/Visite">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Accès/Visite</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-visite [visiteForm]="bienForm.controls['visite']"></app-visite>
@@ -78,7 +93,10 @@
       <!-- /Acces/Visite Accordion -->
 
       <!-- Surface Accordion -->
-      <ngb-panel title="Surface">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Surface</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-surface [surfaceForm]="bienForm.controls['surface']"></app-surface>
@@ -88,7 +106,10 @@
       <!-- /Surface Accordion -->
 
       <!-- Descritif Accordion -->
-      <ngb-panel title="Descritif">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Descritif</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-descriptif [descriptifForm]="bienForm.controls['descriptif']"></app-descriptif>
@@ -98,7 +119,10 @@
       <!-- /Descritif Accordion -->
 
       <!-- Photos Accordion -->
-      <ngb-panel title="Photos">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Photos</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-mandat></app-mandat>
@@ -108,7 +132,10 @@
       <!-- /Photos Accordion -->
 
       <!-- Videos Accordion -->
-      <ngb-panel title="Videos">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Videos</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-mandat></app-mandat>
@@ -118,7 +145,10 @@
       <!-- /Videos Accordion -->
 
       <!-- Contacts Accordion -->
-      <ngb-panel title="Contacts">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Contacts</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-mandat></app-mandat>
@@ -128,7 +158,10 @@
       <!-- /Contacts Accordion -->
 
       <!-- Communication Accordion -->
-      <ngb-panel title="Communication">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Communication</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-commnunication [communicationForm]="bienForm.controls['communication']"></app-commnunication>
@@ -138,7 +171,10 @@
       <!-- /Communication Accordion -->
 
       <!-- Documents Accordion -->
-      <ngb-panel title="Documents">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Documents</span>
+        </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
             <app-mandat></app-mandat>

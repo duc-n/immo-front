@@ -14,12 +14,12 @@ export class RechercherBienComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.buildRechercherBienForm();
   }
 
   buildRechercherBienForm() {
     this.rechercherBienForm = this.fb.group({
-      nomTitulare: []
+      nomTitulaire: []
     });
   }
 
