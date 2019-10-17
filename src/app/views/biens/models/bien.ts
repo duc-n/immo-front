@@ -11,14 +11,14 @@ import { Communication } from './communication';
 
 export interface Bien {
     nomTitulaire: string;
-    detailBien: DetailBien;
-    mandat: Mandat;
-    bail: Bail;
-    conditionsFinancieres: ConditionsFinancieres;
-    visite: Visite;
-    surface: Surface;
-    descriptif: Descriptif;
-    photos: Photos;
-    videos: Videos;
-    communication: Communication;
+    detailBien?: DetailBien;
+    mandat?: Mandat;
+    bail?: Bail;
+    conditionsFinancieres?: ConditionsFinancieres;
+    visite?: Visite;
+    surface?: Surface;
+    descriptif?: Descriptif;
+    photos?: Photos;
+    videos?: Videos;
+    communication?: Communication;
 }

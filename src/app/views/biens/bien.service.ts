@@ -47,7 +47,8 @@ export class BienService {
         descriptif: this.generateDescriptif(bien.descriptif),
         communication: this.generateCommunication(bien.communication),
         surface: this.generateSurface(bien.surface)
-      }))
+      })
+      )
     );
   }
   private generateActivitesForm(activities: Activites) {
@@ -85,19 +86,19 @@ export class BienService {
   private generateEmplacementsForm(emplacements: Emplacements) {
 
     const emplacementsForm = this.fb.group({
-      'aDefinir': [emplacements.aDefinir],
-      'numero1': [emplacements.numero1],
-      'numero1Alimentaire': [emplacements.numero1Alimentaire],
-      'numero1PretPorter': [emplacements.numero1PretPorter],
-      'rueCommercante': [emplacements.rueCommercante],
-      'fluxPietons': [emplacements.fluxPietons],
-      'axeVoiture': [emplacements.axeVoiture],
-      'ruePietonne': [emplacements.ruePietonne],
-      'zoneTouristique': [emplacements.zoneTouristique],
-      'zoneBureau': [emplacements.zoneBureau],
-      'zoneResidentielle': [emplacements.zoneResidentielle],
-      'centreCommercial': [emplacements.centreCommercial],
-      'zac': [emplacements.zac]
+      'aDefinir': [emplacements ? emplacements.aDefinir : null],
+      'numero1': [emplacements ? emplacements.numero1 : null],
+      'numero1Alimentaire': [emplacements ? emplacements.numero1Alimentaire : null],
+      'numero1PretPorter': [emplacements ? emplacements.numero1PretPorter : null],
+      'rueCommercante': [emplacements ? emplacements.rueCommercante : null],
+      'fluxPietons': [emplacements ? emplacements.fluxPietons : null],
+      'axeVoiture': [emplacements ? emplacements.axeVoiture : null],
+      'ruePietonne': [emplacements ? emplacements.ruePietonne : null],
+      'zoneTouristique': [emplacements ? emplacements.zoneTouristique : null],
+      'zoneBureau': [emplacements ? emplacements.zoneBureau : null],
+      'zoneResidentielle': [emplacements ? emplacements.zoneResidentielle : null],
+      'centreCommercial': [emplacements ? emplacements.centreCommercial : null],
+      'zac': [emplacements ? emplacements.zac : null]
     });
 
     return emplacementsForm;
@@ -206,8 +207,13 @@ export class BienService {
   }
 
 
-  private getBien() {
+  private getBien(): Observable<any> {
+    // Call the mock webService
     return this.http.get('/assets/bien.json');
+
+    // Call the real webservice
+    // return this.http.get('http://immo-backend.eu-west-3.elasticbeanstalk.com/bien/5da784a39f14661eaf696850');
+
   }
 
   /**
