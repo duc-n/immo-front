@@ -19,10 +19,11 @@ import { VisiteComponent } from './bien/visite/visite.component';
 import { DescriptifComponent } from './bien/descriptif/descriptif.component';
 import { CommnunicationComponent } from './bien/commnunication/commnunication.component';
 import { SurfaceComponent } from './bien/surface/surface.component';
+import { ContactsComponent } from './bien/contacts/contacts.component';
 
 @NgModule({
   declarations: [BienComponent, ConsultantResponsableComponent, DetailBienComponent,
-    MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent, RechercherBienComponent, RechercherBienResultComponent],
+    MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent, RechercherBienComponent, RechercherBienResultComponent, ContactsComponent],
   imports: [
     CommonModule,
     SharedComponentsModule,
@@ -34,6 +35,6 @@ import { SurfaceComponent } from './bien/surface/surface.component';
     BiensRoutingModule
   ],
   exports: [BienComponent, ConsultantResponsableComponent, DetailBienComponent,
-    MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent, RechercherBienComponent, RechercherBienResultComponent]
+    MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent, RechercherBienComponent, RechercherBienResultComponent, ContactsComponent]
 })
 export class BiensModule { }
