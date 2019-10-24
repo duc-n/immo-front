@@ -8,6 +8,7 @@ import { Photos } from './photos';
 import { Videos } from './videos';
 import { DetailBien } from './detail-bien';
 import { Communication } from './communication';
+import { Client } from 'src/app/shared/models/client';
 
 export interface Bien {
     nomTitulaire: string;
@@ -21,4 +22,5 @@ export interface Bien {
     photos?: Photos;
     videos?: Videos;
     communication?: Communication;
+    contacts?: Client[];
 }

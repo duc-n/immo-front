@@ -16,6 +16,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Page } from 'src/app/shared/models/page';
 import { PagedData } from 'src/app/shared/models/paged-data';
 import { of } from 'rxjs';
+import { Client } from 'src/app/shared/models/client';
 
 const companyData = [];
 
@@ -46,7 +47,8 @@ export class BienService {
         visite: this.generateVisite(bien.visite),
         descriptif: this.generateDescriptif(bien.descriptif),
         communication: this.generateCommunication(bien.communication),
-        surface: this.generateSurface(bien.surface)
+        surface: this.generateSurface(bien.surface),
+        contacts: this.generateContacts(bien.contacts)
       })
       )
     );
@@ -206,13 +208,31 @@ export class BienService {
     return surfaceForm;
   }
 
+  private generateContacts(contacts: Client[]) {
+
+    const contactsForm = this.fb.array((() => {
+      if (!contacts) {
+        return [];
+      }
+      return contacts.map((client) => this.createClient(client));
+    })());
+
+    return contactsForm;
+  }
+
+  createClient(client: Client) {
+    return this.fb.group({
+      nom: [client.nom],
+      prenom: [client.prenom]
+    });
+  }
 
   private getBien(): Observable<any> {
     // Call the mock webService
-    //return this.http.get('/assets/bien.json');
+    return this.http.get('/assets/bien.json');
 
     // Call the real webservice
-    return this.http.get('http://immo-backend.eu-west-3.elasticbeanstalk.com/bien/5da784a39f14661eaf69684b');
+    //return this.http.get('http://immo-backend.eu-west-3.elasticbeanstalk.com/bien/5da784a39f14661eaf69684b');
 
   }
 

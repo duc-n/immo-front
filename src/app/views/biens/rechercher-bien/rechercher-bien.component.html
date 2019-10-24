@@ -5,11 +5,11 @@
 
         <div class="d-flex mb-5" *ngIf="viewMode === 'search'">
           <span class="m-auto"></span>
-          <btn-loading btnClass="btn-primary" type="submit" [loading]="loading" (click)="rechercherBien()">Rechercher</btn-loading>
+          <app-btn-loading btnClass="btn-primary" type="submit" [loading]="loading" (click)="rechercherBien()">Rechercher</app-btn-loading>
         </div>
         <div class="d-flex mb-5" *ngIf="viewMode !== 'search'">
           <span class="m-auto"></span>
-          <btn-loading btnClass="btn-primary" [loading]="loading" (click)="viewMode = 'search'">Retourner à la page de recherche</btn-loading>
+          <app-btn-loading btnClass="btn-primary" [loading]="loading" (click)="viewMode = 'search'">Retourner à la page de recherche</app-btn-loading>
         </div>
         <!-- Search Mode -->
         <div *ngIf="viewMode === 'search'">

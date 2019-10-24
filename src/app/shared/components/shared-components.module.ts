@@ -9,12 +9,8 @@ import { SearchModule } from './search/search.module';
 import { SharedDirectivesModule } from '../directives/shared-directives.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { LayoutsModule } from './layouts/layouts.module';
-import { ReactiveFormsModule, FormGroup } from '@angular/forms';
-
-const components = [
-  BtnLoadingComponent,
-  FeatherIconComponent,
-];
+import { ClientFormModalComponent } from './client-form-modal/client-form-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -26,9 +22,12 @@ const components = [
     SharedDirectivesModule,
     SearchModule,
     PerfectScrollbarModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  declarations: components,
-  exports: components
+  declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent],
+  exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule],
+  entryComponents: [ClientFormModalComponent]
 })
 export class SharedComponentsModule { }

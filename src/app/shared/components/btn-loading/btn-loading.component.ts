@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'btn-loading',
+  selector: 'app-btn-loading',
   templateUrl: './btn-loading.component.html',
   styleUrls: ['./btn-loading.component.scss']
 })
