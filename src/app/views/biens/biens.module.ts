@@ -31,8 +31,7 @@ import { SurfaceComponent } from './bien/surface/surface.component';
     NgbModule,
     NgxPaginationModule,
     NgxDatatableModule,
-    BiensRoutingModule
-  ],
+    BiensRoutingModule],
   exports: [BienComponent, ConsultantResponsableComponent, DetailBienComponent,
     MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent, RechercherBienComponent, RechercherBienResultComponent]
 })

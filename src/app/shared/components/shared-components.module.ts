@@ -9,6 +9,7 @@ import { SearchModule } from './search/search.module';
 import { SharedDirectivesModule } from '../directives/shared-directives.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { LayoutsModule } from './layouts/layouts.module';
+import { ReactiveFormsModule, FormGroup } from '@angular/forms';
 
 const components = [
   BtnLoadingComponent,
@@ -18,6 +19,7 @@ const components = [
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule,
     LayoutsModule,
     SharedPipesModule,

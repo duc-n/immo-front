@@ -8,6 +8,7 @@ import { SearchModule } from './components/search/search.module';
 import { SharedComponentsModule } from './components/shared-components.module';
 import { SharedDirectivesModule } from './directives/shared-directives.module';
 import { SharedPipesModule } from './pipes/shared-pipes.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [

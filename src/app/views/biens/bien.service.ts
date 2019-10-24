@@ -209,10 +209,10 @@ export class BienService {
 
   private getBien(): Observable<any> {
     // Call the mock webService
-    return this.http.get('/assets/bien.json');
+    //return this.http.get('/assets/bien.json');
 
     // Call the real webservice
-    // return this.http.get('http://immo-backend.eu-west-3.elasticbeanstalk.com/bien/5da784a39f14661eaf696850');
+    return this.http.get('http://immo-backend.eu-west-3.elasticbeanstalk.com/bien/5da784a39f14661eaf69684b');
 
   }
 
