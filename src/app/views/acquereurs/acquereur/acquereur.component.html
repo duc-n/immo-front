@@ -1,0 +1,196 @@
+<div class="d-flex align-items-baseline border-bottom justify-content-between">
+  <div>
+    <h3 class="text-secondary font-weight-bold">Edition d'un acquéreur</h3>
+  </div>
+  <div>
+    <button type="button" class="btn btn-outline-info m-2">Enregistrer comme brouillon</button>
+    <button type="button" class="btn btn-outline-primary">Valider</button>
+
+  </div>
+</div>
+<div class="border-top mb-4"></div>
+<!--form *ngIf="acquereurForm$ | async as acquereurForm" [formGroup]="acquereurForm" (submit)="onSubmit(acquereurForm.value)"-->
+<form *ngIf="acquereurForm$ | async as acquereurForm" [formGroup]="acquereurForm">
+  <div>
+
+    <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+
+    <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0">
+
+      <!-- Consultant Responsable Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold" >Consultants Responsables</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Consultant Responsable Accordion -->
+
+      <!-- Detail Bien Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Detail Bien</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Detail Bien Accordion -->
+
+      <!-- Mandat Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold" >Mandat</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Mandat Accordion -->
+
+      <!-- Bail Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Bail</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Bail Accordion -->
+
+      <!-- Conditions financieres Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Condition financières</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Conditions financieres Accordion -->
+
+      <!-- Acces/Visite Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Accès/Visite</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Acces/Visite Accordion -->
+
+      <!-- Surface Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Surface</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Surface Accordion -->
+
+      <!-- Descritif Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Descritif</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Descritif Accordion -->
+
+      <!-- Photos Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Photos</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Photos Accordion -->
+
+      <!-- Videos Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Videos</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Videos Accordion -->
+
+      <!-- Contacts Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Contacts</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Contacts Accordion -->
+
+      <!-- Communication Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Communication</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Communication Accordion -->
+
+      <!-- Documents Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Documents</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Documents Accordion -->
+
+    </ngb-accordion>
+
+  </div>
+
+  <div class="mt-3">
+    <button type="submit" class="btn btn-primary" [disabled]="!acquereurForm.valid">Submit</button>
+  </div>
+</form>

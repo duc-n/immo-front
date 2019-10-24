@@ -1,0 +1,21 @@
+{
+  "client": {
+    "nom": "Nom du client",
+    "prenom": "Prenom du Client",
+    "typeClient": "Acquereur",
+    "typeContact": "Contact",
+    "civilite": "M",
+    "societeEnCreation": false,
+    "societe": "string",
+    "tel": "string",
+    "email": "contact@test.fr",
+    "emailSup": "contact@testA.fr",
+    "activite": "string",
+    "origine": "confrere",
+    "topAcquereur": true,
+    "demandeRDV": true,
+    "newsLetter": true,
+    "consentementRGPD": true,
+    "recevoirAlertEmail": true
+  }
+}
