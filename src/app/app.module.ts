@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/inmemory-db/inmemory-db.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FilePickerModule } from 'ngx-awesome-uploader';
 import { BiensModule } from './views/biens/biens.module';
 import { AcquereursModule } from './views/acquereurs/acquereurs.module';
 import { AgmCoreModule } from '@agm/core';
@@ -20,6 +21,7 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyASY4NUs5fZLtQ9KkAHe4YThnDKBaNCW4k',
       libraries: ['places']
     }),
+    FilePickerModule,
     BrowserModule,
     SharedModule,
     HttpClientModule,
