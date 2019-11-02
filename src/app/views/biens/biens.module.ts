@@ -20,10 +20,11 @@ import { DescriptifComponent } from './bien/descriptif/descriptif.component';
 import { CommnunicationComponent } from './bien/commnunication/commnunication.component';
 import { SurfaceComponent } from './bien/surface/surface.component';
 import { ContactsComponent } from './bien/contacts/contacts.component';
+import { PhotosComponent } from './bien/photos/photos.component';
 
 @NgModule({
   declarations: [BienComponent, ConsultantResponsableComponent, DetailBienComponent,
-    MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent, RechercherBienComponent, RechercherBienResultComponent, ContactsComponent],
+    MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent, RechercherBienComponent, RechercherBienResultComponent, ContactsComponent, PhotosComponent],
   imports: [
     CommonModule,
     SharedComponentsModule,
@@ -34,6 +35,6 @@ import { ContactsComponent } from './bien/contacts/contacts.component';
     NgxDatatableModule,
     BiensRoutingModule],
   exports: [BienComponent, ConsultantResponsableComponent, DetailBienComponent,
-    MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent, RechercherBienComponent, RechercherBienResultComponent, ContactsComponent]
+    MandatComponent, BailComponent, ConditionsFinancieresComponent, VisiteComponent, DescriptifComponent, CommnunicationComponent, SurfaceComponent, RechercherBienComponent, RechercherBienResultComponent, ContactsComponent, PhotosComponent]
 })
 export class BiensModule { }

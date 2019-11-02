@@ -12,7 +12,7 @@
 <form *ngIf="bienForm$ | async as bienForm" [formGroup]="bienForm" (submit)="onSubmit(bienForm.value)">
   <div>
 
-    <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0">
+    <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" [destroyOnHide]="false" activeIds="ngb-panel-0">
 
       <!-- Consultant Responsable Accordion -->
       <ngb-panel>
@@ -21,7 +21,7 @@
         </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-consultant-responsable [consultantResponsableForm]="bienForm.controls['nomTitulaire']"></app-consultant-responsable>
+            <app-consultant-responsable [consultantResponsableForm]="bienForm.controls['consultants']"></app-consultant-responsable>
           </div>
         </ng-template>
       </ngb-panel>
@@ -125,7 +125,7 @@
         </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-mandat></app-mandat>
+            <app-photos></app-photos>
           </div>
         </ng-template>
       </ngb-panel>

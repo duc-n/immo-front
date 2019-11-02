@@ -9,9 +9,12 @@ import { Videos } from './videos';
 import { DetailBien } from './detail-bien';
 import { Communication } from './communication';
 import { Client } from 'src/app/shared/models/client';
+import { Consultant } from 'src/app/shared/models/consultant';
+import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
 
 export interface Bien {
-    nomTitulaire: string;
+    consultant?: Consultant;
+    consultantsAssocies?: Consultant[];
     detailBien?: DetailBien;
     mandat?: Mandat;
     bail?: Bail;
