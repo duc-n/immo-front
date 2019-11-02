@@ -1,9 +1,9 @@
 export interface Client {
+    nom: string;
+    prenom: string;
     typeClient: string;
     typeContact: string;
     civilite: string;
-    nom: number;
-    prenom: boolean;
     societeEnCreation: boolean;
     societe: string;
     tel: string;
@@ -16,4 +16,5 @@ export interface Client {
     newsLetter: boolean;
     consentementRGPD: boolean;
     recevoirAlertEmail: boolean;
+
 }

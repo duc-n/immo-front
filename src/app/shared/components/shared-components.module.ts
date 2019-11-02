@@ -11,6 +11,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { LayoutsModule } from './layouts/layouts.module';
 import { ClientFormModalComponent } from './client-form-modal/client-form-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommercialFormModalComponent } from './commercial-form-modal/commercial-form-modal.component';
 
 @NgModule({
   imports: [
@@ -26,8 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent],
+  declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, CommercialFormModalComponent],
   exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule],
-  entryComponents: [ClientFormModalComponent]
+  entryComponents: [ClientFormModalComponent, CommercialFormModalComponent]
 })
 export class SharedComponentsModule { }
