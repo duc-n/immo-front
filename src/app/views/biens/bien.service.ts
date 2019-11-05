@@ -17,6 +17,8 @@ import { Page } from 'src/app/shared/models/page';
 import { PagedData } from 'src/app/shared/models/paged-data';
 import { of } from 'rxjs';
 import { Client } from 'src/app/shared/models/client';
+import { Consultant } from 'src/app/shared/models/consultant';
+import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
 
 const companyData = [];
 
@@ -33,7 +35,7 @@ export class BienService {
   getBienForm() {
     return this.getBien().pipe(
       map((bien: Bien) => this.fb.group({
-        nomTitulaire: [bien.nomTitulaire],
+        consultants: this.generateConsultants(bien.consultant, bien.consultantsAssocies),
         detailBien: this.fb.group({
           'typeBien': [bien.detailBien.typeBien],
           'activite': [bien.detailBien.activite],
@@ -53,6 +55,39 @@ export class BienService {
       )
     );
   }
+  private generateConsultants(consultant: Consultant, consultantsAssocies: Consultant[]) {
+    return this.fb.group({
+      id: [consultant.id],
+      nom: [consultant.nom],
+      prenom: [consultant.prenom],
+      tel: [consultant.tel],
+      email: [consultant.email],
+      consultantAssocie: [],
+      consultantsAssocies: this.generateConsultantsAssocies(consultantsAssocies)
+    });
+  }
+
+  private generateConsultantsAssocies(consultants: Consultant[]) {
+
+    const consultantForm = this.fb.array((() => {
+      if (!consultants) {
+        return [];
+      }
+      return consultants.map((consultant) => this.createConsultant(consultant));
+    })());
+
+    return consultantForm;
+  }
+  createConsultant(consultant: Consultant) {
+    return this.fb.group({
+      id: [consultant.id],
+      nom: [consultant.nom],
+      prenom: [consultant.prenom],
+      tel: [consultant.tel],
+      email: [consultant.email]
+    });
+  }
+
   private generateActivitesForm(activities: Activites) {
 
     const activitiesForm = this.fb.group({

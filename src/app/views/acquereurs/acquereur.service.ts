@@ -8,6 +8,9 @@ import { Client } from 'src/app/shared/models/client';
 import { Commercial } from 'src/app/shared/models/commercial';
 import { InformationSupplementaires } from 'src/app/shared/models/informations-supplementaires';
 import { Activite } from 'src/app/shared/models/activite';
+import { Consultant } from 'src/app/shared/models/consultant';
+import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
+
 
 
 @Injectable({
@@ -28,6 +31,7 @@ export class AcquereurService {
       map((acquereur: Acquereur) => this.fb.group({
         client: this.generateClientForm(acquereur.acquereurDetail),
         commerciaux: this.generateCommercialForm(acquereur.commerciaux),
+        consultants: this.generateConsultants(acquereur.consultant, acquereur.consultantsAssocies),
         informationsSupplementaires: this.generateInformations(acquereur.informationsSupplementaires)
       })
       )
@@ -76,6 +80,40 @@ export class AcquereurService {
   }
 
 
+  private generateConsultants(consultant: Consultant, consultantsAssocies: Consultant[]) {
+    return this.fb.group({
+      id: [consultant.id],
+      nom: [consultant.nom],
+      prenom: [consultant.prenom],
+      tel: [consultant.tel],
+      email: [consultant.email],
+      consultantAssocie: [],
+      consultantsAssocies: this.generateConsultantsAssocies(consultantsAssocies)
+    });
+  }
+
+  private generateConsultantsAssocies(consultants: Consultant[]) {
+
+    const consultantForm = this.fb.array((() => {
+      if (!consultants) {
+        return [];
+      }
+      return consultants.map((consultant) => this.createConsultant(consultant));
+    })());
+
+    return consultantForm;
+  }
+
+  createConsultant(consultant: Consultant) {
+    return this.fb.group({
+      id: [consultant.id],
+      nom: [consultant.nom],
+      prenom: [consultant.prenom],
+      tel: [consultant.tel],
+      email: [consultant.email]
+    });
+  }
+
   createClient(commercial: Commercial) {
     return this.fb.group({
       nom: [commercial.nom],
@@ -95,28 +133,28 @@ export class AcquereurService {
       'numFax': [informations.numFax],
       'numAutre': [informations.numAutre],
       activites: this.generateActivites(informations.activites)
-    })
+    });
     return informationsForm;
   }
 
   generateActivites(activites: Activite[]) {
-    const contactsForm = this.fb.array((() => {
-      if (!activites) {
-        return [];
-      }
-      return activites.map((activite) => this.createActivite(activite));
-    })());
+    return this.fb.group({
+      activite: [],
+      activites: this.fb.array((() => {
+        if (!activites) {
+          return [];
+        }
+        return activites.map((activite) => this.createActivite(activite));
+      })())
+    });
 
-    return contactsForm;
   }
   createActivite(activite: Activite) {
     return this.fb.group({
-      typeActivite: [activite.typeActivite]
+      id: [activite.id],
+      libelle: [activite.libelle]
     });
   }
-
-
-
 
   private getAcquereur(): Observable<any> {
     // Call the mock webService

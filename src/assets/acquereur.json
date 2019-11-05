@@ -41,10 +41,12 @@
     "numFax": "899 99 3777 333",
     "numAutre": "23 23 23 23",
     "activites": [{
-        "typeActivite": "Commercial 1"
+        "id": "04",
+        "libelle": "Cyle/Vélo"
       },
       {
-        "typeActivite": "AZERAZERAZERAZER"
+        "id": "05",
+        "libelle": "Fleuriste"
       }
     ],
     "societes": [{
@@ -58,6 +60,27 @@
     ],
     "notes": "QSDFQSDFQSDFGGRGSDFGSGSGSFSDFGSDFGS"
 
-  }
-
+  },
+  "consultant": {
+    "id": "123",
+    "nom": "MINGOT",
+    "prenom": "Laurent",
+    "tel": "0145678965",
+    "email": "laurent.mignot@gmail.com"
+  },
+  "consultantsAssocies": [{
+      "id": "01",
+      "nom": "NGUYEN",
+      "prenom": "Léo",
+      "tel": "0686090909",
+      "email": "leo.nguyen@gmail.com"
+    },
+    {
+      "id": "02",
+      "nom": "GUIBER",
+      "prenom": "Lucas",
+      "tel": "0645678934",
+      "email": "lucas.guiber@gmail.com"
+    }
+  ]
 }

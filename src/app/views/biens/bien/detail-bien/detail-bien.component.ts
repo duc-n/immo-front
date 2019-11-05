@@ -21,7 +21,7 @@ export class DetailBienComponent implements OnInit {
   }
 
   ngOnInit() {
-    // console.log(this.detailBienForm);
+    console.log('Detail Bien init');
 
     // load Places Autocomplete
     this.mapsAPILoader.load().then(() => {

@@ -27,7 +27,7 @@ import { AgmCoreModule } from '@agm/core';
     InMemoryWebApiModule.forRoot(InMemoryDataService, { passThruUnknownUrl: true }),
     AppRoutingModule,
     BiensModule,
-    AcquereursModule,
+    AcquereursModule
   ],
   providers: [],
   bootstrap: [AppComponent],

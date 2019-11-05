@@ -18,7 +18,7 @@ export class BienComponent implements OnInit {
   constructor(private readonly fb: FormBuilder, private readonly bienService: BienService) {
   }
   ngOnInit() {
-
+    console.log('Init bien form');
   }
 
   onSubmit(value) {

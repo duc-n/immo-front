@@ -12,6 +12,8 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { ClientFormModalComponent } from './client-form-modal/client-form-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommercialFormModalComponent } from './commercial-form-modal/commercial-form-modal.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { FilePickerModule } from 'ngx-awesome-uploader';
 
 @NgModule({
   imports: [
@@ -25,10 +27,14 @@ import { CommercialFormModalComponent } from './commercial-form-modal/commercial
     PerfectScrollbarModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FilePickerModule
   ],
-  declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, CommercialFormModalComponent],
-  exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule],
+  declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, CommercialFormModalComponent, FileUploadComponent],
+  exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule, FileUploadComponent],
   entryComponents: [ClientFormModalComponent, CommercialFormModalComponent]
+  //declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, ],
+  //exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule, ],
+  //entryComponents: [ClientFormModalComponent]
 })
 export class SharedComponentsModule { }
