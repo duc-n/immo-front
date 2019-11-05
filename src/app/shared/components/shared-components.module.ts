@@ -33,8 +33,5 @@ import { FilePickerModule } from 'ngx-awesome-uploader';
   declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, CommercialFormModalComponent, FileUploadComponent],
   exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule, FileUploadComponent],
   entryComponents: [ClientFormModalComponent, CommercialFormModalComponent]
-  //declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, ],
-  //exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule, ],
-  //entryComponents: [ClientFormModalComponent]
 })
 export class SharedComponentsModule { }
