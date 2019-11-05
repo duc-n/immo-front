@@ -41,6 +41,7 @@ export class ConsultantResponsableComponent implements OnInit, AfterViewInit {
   associerConsultant() {
     const consultant: Consultant = this.consultantResponsableForm.get('consultantAssocie').value;
     if (consultant) {
+      consultant.commission = this.consultantResponsableForm.get('commission').value;
       this.consultantsAssociesArray.push(this.bienService.createConsultant(consultant));
       this.consultantService.remove(consultant);
       this.consultantResponsableForm.get('consultantAssocie').setValue(null);
