@@ -62,7 +62,6 @@ export class BienService {
       prenom: [consultant.prenom],
       tel: [consultant.tel],
       email: [consultant.email],
-      consultantAssocie: [],
       consultantsAssocies: this.generateConsultantsAssocies(consultantsAssocies)
     });
   }
@@ -84,7 +83,8 @@ export class BienService {
       nom: [consultant.nom],
       prenom: [consultant.prenom],
       tel: [consultant.tel],
-      email: [consultant.email]
+      email: [consultant.email],
+      commission: [consultant.commission]
     });
   }
 

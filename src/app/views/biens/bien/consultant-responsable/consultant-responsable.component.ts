@@ -1,8 +1,10 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormArray, FormControl } from '@angular/forms';
 import { BienService } from '../../bien.service';
 import { ConsultantService } from 'src/app/shared/services/consultant.service';
 import { Consultant } from 'src/app/shared/models/consultant';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CommercialFormModalComponent } from 'src/app/shared/components/commercial-form-modal/commercial-form-modal.component';
 
 @Component({
   selector: 'app-consultant-responsable',
@@ -14,6 +16,8 @@ export class ConsultantResponsableComponent implements OnInit, AfterViewInit {
   constructor(
     private bienService: BienService,
     public consultantService: ConsultantService,
+    private modalService: NgbModal,
+    private cdRef: ChangeDetectorRef,
   ) { }
 
   ngOnInit() {
@@ -38,13 +42,29 @@ export class ConsultantResponsableComponent implements OnInit, AfterViewInit {
     this.consultantService.add(consultantForm.value);
   }
 
-  associerConsultant() {
-    const consultant: Consultant = this.consultantResponsableForm.get('consultantAssocie').value;
+  associerConsultant(consultant: Consultant) {
     if (consultant) {
       this.consultantsAssociesArray.push(this.bienService.createConsultant(consultant));
       this.consultantService.remove(consultant);
-      this.consultantResponsableForm.get('consultantAssocie').setValue(null);
+      // when adding the consultant object manually, just tell Angular the change by calling this.cdRef.detectChanges();
+      this.cdRef.detectChanges();
     }
+  }
+
+  openCommercialModal() {
+    const modalRef = this.modalService.open(CommercialFormModalComponent);
+
+    // Pass the consultants$ observable into the modal
+    modalRef.componentInstance.consultants$ = this.consultantService.consultants$;
+
+    modalRef.result.then((result) => {
+      const consultant: Consultant = result.consultantAssocie;
+      consultant.commission = result.commission;
+      this.associerConsultant(consultant);
+
+    }).catch((error) => {
+      console.log('Error' + error);
+    });
   }
 
 }

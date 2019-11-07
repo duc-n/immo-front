@@ -5,6 +5,7 @@ import { CountryDB } from './countries';
 import { ChatDB } from './chat-db';
 import { InvoiceDB } from './invoices';
 import { ConsultantDB } from './consultants';
+import { ActiviteDB } from './activites';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
@@ -16,7 +17,8 @@ export class InMemoryDataService implements InMemoryDbService {
       'contacts': ChatDB.contacts,
       'chat-collections': ChatDB.chatCollection,
       'chat-user': ChatDB.user,
-      'consultants': ConsultantDB.consultants
+      'consultants': ConsultantDB.consultants,
+      'activites': ActiviteDB.activites
     };
   }
 }

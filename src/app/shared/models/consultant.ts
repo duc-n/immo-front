@@ -4,4 +4,5 @@ export interface Consultant {
     prenom: string;
     tel: string;
     email: string;
+    commission: number;
 }

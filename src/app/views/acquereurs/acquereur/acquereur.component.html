@@ -14,21 +14,22 @@
   <div>
 
     <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+    <app-consultant-responsable [consultantResponsableForm]="acquereurForm.controls['consultants']"></app-consultant-responsable>
 
     <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0">
 
-      <!-- Consultant Responsable Accordion -->
+      <!-- Detail Accordion -->
       <ngb-panel>
         <ng-template ngbPanelTitle>
-          <span class="font-weight-bold" >Consultants Responsables</span>
+          <span class="font-weight-bold" >Détails acquéreur</span>
         </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-client [clientForm]="acquereurForm.controls['client']"></app-client>
+            <app-detail-acquereur [detailAcquereurForm]="acquereurForm.controls['informationsSupplementaires']"></app-detail-acquereur>
           </div>
         </ng-template>
       </ngb-panel>
-      <!-- /Consultant Responsable Accordion -->
+      <!-- /Detail Accordion -->
 
       <!-- Detail Bien Accordion -->
       <ngb-panel>

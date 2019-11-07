@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Utils } from '../utils';
 import { Consultant } from '../models/consultant';
+import { Activite } from '../models/activite';
 
 @Injectable({
     providedIn: 'root'
@@ -41,5 +42,8 @@ export class DataLayerService {
     }
     getConsultants() {
         return this.http.get<Consultant[]>('api/consultants');
+    }
+    getActivites() {
+        return this.http.get<Activite[]>('api/activites');
     }
 }

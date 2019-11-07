@@ -1,0 +1,57 @@
+<div [formGroup]="activitesleForm">
+  <div class="form-group row">
+    <label for="AjouterActivite" class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-6">
+      <select formControlName="activite" class="form-control" id="activite">
+        <option [ngValue]="null" disabled>Selectionner une activité</option>
+        <option *ngFor="let activite of (activitetService.activites$ | async)" [ngValue]="activite">{{ activite.id + ' ' + activite.libelle }}</option>
+      </select>
+    </div>
+    <div class="col-sm-2">
+      <button class="btn btn-primary btn-rounded" (click)="associerActivite()">Ajouter une activité</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="col-lg-12 col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="row" formArrayName="activites">
+                  <!--
+                  <div class="col-lg-3" *ngFor="let activite of activitesleForm.controls['activites'].controls; let i = index;" [formGroupName]="i">
+                    <div class="card card-ecommerce-1 mb-4">
+                      <div class="card-body text-center">
+                        {{ activitesleForm.controls['activites'].controls[i].controls['libelle'].value}}
+                        <a [routerLink]="" (click)="detacherActivite(i)">Supp</a>
+                      </div>
+                    </div>
+                  </div>
+
+                -->
+                  <div class="col-md-12 table-responsive">
+                    <table class="table table-hover mb-3">
+                      <thead class="bg-gray-300">
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let activite of activitesleForm.controls['activites'].controls; let i = index;" [formGroupName]="i">
+                          <td>
+                            {{ activitesleForm.controls['activites'].controls[i].controls['libelle'].value}}
+                          </td>
+                          <td>
+                            <a (click)="detacherActivite(i)">Supp</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

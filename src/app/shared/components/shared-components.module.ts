@@ -11,6 +11,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { LayoutsModule } from './layouts/layouts.module';
 import { ClientFormModalComponent } from './client-form-modal/client-form-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommercialFormModalComponent } from './commercial-form-modal/commercial-form-modal.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FilePickerModule } from 'ngx-awesome-uploader';
 
@@ -29,8 +30,8 @@ import { FilePickerModule } from 'ngx-awesome-uploader';
     ReactiveFormsModule,
     FilePickerModule
   ],
-  declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, FileUploadComponent],
+  declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, CommercialFormModalComponent, FileUploadComponent],
   exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule, FileUploadComponent],
-  entryComponents: [ClientFormModalComponent]
+  entryComponents: [ClientFormModalComponent, CommercialFormModalComponent]
 })
 export class SharedComponentsModule { }

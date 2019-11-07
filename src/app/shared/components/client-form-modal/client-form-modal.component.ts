@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Consultant } from '../../models/consultant';
 
 @Component({
   selector: 'app-client-form-modal',
@@ -10,6 +11,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class ClientFormModalComponent implements OnInit {
 
   @Input() id: string; // this value will be used in case of editing a client
+  @Input() consultants: Consultant[];
 
   clientForm: FormGroup;
 

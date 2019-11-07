@@ -1,5 +1,5 @@
 {
-  "client": {
+  "acquereurDetail": {
     "nom": "Nom du client",
     "prenom": "Prenom du Client",
     "typeClient": "Acquereur",
@@ -17,5 +17,70 @@
     "newsLetter": true,
     "consentementRGPD": true,
     "recevoirAlertEmail": true
-  }
+  },
+  "commerciaux": [{
+      "nom": "Commercial 1",
+      "prenom": "Prenom Commercial 2",
+      "commission": {
+        "pourcentage": "50",
+        "typeCommission": "acquéreur"
+      }
+    },
+    {
+      "nom": "Commercial 2",
+      "prenom": "Prenom Commercial 2",
+      "commission": {
+        "pourcentage": "20",
+        "typeCommission": "acquéreur"
+      }
+    }
+  ],
+  "informationsSupplementaires": {
+    "numMobile": "06 20 58 14 68",
+    "numFixe": "01 39 99 88 33",
+    "numFax": "899 99 3777 333",
+    "numAutre": "23 23 23 23",
+    "activites": [{
+        "id": "04",
+        "libelle": "Cyle/Vélo"
+      },
+      {
+        "id": "05",
+        "libelle": "Fleuriste"
+      }
+    ],
+    "societes": [{
+        "nom": "Nom de la société",
+        "adresse": "Adresse 1"
+      },
+      {
+        "nom": "Nom de la société",
+        "adresse": "Adresse 1"
+      }
+    ],
+    "notes": "QSDFQSDFQSDFGGRGSDFGSGSGSFSDFGSDFGS"
+
+  },
+  "consultant": {
+    "id": "123",
+    "nom": "MINGOT",
+    "prenom": "Laurent",
+    "tel": "0145678965",
+    "email": "laurent.mignot@gmail.com"
+  },
+  "consultantsAssocies": [{
+      "id": "01",
+      "nom": "NGUYEN",
+      "prenom": "Léo",
+      "tel": "0686090909",
+      "email": "leo.nguyen@gmail.com"
+    },
+    {
+      "id": "02",
+      "nom": "GUIBER",
+      "prenom": "Lucas",
+      "tel": "0645678934",
+      "email": "lucas.guiber@gmail.com"
+    }
+  ]
 }
