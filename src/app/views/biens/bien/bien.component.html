@@ -5,15 +5,12 @@
   <div>
     <button type="button" class="btn btn-outline-info m-2">Enregistrer comme brouillon</button>
     <button type="button" class="btn btn-outline-primary">Valider</button>
-
   </div>
 </div>
 <div class="border-top mb-4"></div>
 <form *ngIf="bienForm$ | async as bienForm" [formGroup]="bienForm" (submit)="onSubmit(bienForm.value)">
   <div>
-
     <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" [destroyOnHide]="false" activeIds="ngb-panel-0">
-
       <!-- Consultant Responsable Accordion -->
       <ngb-panel>
         <ng-template ngbPanelTitle>
