@@ -15,14 +15,44 @@
 <div *ngIf="viewMode === 'search'">
   <form [formGroup]="rechercherBienForm">
 
+
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
+
             <div class="form-group row">
-              <label for="consultant" class="col-sm-2 col-form-label">Nom titulaire</label>
-              <div class="col-sm-3">
+
+              <label for="typeBien" class="col-sm-2 col-form-label">Type de biens</label>
+              <div class="col-sm-2">
+                <input type="text" formControlName="typeBien" class="form-control" id="typeBien" placeholder="Type de bien">
+              </div>
+
+              <label for="consultant" class="col-sm-1 col-form-label">Nom titulaire</label>
+              <div class="col-sm-2">
                 <input type="text" formControlName="consultant" class="form-control" id="consultant" placeholder="Nom du titulaire">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Type de transaction</label>
+
+              <div class="col-sm-8">
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Cession de bail
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Location pure
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="" disabled>Location avec droit d'entrée
+                  </label>
+                </div>
               </div>
             </div>
           </div>
