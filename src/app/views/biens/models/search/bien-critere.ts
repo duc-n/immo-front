@@ -22,11 +22,12 @@ export interface BienCritere {
     lineaireVitrineMin: number;
     angle: boolean;
 
-    pointRoute: boolean;
+    pointRouge: boolean;
     pointNoir: boolean;
     avecPanneau: boolean;
     sansPasserelles: boolean;
     licenceIV: boolean;
+    liquidationJudiciaire: boolean;
     popupStore: boolean;
     restaurentConduitCheminee: boolean;
     restaurentSansNuisance: boolean;

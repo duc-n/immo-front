@@ -19,6 +19,7 @@ import { of } from 'rxjs';
 import { Client } from 'src/app/shared/models/client';
 import { Consultant } from 'src/app/shared/models/consultant';
 import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
+import { BienCritere } from './models/search/bien-critere';
 
 const companyData = [];
 
@@ -298,6 +299,10 @@ export class BienService {
     }
     pagedData.page = page;
     return pagedData;
+  }
+
+  rechercherBien(bienCritere: BienCritere) {
+    return this.http.post<any[]>('/api/rechercherBien/', bienCritere);
   }
 
 }

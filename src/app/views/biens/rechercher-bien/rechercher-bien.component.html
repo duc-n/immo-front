@@ -15,46 +15,252 @@
 <div *ngIf="viewMode === 'search'">
   <form [formGroup]="rechercherBienForm">
 
-
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-
             <div class="form-group row">
-
+              <!-- Type de biens -->
               <label for="typeBien" class="col-sm-2 col-form-label">Type de biens</label>
               <div class="col-sm-2">
                 <input type="text" formControlName="typeBien" class="form-control" id="typeBien" placeholder="Type de bien">
               </div>
+              <!-- /Type de biens -->
 
+              <!-- Nom titulaire -->
               <label for="consultant" class="col-sm-1 col-form-label">Nom titulaire</label>
               <div class="col-sm-2">
                 <input type="text" formControlName="consultant" class="form-control" id="consultant" placeholder="Nom du titulaire">
               </div>
+              <!-- /Nom titulaire -->
             </div>
 
+            <!-- Type de transaction -->
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Type de transaction</label>
 
               <div class="col-sm-8">
                 <div class="form-check-inline">
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="">Cession de bail
+                  <label class="form-check-label" for="cessionBail">
+                    <input formControlName="cessionBail" type="checkbox" class="form-check-input" name="cessionBail" id="cessionBail">Cession de bail
                   </label>
                 </div>
                 <div class="form-check-inline">
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="">Location pure
+                  <label class="form-check-label" for="locationPure">
+                    <input formControlName="locationPure" type="checkbox" class="form-check-input" name="locationPure" id="locationPure">Location pure
                   </label>
                 </div>
                 <div class="form-check-inline">
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="" disabled>Location avec droit d'entrée
+                  <label class="form-check-label" for="locationDroitEntree">
+                    <input formControlName="locationDroitEntree" type="checkbox" name="locationDroitEntree" id="locationDroitEntree" class="form-check-input">Location avec droit d'entrée
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="mursLibres">
+                    <input formControlName="mursLibres" type="checkbox" name="mursLibres" id="mursLibres" class="form-check-input">Murs libres
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="mursOccupes">
+                    <input formControlName="mursOccupes" type="checkbox" name="mursOccupes" id="mursOccupes" class="form-check-input">Murs occupés
                   </label>
                 </div>
               </div>
             </div>
+            <!-- /Type de transaction -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-4"></div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <!-- Adresse -->
+            <div class="form-group row">
+              <label for="adresse" class="col-sm-2 col-form-label">Adresse</label>
+              <div class="col-sm-4">
+                <input type="text" formControlName="adresse" class="form-control" id="adresse" placeholder="Adresse">
+              </div>
+            </div>
+            <!-- /Adresse -->
+            <!-- Departement -->
+            <div class="form-group row">
+              <label for="departement" class="col-sm-2 col-form-label">Departement</label>
+              <div class="col-sm-2">
+                <input type="text" formControlName="departement" class="form-control" id="departement" placeholder="Departement">
+              </div>
+            </div>
+            <!-- /Departement -->
+            <!-- Code postal -->
+            <div class="form-group row">
+              <label for="codePostal" class="col-sm-2 col-form-label">Code postal</label>
+              <div class="col-sm-2">
+                <input type="text" formControlName="codePostal" class="form-control" id="codePostal" placeholder="Code Postal">
+              </div>
+            </div>
+            <!-- /Code postal -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-4"></div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <!-- Loyer -->
+            <div class="form-group row">
+              <label for="loyerMin" class="col-sm-2 col-form-label">Loyer</label>
+              <div class="form-inline">
+                <label class="sr-only"></label>
+                <input type="text" formControlName="loyerMin" class="form-control mb-2 mr-sm-2 ml-sm-3">
+                <label>€ min</label>
+                <label class="mr-sm-1 ml-sm-5">à</label>
+                <input type="text" formControlName="loyerMax" class="form-control mb-2 mr-sm-2 ml-sm-3">
+                <label>€ max</label>
+              </div>
+            </div>
+            <!-- /Loyer -->
+            <!-- Prix -->
+            <div class="form-group row">
+              <label for="loyerMin" class="col-sm-2 col-form-label">Prix</label>
+              <div class="form-inline">
+                <label class="sr-only"></label>
+                <input type="text" formControlName="prixMin" class="form-control mb-2 mr-sm-2 ml-sm-3">
+                <label>€ min</label>
+                <label class="mr-sm-1 ml-sm-5">à</label>
+                <input type="text" formControlName="prixMax" class="form-control mb-2 mr-sm-2 ml-sm-3">
+                <label>€ max</label>
+              </div>
+            </div>
+            <!-- /Prix -->
+            <!-- Valeur locative -->
+            <div class="form-group row">
+              <label for="loyerMin" class="col-sm-2 col-form-label">Valeur locative</label>
+              <div class="form-inline">
+                <label class="sr-only"></label>
+                <input type="text" formControlName="valeurLocativeMin" class="form-control mb-2 mr-sm-2 ml-sm-3">
+                <label>€ min</label>
+                <label class="mr-sm-1 ml-sm-5">à</label>
+                <input type="text" formControlName="valeurLocativeMax" class="form-control mb-2 mr-sm-2 ml-sm-3">
+                <label>€ max</label>
+              </div>
+            </div>
+            <!-- /Valeur locative -->
+            <!-- Surface totale -->
+            <div class="form-group row">
+              <label for="loyerMin" class="col-sm-2 col-form-label">Surface totale</label>
+              <div class="form-inline">
+                <label class="sr-only"></label>
+                <input type="text" formControlName="surfaceTotaleMin" class="form-control mb-2 mr-sm-2 ml-sm-3">
+                <label>m²</label>
+                <label class="mr-sm-1 ml-sm-5">à</label>
+                <input type="text" formControlName="surfaceTotaleMax" class="form-control mb-2 mr-sm-2 ml-sm-5">
+                <label>m²</label>
+              </div>
+            </div>
+            <!-- /Surface totale -->
+            <!-- Surface RDC -->
+            <div class="form-group row">
+              <label for="loyerMin" class="col-sm-2 col-form-label">Surface RDC</label>
+              <div class="form-inline">
+                <label class="sr-only"></label>
+                <input type="text" formControlName="surfaceRDCMin" class="form-control mb-2 mr-sm-2 ml-sm-3">
+                <label>m²</label>
+                <label class="mr-sm-1 ml-sm-5">à</label>
+                <input type="text" formControlName="surfaceRDCMax" class="form-control mb-2 mr-sm-2 ml-sm-5">
+                <label>m²</label>
+              </div>
+            </div>
+            <!-- /Surface RDC -->
+            <!-- Lineaire de vitrine -->
+            <div class="form-group row">
+              <label for="loyerMin" class="col-sm-2 col-form-label">Linéaire de vitrine</label>
+              <div class="form-inline">
+                <label class="sr-only"></label>
+                <input type="text" formControlName="lineaireVitrineMin" class="form-control mb-2 mr-sm-2 ml-sm-3">
+                <label>m</label>
+                <div class="custom-control custom-checkbox my-1 mr-sm-2 ml-sm-5">
+                  <input type="checkbox" formControlName="angle" class="custom-control-input" id="angle">
+                  <label class="custom-control-label" for="angle">Seulement d'angle</label>
+                </div>
+              </div>
+            </div>
+            <!-- /Lineaire de vitrine -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-4"></div>
+    <!-- Seulement point rouge -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <!-- Seulement point rouge line -->
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="pointRouge">
+                    <input formControlName="pointRouge" type="checkbox" class="form-check-input" name="pointRouge" id="pointRouge">Seulement point rouge
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="licenceIV">
+                    <input formControlName="licenceIV" type="checkbox" class="form-check-input" name="licenceIV" id="licenceIV">Licence IV
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="liquidationJudiciaire">
+                    <input formControlName="liquidationJudiciaire" type="checkbox" name="liquidationJudiciaire" id="liquidationJudiciaire" class="form-check-input">Liquidation judiciaire
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="brouillon">
+                    <input formControlName="brouillon" type="checkbox" name="brouillon" id="brouillon" class="form-check-input">Brouillon
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="actif">
+                    <input formControlName="actif" type="checkbox" name="actif" id="actif" class="form-check-input">Actif
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="offreEnCours">
+                    <input formControlName="offreEnCours" type="checkbox" name="offreEnCours" id="offreEnCours" class="form-check-input">Offre en cours
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /Seulement point rouge line -->
+            <!-- Seulement point noir line -->
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="pointNoir">
+                    <input formControlName="pointNoir" type="checkbox" class="form-check-input" name="pointNoir" id="pointNoir">Seulement point noir
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="popupStore">
+                    <input formControlName="popupStore" type="checkbox" name="popupStore" id="popupStore" class="form-check-input">Popup store
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="conclu">
+                    <input formControlName="brouillon" type="checkbox" name="conclu" id="conclu" class="form-check-input">Conclu
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="archive">
+                    <input formControlName="archive" type="checkbox" name="archive" id="archive" class="form-check-input">Archivé
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /Seulement point noir line -->
           </div>
         </div>
       </div>

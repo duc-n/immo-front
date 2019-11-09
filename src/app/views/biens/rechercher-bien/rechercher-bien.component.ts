@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { BienService } from '../bien.service';
 
 @Component({
   selector: 'app-rechercher-bien',
@@ -10,12 +11,14 @@ import { ProductService } from 'src/app/shared/services/product.service';
 export class RechercherBienComponent implements OnInit {
   loading: boolean;
   products$;
+  biens$;
   viewMode: 'search' | 'result' = 'search';
 
   rechercherBienForm: FormGroup;
   constructor(
     private fb: FormBuilder,
-    private productService: ProductService
+    private productService: ProductService,
+    private bienService: BienService
   ) { }
 
   ngOnInit() {
@@ -46,11 +49,12 @@ export class RechercherBienComponent implements OnInit {
       surfaceRDCMax: [],
       lineaireVitrineMin: [],
       angle: [],
-      pointRoute: [],
+      pointRouge: [],
       pointNoir: [],
       avecPanneau: [],
       sansPasserelles: [],
       licenceIV: [],
+      liquidationJudiciaire: [],
       popupStore: [],
       restaurentConduitCheminee: [],
       restaurentSansNuisance: [],
@@ -78,7 +82,8 @@ export class RechercherBienComponent implements OnInit {
   }
 
   rechercherBien() {
-    this.products$ = this.productService.getProducts();
+    console.log(this.rechercherBienForm.value);
+    this.biens$ = this.bienService.rechercherBien(this.rechercherBienForm.value);
     this.viewMode = 'result';
   }
 
