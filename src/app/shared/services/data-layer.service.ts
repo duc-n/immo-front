@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Utils } from '../utils';
 import { Consultant } from '../models/consultant';
 import { Activite } from '../models/activite';
+import { Client } from '../models/client';
 
 @Injectable({
     providedIn: 'root'
@@ -45,5 +46,9 @@ export class DataLayerService {
     }
     getActivites() {
         return this.http.get<Activite[]>('api/activites');
+    }
+    clientLookup(nom) {
+        const params = new HttpParams().set('nom', nom);
+        return this.http.get<Client[]>('http://localhost/client/clientLookup', { params: params });
     }
 }

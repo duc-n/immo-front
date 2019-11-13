@@ -2,329 +2,321 @@
     <div class="container">
       <div class="row vdivide">
         <div class="col-sm-6">
-          <div class="card mb-5">
-            <div class="card-body">
-              <!-- Type de bien -->
-              <div class="form-group row">
-                <label for="inputTypeBien" class="col-sm-4 col-form-label">Type de bien<em class="text-danger">*</em></label>
-                <div class="col-sm-8">
-                  <select formControlName="typeBien" class="form-control" id="inputTypeBien">
-                    <option [ngValue]="null" disabled>Selectionner type de bien</option>
-                    <option value="Commerce">Commerce</option>
-                    <option>Option 1</option>
-                    <option>Option 1</option>
+          <!-- Type de bien -->
+          <div class="form-group row">
+            <label for="inputTypeBien" class="col-sm-4 col-form-label">Type de bien<em class="text-danger">*</em></label>
+            <div class="col-sm-8">
+              <select formControlName="typeBien" class="form-control" id="inputTypeBien">
+                <option [ngValue]="null" disabled>Selectionner type de bien</option>
+                <option value="Commerce">Commerce</option>
+                <option>Option 1</option>
+                <option>Option 1</option>
 
-                  </select>
-                </div>
-              </div>
-              <!-- /Type de bien -->
-              <!-- Activite actuel -->
-              <div class="form-group row">
-                <label for="inputActivite" class="col-sm-4 col-form-label">Activité actuel<em class="text-danger">*</em></label>
-                <div class="col-sm-8">
-                  <select formControlName="activite" class="form-control" id="inputActivite">
-                    <option>Option 1</option>
-                    <option>Option 1</option>
-                    <option>Option 1</option>
-                  </select>
-                </div>
-              </div>
-              <!-- /Activite actuel-->
-              <!-- Equipement -->
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Equipement<em class="text-danger">*</em></label>
-              </div>
-              <!-- /Equipement -->
-              <!-- Activites possibles -->
-              <fieldset formGroupName="activites" class="form-group">
-                <div class="row">
-                  <legend class="col-form-label col-sm-4 pt-0">Activités possibles</legend>
-                  <div class="col-sm-8">
-                    <!-- Licence IV -->
-
-                    <div class="form-check">
-                      <input formControlName="licence" class="form-check-input" type="checkbox" name="licence" id="licence">
-                      <label class="form-check-label" for="licence">
-                        Licence IV
-                      </label>
-                    </div>
-                    <!-- /Licence IV -->
-                    <!-- Liquidation judiciaire -->
-                    <div class="form-check">
-                      <input formControlName="liquidationJudiciaire" class="form-check-input" type="checkbox" name="liquidationJudiciaire" id="liquidationJudiciaire">
-                      <label class="form-check-label" for="liquidationJudiciaire">
-                        Liquidation judiciaire
-                      </label>
-                    </div>
-                    <!-- /Liquidation judiciaire -->
-                    <!-- Popup store -->
-                    <div class="form-check">
-                      <input formControlName="popupStore" class="form-check-input" type="checkbox" name="popupStore" id="popupStore">
-                      <label class="form-check-label" for="popupStore">
-                        Popup store
-                      </label>
-                    </div>
-                    <!-- /Popup store -->
-                    <!-- Restaurant avec conduit de cheminée -->
-                    <div class="form-check">
-                      <input formControlName="restaurantConduitChemine" class="form-check-input" type="checkbox" name="restaurantConduitChemine" id="restaurantConduitChemine">
-                      <label class="form-check-label" for="restaurantConduitChemine">
-                        Restaurant avec conduit de cheminée
-                      </label>
-                    </div>
-                    <!-- /Restaurant avec conduit de cheminée -->
-                    <!-- Restauration sans nuisance ou alimentaire -->
-                    <div class="form-check">
-                      <input formControlName="restaurantSansNuisance" class="form-check-input" type="checkbox" name="restaurantSansNuisance" id="restaurantSansNuisance">
-                      <label class="form-check-label" for="restaurantSansNuisance">
-                        Restauration sans nuisance ou alimentaire
-                      </label>
-                    </div>
-                    <!-- /Restauration sans nuisance ou alimentaire -->
-                    <!-- Terrasse -->
-                    <div class="form-check">
-                      <input formControlName="terrasse" class="form-check-input" type="checkbox" name="terrasse" id="terrasse">
-                      <label class="form-check-label" for="terrasse">
-                        Terrasse
-                      </label>
-                    </div>
-                    <!-- Terrasse -->
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /Activites possibles -->
-              <!-- Nom du magasin -->
-              <div class="form-group row">
-                <label for="nomMagasin" class="col-sm-4 col-form-label">Nom du magasin</label>
-                <div class="col-sm-8">
-                  <input type="text" formControlName="nomMagasin" class="form-control" id="nomMagasin" placeholder="Nom du magasin">
-                </div>
-              </div>
-              <!-- /Nom du magasin -->
-              <!-- Enseignes a proximite -->
-              <div class="form-group row">
-                <label for="enseigneProximite" class="col-sm-4 col-form-label">Enseignes à proximité</label>
-                <div class="col-sm-8">
-                  <textarea type="text" formControlName="enseigneProximite" id="enseigneProximite" class="md-textarea md-textarea-auto form-control"></textarea>
-                </div>
-              </div>
-              <!-- /Enseignes a proximite -->
+              </select>
             </div>
           </div>
+          <!-- /Type de bien -->
+          <!-- Activite actuel -->
+          <div class="form-group row">
+            <label for="inputActivite" class="col-sm-4 col-form-label">Activité actuel<em class="text-danger">*</em></label>
+            <div class="col-sm-8">
+              <select formControlName="activite" class="form-control" id="inputActivite">
+                <option>Option 1</option>
+                <option>Option 1</option>
+                <option>Option 1</option>
+              </select>
+            </div>
+          </div>
+          <!-- /Activite actuel-->
+          <!-- Equipement -->
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Equipement<em class="text-danger">*</em></label>
+          </div>
+          <!-- /Equipement -->
+          <!-- Activites possibles -->
+          <fieldset formGroupName="activites" class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Activités possibles</legend>
+              <div class="col-sm-8">
+                <!-- Licence IV -->
+
+                <div class="form-check">
+                  <input formControlName="licence" class="form-check-input" type="checkbox" name="licence" id="licence">
+                  <label class="form-check-label" for="licence">
+                    Licence IV
+                  </label>
+                </div>
+                <!-- /Licence IV -->
+                <!-- Liquidation judiciaire -->
+                <div class="form-check">
+                  <input formControlName="liquidationJudiciaire" class="form-check-input" type="checkbox" name="liquidationJudiciaire" id="liquidationJudiciaire">
+                  <label class="form-check-label" for="liquidationJudiciaire">
+                    Liquidation judiciaire
+                  </label>
+                </div>
+                <!-- /Liquidation judiciaire -->
+                <!-- Popup store -->
+                <div class="form-check">
+                  <input formControlName="popupStore" class="form-check-input" type="checkbox" name="popupStore" id="popupStore">
+                  <label class="form-check-label" for="popupStore">
+                    Popup store
+                  </label>
+                </div>
+                <!-- /Popup store -->
+                <!-- Restaurant avec conduit de cheminée -->
+                <div class="form-check">
+                  <input formControlName="restaurantConduitChemine" class="form-check-input" type="checkbox" name="restaurantConduitChemine" id="restaurantConduitChemine">
+                  <label class="form-check-label" for="restaurantConduitChemine">
+                    Restaurant avec conduit de cheminée
+                  </label>
+                </div>
+                <!-- /Restaurant avec conduit de cheminée -->
+                <!-- Restauration sans nuisance ou alimentaire -->
+                <div class="form-check">
+                  <input formControlName="restaurantSansNuisance" class="form-check-input" type="checkbox" name="restaurantSansNuisance" id="restaurantSansNuisance">
+                  <label class="form-check-label" for="restaurantSansNuisance">
+                    Restauration sans nuisance ou alimentaire
+                  </label>
+                </div>
+                <!-- /Restauration sans nuisance ou alimentaire -->
+                <!-- Terrasse -->
+                <div class="form-check">
+                  <input formControlName="terrasse" class="form-check-input" type="checkbox" name="terrasse" id="terrasse">
+                  <label class="form-check-label" for="terrasse">
+                    Terrasse
+                  </label>
+                </div>
+                <!-- Terrasse -->
+              </div>
+            </div>
+          </fieldset>
+          <!-- /Activites possibles -->
+          <!-- Nom du magasin -->
+          <div class="form-group row">
+            <label for="nomMagasin" class="col-sm-4 col-form-label">Nom du magasin</label>
+            <div class="col-sm-8">
+              <input type="text" formControlName="nomMagasin" class="form-control" id="nomMagasin" placeholder="Nom du magasin">
+            </div>
+          </div>
+          <!-- /Nom du magasin -->
+          <!-- Enseignes a proximite -->
+          <div class="form-group row">
+            <label for="enseigneProximite" class="col-sm-4 col-form-label">Enseignes à proximité</label>
+            <div class="col-sm-8">
+              <textarea type="text" formControlName="enseigneProximite" id="enseigneProximite" class="md-textarea md-textarea-auto form-control"></textarea>
+            </div>
+          </div>
+          <!-- /Enseignes a proximite -->
 
         </div>
         <div class="col-sm-6 border-left">
-          <div class="card mb-5">
-            <div class="card-body">
-              <div formGroupName="adresseBien">
-                <!-- Adresse -->
-                <div class="form-group row">
-                  <label for="inputAdresse" class="col-sm-4 col-form-label">Adresse<em class="text-danger">*</em></label>
-                  <div class="col-sm-8">
-                    <input type="text" formControlName="adresse" #search autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" id="inputAdresse" placeholder="Adresse">
-                  </div>
-                </div>
-                <!-- /Adresse -->
-                <!-- Ville -->
-                <div class="form-group row">
-                  <label for="ville" class="col-sm-4 col-form-label">Ville<em class="text-danger">*</em></label>
-                  <div class="col-sm-8">
-                    <input type="text" formControlName="ville" class="form-control" id="ville" placeholder="Ville">
-                  </div>
-                </div>
-                <!-- /Ville -->
-                <!-- CP -->
-                <div class="form-group row">
-                  <label for="codePostal" class="col-sm-4 col-form-label">CP<em class="text-danger">*</em></label>
-                  <div class="col-sm-8">
-                    <input type="text" formControlName="codePostal" class="form-control" id="codePostal" placeholder="Code Postal">
-                  </div>
-                </div>
-                <!-- /CP -->
-                <!-- Quatier -->
-                <div class="form-group row">
-                  <label for="quatier" class="col-sm-4 col-form-label">Quatier</label>
-                  <div class="col-sm-8">
-                    <input type="text" formControlName="quatier" class="form-control" id="quatier" placeholder="Quatier">
-                  </div>
-                </div>
-                <!-- /Quatier -->
-                <!-- Metro -->
-                <div class="form-group row">
-                  <label for="quatier" class="col-sm-4 col-form-label">Métro</label>
-                  <div class="col-sm-8">
-                    <input type="text" formControlName="metro" class="form-control" id="metro" placeholder="Métro">
-                  </div>
-                </div>
-                <!-- /Metro -->
-                <!-- RER -->
-                <div class="form-group row">
-                  <label for="rer" class="col-sm-4 col-form-label">RER</label>
-                  <div class="col-sm-8">
-                    <input type="text" formControlName="rer" class="form-control" id="rer" placeholder="RER">
-                  </div>
-                </div>
-                <!-- /RER -->
-                <!-- Bus -->
-                <div class="form-group row">
-                  <label for="bus" class="col-sm-4 col-form-label">Bus</label>
-                  <div class="col-sm-8">
-                    <input type="text" formControlName="bus" class="form-control" id="bus" placeholder="Bus">
-                  </div>
-                </div>
-                <!-- /Bus -->
-                <!-- Parking -->
-                <div class="form-group row">
-                  <label for="parking" class="col-sm-4 col-form-label">Parking</label>
-                  <div class="col-sm-8">
-                    <input type="text" formControlName="parking" class="form-control" id="parking" placeholder="Parking">
-                  </div>
-                </div>
-                <!-- /Parking -->
-                <!-- Emplacements -->
-                <fieldset formGroupName="emplacements" class="form-group">
-                  <div class="row">
-                    <legend class="col-form-label col-sm-4 pt-0">Emplacements<em class="text-danger">*</em></legend>
-                    <div class="col-sm-8">
-                      <!-- A définir -->
-                      <div class="form-check">
-                        <input formControlName="aDefinir" class="form-check-input" type="checkbox" name="aDefinir" id="aDefinir">
-                        <label class="form-check-label" for="aDefinir">
-                          A définir
-                        </label>
-                      </div>
-                      <!-- /A définir -->
-                      <!-- Numero 1 -->
-                      <div class="form-check">
-                        <input formControlName="numero1" class="form-check-input" type="checkbox" name="numero1" id="numero1">
-                        <label class="form-check-label" for="numero1">
-                          Numéro 1
-                        </label>
-                      </div>
-                      <!-- /Numero 1 -->
-                      <!-- Numéro 1 Alimentaire -->
-                      <div class="form-check">
-                        <input formControlName="numero1Alimentaire" class="form-check-input" type="checkbox" name="numero1Alimentaire" id="numero1Alimentaire">
-                        <label class="form-check-label" for="numero1Alimentaire">
-                          Numéro 1 Alimentaire
-                        </label>
-                      </div>
-                      <!-- /Numéro 1 Alimentaire -->
-                      <!-- Numéro 1 Pret à porter -->
-                      <div class="form-check">
-                        <input formControlName="numero1PretPorter" class="form-check-input" type="checkbox" name="numero1PretPorter" id="numero1PretPorter">
-                        <label class="form-check-label" for="numero1PretPorter">
-                          Numéro 1 Pret à porter
-                        </label>
-                      </div>
-                      <!-- /Numéro 1 Pret à porter -->
-                      <!-- Rue commercante -->
-                      <div class="form-check">
-                        <input formControlName="rueCommercante" class="form-check-input" type="checkbox" name="rueCommercante" id="rueCommercante">
-                        <label class="form-check-label" for="rueCommercante">
-                          Rue commercante
-                        </label>
-                      </div>
-                      <!-- /Rue commercante -->
-                      <!-- Flux pietons importants -->
-                      <div class="form-check">
-                        <input formControlName="fluxPietons" class="form-check-input" type="checkbox" name="fluxPietons" id="fluxPietons">
-                        <label class="form-check-label" for="fluxPietons">
-                          Flux pietons importants
-                        </label>
-                      </div>
-                      <!-- /Flux pietons importants -->
-                      <!-- Axe voiture importante -->
-                      <div class="form-check">
-                        <input formControlName="axeVoiture" class="form-check-input" type="checkbox" name="axeVoiture" id="axeVoiture">
-                        <label class="form-check-label" for="axeVoiture">
-                          Axe voiture importante
-                        </label>
-                      </div>
-                      <!-- /Axe voiture importante -->
-                      <!-- Rue pietonne -->
-                      <div class="form-check">
-                        <input formControlName="ruePietonne" class="form-check-input" type="checkbox" name="ruePietonne" id="ruePietonne">
-                        <label class="form-check-label" for="ruePietonne">
-                          Rue pietonne
-                        </label>
-                      </div>
-                      <!-- /Rue pietonne -->
-                      <!-- Zone touristique -->
-                      <div class="form-check">
-                        <input formControlName="zoneTouristique" class="form-check-input" type="checkbox" name="zoneTouristique" id="zoneTouristique">
-                        <label class="form-check-label" for="zoneTouristique">
-                          Zone touristique
-                        </label>
-                      </div>
-                      <!-- /Zone touristique -->
-                      <!-- Zone de bureaux -->
-                      <div class="form-check">
-                        <input formControlName="zoneBureau" class="form-check-input" type="checkbox" name="zoneBureau" id="zoneBureau">
-                        <label class="form-check-label" for="zoneBureau">
-                          Zone de bureaux
-                        </label>
-                      </div>
-                      <!-- /Zone de bureaux -->
-                      <!-- Zone residentielle -->
-                      <div class="form-check">
-                        <input formControlName="zoneResidentielle" class="form-check-input" type="checkbox" name="zoneResidentielle" id="zoneResidentielle">
-                        <label class="form-check-label" for="zoneResidentielle">
-                          Zone residentielle
-                        </label>
-                      </div>
-                      <!-- /Zone residentielle-->
-                      <!-- Centre commercial -->
-                      <div class="form-check">
-                        <input formControlName="centreCommercial" class="form-check-input" type="checkbox" name="centreCommercial" id="centreCommercial">
-                        <label class="form-check-label" for="centreCommercial">
-                          Centre commercial
-                        </label>
-                      </div>
-                      <!-- /Centre commercial -->
-                      <!-- Zac-->
-                      <div class="form-check">
-                        <input formControlName="zac" class="form-check-input" type="checkbox" name="zac" id="zac">
-                        <label class="form-check-label" for="zac">
-                          Zac
-                        </label>
-                      </div>
-                      <!-- /Zac-->
-
-                    </div>
-                  </div>
-                </fieldset>
-                <!-- /Emplacements -->
-                <!-- Origine -->
-                <div class="form-group row">
-                  <label for="origine" class="col-sm-4 col-form-label">Origine<em class="text-danger">*</em></label>
-                  <div class="col-sm-8">
-                    <select formControlName="origine" class="form-control" id="origine">
-                      <option [ngValue]="null" disabled>Selectionner origine</option>
-                      <option value="INTERCABINET">INTERCABINET</option>
-                      <option value="SITE_INTERNET_PDV">SITE INTERNET PDV</option>
-                      <option value="VOITURE_PDV">VOITURE PDV</option>
-                      <option value="GESTIONNAIRE_BIEN">GESTIONNAIRE DE BIEN</option>
-                      <option value="TAXI_PANNEAU">TAXI PANNEAU</option>
-                      <option value="RELATIONEL">Relationel</option>
-                      <option value="PANNEAUX_CONFERES">Panneaux Confères</option>
-                      <option value="LE_BON_COIN">Le Bon Coin</option>
-                      <option value="PAP">Pap</option>
-                      <option value="PERMANENCE">Permanence</option>
-                      <option value="TERRAIN">Terrain</option>
-                      <option value="CARTE_VISITE">Carte de Visite</option>
-                      <option value="VIVASTREET">VivaStreet</option>
-                      <option value="MONIQUE_AST">Monique Ast</option>
-                      <option value="GLF">GLF</option>
-                      <option value="VOITURE">Voiture</option>
-                      <option value="APPORTEUR_AFFAIRE">Apporteur d'affaire</option>
-                      <option value="BUREAUX_LOCAUX">Bureaux locaux</option>
-                    </select>
-                  </div>
-                </div>
-                <!-- /Origine -->
+          <div formGroupName="adresseBien">
+            <!-- Adresse -->
+            <div class="form-group row">
+              <label for="inputAdresse" class="col-sm-4 col-form-label">Adresse<em class="text-danger">*</em></label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="adresse" #search autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" id="inputAdresse" placeholder="Adresse">
               </div>
             </div>
+            <!-- /Adresse -->
+            <!-- Ville -->
+            <div class="form-group row">
+              <label for="ville" class="col-sm-4 col-form-label">Ville<em class="text-danger">*</em></label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="ville" class="form-control" id="ville" placeholder="Ville">
+              </div>
+            </div>
+            <!-- /Ville -->
+            <!-- CP -->
+            <div class="form-group row">
+              <label for="codePostal" class="col-sm-4 col-form-label">CP<em class="text-danger">*</em></label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="codePostal" class="form-control" id="codePostal" placeholder="Code Postal">
+              </div>
+            </div>
+            <!-- /CP -->
+            <!-- Quatier -->
+            <div class="form-group row">
+              <label for="quatier" class="col-sm-4 col-form-label">Quatier</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="quatier" class="form-control" id="quatier" placeholder="Quatier">
+              </div>
+            </div>
+            <!-- /Quatier -->
+            <!-- Metro -->
+            <div class="form-group row">
+              <label for="quatier" class="col-sm-4 col-form-label">Métro</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="metro" class="form-control" id="metro" placeholder="Métro">
+              </div>
+            </div>
+            <!-- /Metro -->
+            <!-- RER -->
+            <div class="form-group row">
+              <label for="rer" class="col-sm-4 col-form-label">RER</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="rer" class="form-control" id="rer" placeholder="RER">
+              </div>
+            </div>
+            <!-- /RER -->
+            <!-- Bus -->
+            <div class="form-group row">
+              <label for="bus" class="col-sm-4 col-form-label">Bus</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="bus" class="form-control" id="bus" placeholder="Bus">
+              </div>
+            </div>
+            <!-- /Bus -->
+            <!-- Parking -->
+            <div class="form-group row">
+              <label for="parking" class="col-sm-4 col-form-label">Parking</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="parking" class="form-control" id="parking" placeholder="Parking">
+              </div>
+            </div>
+            <!-- /Parking -->
+            <!-- Emplacements -->
+            <fieldset formGroupName="emplacements" class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Emplacements<em class="text-danger">*</em></legend>
+                <div class="col-sm-8">
+                  <!-- A définir -->
+                  <div class="form-check">
+                    <input formControlName="aDefinir" class="form-check-input" type="checkbox" name="aDefinir" id="aDefinir">
+                    <label class="form-check-label" for="aDefinir">
+                      A définir
+                    </label>
+                  </div>
+                  <!-- /A définir -->
+                  <!-- Numero 1 -->
+                  <div class="form-check">
+                    <input formControlName="numero1" class="form-check-input" type="checkbox" name="numero1" id="numero1">
+                    <label class="form-check-label" for="numero1">
+                      Numéro 1
+                    </label>
+                  </div>
+                  <!-- /Numero 1 -->
+                  <!-- Numéro 1 Alimentaire -->
+                  <div class="form-check">
+                    <input formControlName="numero1Alimentaire" class="form-check-input" type="checkbox" name="numero1Alimentaire" id="numero1Alimentaire">
+                    <label class="form-check-label" for="numero1Alimentaire">
+                      Numéro 1 Alimentaire
+                    </label>
+                  </div>
+                  <!-- /Numéro 1 Alimentaire -->
+                  <!-- Numéro 1 Pret à porter -->
+                  <div class="form-check">
+                    <input formControlName="numero1PretPorter" class="form-check-input" type="checkbox" name="numero1PretPorter" id="numero1PretPorter">
+                    <label class="form-check-label" for="numero1PretPorter">
+                      Numéro 1 Pret à porter
+                    </label>
+                  </div>
+                  <!-- /Numéro 1 Pret à porter -->
+                  <!-- Rue commercante -->
+                  <div class="form-check">
+                    <input formControlName="rueCommercante" class="form-check-input" type="checkbox" name="rueCommercante" id="rueCommercante">
+                    <label class="form-check-label" for="rueCommercante">
+                      Rue commercante
+                    </label>
+                  </div>
+                  <!-- /Rue commercante -->
+                  <!-- Flux pietons importants -->
+                  <div class="form-check">
+                    <input formControlName="fluxPietons" class="form-check-input" type="checkbox" name="fluxPietons" id="fluxPietons">
+                    <label class="form-check-label" for="fluxPietons">
+                      Flux pietons importants
+                    </label>
+                  </div>
+                  <!-- /Flux pietons importants -->
+                  <!-- Axe voiture importante -->
+                  <div class="form-check">
+                    <input formControlName="axeVoiture" class="form-check-input" type="checkbox" name="axeVoiture" id="axeVoiture">
+                    <label class="form-check-label" for="axeVoiture">
+                      Axe voiture importante
+                    </label>
+                  </div>
+                  <!-- /Axe voiture importante -->
+                  <!-- Rue pietonne -->
+                  <div class="form-check">
+                    <input formControlName="ruePietonne" class="form-check-input" type="checkbox" name="ruePietonne" id="ruePietonne">
+                    <label class="form-check-label" for="ruePietonne">
+                      Rue pietonne
+                    </label>
+                  </div>
+                  <!-- /Rue pietonne -->
+                  <!-- Zone touristique -->
+                  <div class="form-check">
+                    <input formControlName="zoneTouristique" class="form-check-input" type="checkbox" name="zoneTouristique" id="zoneTouristique">
+                    <label class="form-check-label" for="zoneTouristique">
+                      Zone touristique
+                    </label>
+                  </div>
+                  <!-- /Zone touristique -->
+                  <!-- Zone de bureaux -->
+                  <div class="form-check">
+                    <input formControlName="zoneBureau" class="form-check-input" type="checkbox" name="zoneBureau" id="zoneBureau">
+                    <label class="form-check-label" for="zoneBureau">
+                      Zone de bureaux
+                    </label>
+                  </div>
+                  <!-- /Zone de bureaux -->
+                  <!-- Zone residentielle -->
+                  <div class="form-check">
+                    <input formControlName="zoneResidentielle" class="form-check-input" type="checkbox" name="zoneResidentielle" id="zoneResidentielle">
+                    <label class="form-check-label" for="zoneResidentielle">
+                      Zone residentielle
+                    </label>
+                  </div>
+                  <!-- /Zone residentielle-->
+                  <!-- Centre commercial -->
+                  <div class="form-check">
+                    <input formControlName="centreCommercial" class="form-check-input" type="checkbox" name="centreCommercial" id="centreCommercial">
+                    <label class="form-check-label" for="centreCommercial">
+                      Centre commercial
+                    </label>
+                  </div>
+                  <!-- /Centre commercial -->
+                  <!-- Zac-->
+                  <div class="form-check">
+                    <input formControlName="zac" class="form-check-input" type="checkbox" name="zac" id="zac">
+                    <label class="form-check-label" for="zac">
+                      Zac
+                    </label>
+                  </div>
+                  <!-- /Zac-->
+
+                </div>
+              </div>
+            </fieldset>
+            <!-- /Emplacements -->
+            <!-- Origine -->
+            <div class="form-group row">
+              <label for="origine" class="col-sm-4 col-form-label">Origine<em class="text-danger">*</em></label>
+              <div class="col-sm-8">
+                <select formControlName="origine" class="form-control" id="origine">
+                  <option [ngValue]="null" disabled>Selectionner origine</option>
+                  <option value="INTERCABINET">INTERCABINET</option>
+                  <option value="SITE_INTERNET_PDV">SITE INTERNET PDV</option>
+                  <option value="VOITURE_PDV">VOITURE PDV</option>
+                  <option value="GESTIONNAIRE_BIEN">GESTIONNAIRE DE BIEN</option>
+                  <option value="TAXI_PANNEAU">TAXI PANNEAU</option>
+                  <option value="RELATIONEL">Relationel</option>
+                  <option value="PANNEAUX_CONFERES">Panneaux Confères</option>
+                  <option value="LE_BON_COIN">Le Bon Coin</option>
+                  <option value="PAP">Pap</option>
+                  <option value="PERMANENCE">Permanence</option>
+                  <option value="TERRAIN">Terrain</option>
+                  <option value="CARTE_VISITE">Carte de Visite</option>
+                  <option value="VIVASTREET">VivaStreet</option>
+                  <option value="MONIQUE_AST">Monique Ast</option>
+                  <option value="GLF">GLF</option>
+                  <option value="VOITURE">Voiture</option>
+                  <option value="APPORTEUR_AFFAIRE">Apporteur d'affaire</option>
+                  <option value="BUREAUX_LOCAUX">Bureaux locaux</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Origine -->
           </div>
         </div>
       </div>

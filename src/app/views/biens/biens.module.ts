@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BiensRoutingModule } from './biens-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -30,6 +31,7 @@ import { PhotosComponent } from './bien/photos/photos.component';
     SharedComponentsModule,
     SharedDirectivesModule,
     ReactiveFormsModule,
+    FormsModule,
     NgbModule,
     NgxPaginationModule,
     NgxDatatableModule,

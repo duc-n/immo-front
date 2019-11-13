@@ -27,8 +27,24 @@ export class ClientFormModalComponent implements OnInit {
 
   createClientForm() {
     this.clientForm = this.fb.group({
+      typeClient: '',
+      typeContact: '',
+      civilite: '',
       nom: '',
-      prenom: ''
+      prenom: '',
+      societeEnCreation: '',
+      societe: '',
+      tel: '',
+      email: '',
+      emailSupp: '',
+      activite: '',
+      origine: '',
+      topAcquereur: '',
+      demandeRdv: '',
+      newsLettre: '',
+      consentementRGPD: '',
+      alertEmail: '',
+
     });
   }
 
