@@ -48,18 +48,18 @@ export class ContactsComponent implements OnInit {
 
   /**
  * Used to format the result data from the lookup into the
- * display and list values. Maps `{name: "band", id:"id" }` into a string
+ * display and list values. Maps `{name: "tran", id:"id" }` into a string
 */
   resultFormatClientListValue(value: any) {
-    return value.nom;
+    return value.nom + ' ' + value.prenom;
   }
   /**
     * Initially binds the string value and then after selecting
     * an item by checking either for string or key/value object.
   */
   inputFormatClientListValue(value: any) {
-    if (value.nom) {
-      return value.nom;
+    if (value.id) {
+      return value.id;
     }
     return value;
   }
