@@ -51,7 +51,10 @@ export class BienService {
         descriptif: this.generateDescriptif(bien.descriptif),
         communication: this.generateCommunication(bien.communication),
         surface: this.generateSurface(bien.surface),
-        contacts: this.generateContacts(bien.contacts)
+        contacts: this.fb.group({
+          'clientName': [],
+          'contacts': this.generateContacts(bien.contacts)
+        })
       })
       )
     );

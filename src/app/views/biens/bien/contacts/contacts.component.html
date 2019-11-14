@@ -1,7 +1,7 @@
 <div [formGroup]="contactsForm">
   <div class="form-group">
     <label for="clientName">Nom du client</label>
-    <input id="clientName" type="text" name="clientName" class="form-control" [ngbTypeahead]="search" [resultFormatter]="resultFormatClientListValue" [inputFormatter]="inputFormatClientListValue" #instance="ngbTypeahead" />
+    <input id="clientName" type="text" formControlName="clientName" name="clientName" class="form-control" [ngbTypeahead]="search" [resultFormatter]="resultFormatClientListValue" [inputFormatter]="inputFormatClientListValue" #instance="ngbTypeahead" />
     
     <button class="btn btn-primary" (click)="openClientFormModal()">Créer un propriétaire</button>
   </div>

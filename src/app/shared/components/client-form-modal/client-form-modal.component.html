@@ -11,16 +11,16 @@
         <div class="col-sm-6">
           <!-- Civilite -->
           <div class="form-group row">
-            <label for="civilite" class="col-sm-5 col-form-label">Civilité</label>
+            <label class="col-sm-5 col-form-label">Civilité</label>
             <div class="col-sm-7">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" formControlName="civilite" type="radio" name="civilite" id="civiliteM" value="M">
-                <label class="form-check-label" for="civiliteM">M.</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" formControlName="civilite" type="radio" name="civilite" id="civiliteMme" value="MME">
-                <label class="form-check-label" for="civiliteMme">Mme</label>
-              </div>
+                <label class="radio-inline">
+                    <input formControlName="civilite" type="radio" id="civiliteM" value="M">
+                    <span>M.</span>
+                </label>
+                <label class="radio-inline">
+                    <input formControlName="civilite" type="radio" id="civiliteMme" value="MME">
+                    <span>Mme</span>
+                </label>
             </div>
           </div>
           <!-- /Civilite -->
@@ -44,14 +44,14 @@
           <div class="form-group row">
             <label for="societeEnCreation" class="col-sm-5 col-form-label">Societe en création</label>
             <div class="col-sm-7">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" formControlName="societeEnCreation" type="radio" name="societeEnCreation" id="societeEnCreationY" value="true">
-                <label class="form-check-label" for="civiliteM">Oui</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" formControlName="societeEnCreation" type="radio" name="societeEnCreation" id="societeEnCreationN" value="false">
-                <label class="form-check-label" for="civiliteMme">Non</label>
-              </div>
+                <label class="radio-inline">
+                    <input formControlName="societeEnCreation" type="radio" id="societeEnCreationY" value="true">
+                    <span>Oui</span>
+                </label>
+                <label class="radio-inline">
+                    <input formControlName="societeEnCreation" type="radio" id="societeEnCreationN" value="false">
+                    <span>Non</span>
+                </label>
             </div>
           </div>
           <!-- /Societe en creation -->
