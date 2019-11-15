@@ -26,22 +26,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 # immo-front
+Build your image using the production configuration (the default), e.g.:
+docker build -t immo-front:prod .
 
-# kubernetes config + namespace
-Connecte to a cluster : gcloud container clusters get-credentials immo-cluster --zone europe-west3-a
-Create developement namespace :kubectl create -f https://k8s.io/examples/admin/namespace-dev.json
-Create production namespace : kubectl create -f https://k8s.io/examples/admin/namespace-prod.json
-
-kubectl config view => current-context: gke_celeduc_europe-west3-a_immo-cluster
-
-kubectl config set-context dev --namespace=development --cluster=gke_celeduc_europe-west3-a_immo-cluster --user=gke_celeduc_europe-west3-a_immo-cluster
-kubectl config set-context prod --namespace=production --cluster=gke_celeduc_europe-west3-a_immo-cluster --user=gke_celeduc_europe-west3-a_immo-cluster
-kubectl get namespaces --show-labels
-
-Check the current context : 
-kubectl config view
-
-Let’s switch to operate in the development namespace : kubectl config use-context dev
-kubectl config current-context
-kubectl config use-context prod
-kubectl get deployment
+Build your image using the development environment (no configuration), e.g.:
+docker build -t immo-front:dev --build-arg configuration="" .
