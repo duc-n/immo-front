@@ -49,6 +49,6 @@ export class DataLayerService {
     }
     clientLookup(nom) {
         const params = new HttpParams().set('nom', nom);
-        return this.http.get<Client[]>('http://localhost/client/clientLookup', { params: params });
+        return this.http.get<Client[]>('http://localhost:8080/client/clientLookup', { params: params });
     }
 }
