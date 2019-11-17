@@ -5,7 +5,7 @@
         <div class="card-body">
           <div class="card-title m-2">Consultants associés :</div>
           <div class="row" formArrayName="consultantsAssocies">
-            <div class="col-lg-2" *ngFor="let consultant of consultantResponsableForm.controls['consultantsAssocies'].controls; let i = index;" [formGroupName]="i">
+            <div class="col-lg-2" *ngFor="let consultant of consultantResponsableForm.controls['consultantsAssocies']['controls']; let i = index;" [formGroupName]="i">
               <div class="card card-ecommerce-1 mb-4">
                 <div class="card-body text-center">
                   <h5 class="text-primary">{{consultantResponsableForm.controls['consultantsAssocies'].controls[i].controls['nom'].value + ' ' + consultantResponsableForm.controls['consultantsAssocies'].controls[i].controls['prenom'].value}}</h5>

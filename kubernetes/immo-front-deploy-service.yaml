@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: immo-front-deployment
+  labels:
+    app: immo-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: immo-front
+  template:
+    metadata:
+      labels:
+        app: immo-front
+    spec:
+      containers:
+      - name: immo-front
+        image: eu.gcr.io/celeduc/immo-front:0.0.1-SNAPSHOT
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: immo-front
+  labels:
+    app: immo-front
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  selector:
+    app: immo-front

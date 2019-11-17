@@ -32,6 +32,8 @@ docker build -t immo-front:prod .
 Build your image using the development environment (no configuration), e.g.:
 docker build -t immo-front:dev --build-arg configuration="" .
 
+ docker build -t celeduc/immo-front:0.0.1-SNAPSHOT .
+
 # kubernetes config + namespace
 Connecte to a cluster : gcloud container clusters get-credentials immo-cluster --zone europe-west3-a
 Create developement namespace :kubectl create -f https://k8s.io/examples/admin/namespace-dev.json
@@ -63,6 +65,13 @@ EXTERNAL_IP=$(kubectl get svc -n istio-system \
 
 kubectl apply -f istio-http-gateway.yaml
 
+kubectl get svc -n istio-system -l istio=ingressgateway
+
   kubectl describe gateway http-gateway
 
+ docker build -t celeduc/immo-front:0.0.1-SNAPSHOT .
+ 
+  docker tag celeduc/immo-front:0.0.1-SNAPSHOT eu.gcr.io/celeduc/immo-front:0.0.1-SNAPSHOT; 
+ 
+  docker push eu.gcr.io/celeduc/immo-front:0.0.1-SNAPSHOT;
   github istio authen : https://github.com/rinormaloku/istio-auth0

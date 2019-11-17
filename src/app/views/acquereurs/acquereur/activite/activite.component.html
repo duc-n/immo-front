@@ -36,7 +36,7 @@
                       <thead class="bg-gray-300">
                       </thead>
                       <tbody>
-                        <tr *ngFor="let activite of activitesleForm.controls['activites'].controls; let i = index;" [formGroupName]="i">
+                        <tr *ngFor="let activite of activitesleForm.controls['activites']['controls']; let i = index;" [formGroupName]="i">
                           <td>
                             {{ activitesleForm.controls['activites'].controls[i].controls['libelle'].value}}
                           </td>

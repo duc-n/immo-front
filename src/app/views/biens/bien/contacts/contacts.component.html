@@ -4,23 +4,11 @@
   <div class="form-group row">
     <label for="clientName" class="col-sm-2 col-form-label">Nom/Prénom</label>
     <div class="col-sm-3">
-      <input type="text" formControlName="clientName" [ngbTypeahead]="search" [resultFormatter]="resultFormatClientListValue" [inputFormatter]="inputFormatClientListValue" #instance="ngbTypeahead" class="form-control" id="clientName" placeholder="Saisir le nom">
+      <input type="text" formControlName="clientName" [ngbTypeahead]="search" [resultFormatter]="formatter" [inputFormatter]="formatter" #instance="ngbTypeahead" class="form-control" id="clientName" placeholder="Saisir le nom">
     </div>
   </div>
   <!-- /Nom du magasin -->
 
-  <div class="form-group row">
-    <button class="btn btn-primary" (click)="openClientFormModal()">Créer un propriétaire</button>
-  </div>
-  <div class="form-group row">
-    <button class="btn btn-primary" (click)="openClientFormModal()">Créer un propriétaire</button>
-  </div>
-  <div class="form-group row">
-    <button class="btn btn-primary" (click)="openClientFormModal()">Créer un propriétaire</button>
-  </div>
-  <div class="form-group row">
-    <button class="btn btn-primary" (click)="openClientFormModal()">Créer un propriétaire</button>
-  </div>
   <div class="form-group row">
     <button class="btn btn-primary" (click)="openClientFormModal()">Créer un propriétaire</button>
   </div>

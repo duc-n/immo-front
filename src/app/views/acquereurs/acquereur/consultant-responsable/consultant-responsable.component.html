@@ -21,7 +21,7 @@
               <div class="card-title m-2">Consultants associés :</div>
               <div class="row" formArrayName="consultantsAssocies">
 
-                <div class="col-lg-3" *ngFor="let consultant of consultantResponsableForm.controls['consultantsAssocies'].controls; let i = index;" [formGroupName]="i">
+                <div class="col-lg-3" *ngFor="let consultant of consultantResponsableForm.controls['consultantsAssocies']['controls']; let i = index;" [formGroupName]="i">
                   <div class="card card-ecommerce-1 mb-4">
                     <div class="card-body text-center">
                       <i class="i-MaleFemale mb-3"></i>

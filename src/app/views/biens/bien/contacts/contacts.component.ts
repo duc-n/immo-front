@@ -5,6 +5,7 @@ import { FormGroup, FormArray } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, switchMap, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import { DataLayerService } from 'src/app/shared/services/data-layer.service';
+import { Client } from 'src/app/shared/models/client';
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
@@ -64,5 +65,6 @@ export class ContactsComponent implements OnInit {
     return value;
   }
 
+  formatter = (client: Client) => client.nom + ' ' + client.prenom;
 
 }
