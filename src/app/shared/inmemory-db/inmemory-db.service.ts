@@ -1,4 +1,4 @@
-import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { InMemoryDbService, RequestInfoUtilities, ParsedRequestUrl } from 'angular-in-memory-web-api';
 import { ProductDB } from './products';
 import { MailDB } from './mails';
 import { CountryDB } from './countries';
@@ -6,6 +6,7 @@ import { ChatDB } from './chat-db';
 import { InvoiceDB } from './invoices';
 import { ConsultantDB } from './consultants';
 import { ActiviteDB } from './activites';
+import { RechercherBienDB } from './rechercherBien';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
@@ -18,7 +19,11 @@ export class InMemoryDataService implements InMemoryDbService {
       'chat-collections': ChatDB.chatCollection,
       'chat-user': ChatDB.user,
       'consultants': ConsultantDB.consultants,
-      'activites': ActiviteDB.activites
+      'activites': ActiviteDB.activites,
+      'rechercherBien': RechercherBienDB.rechercherBien
     };
+  }
+  genId(items: any[]): number {
+    return items.length > 0 ? Math.max(...items.map(item => item.id)) + 1 : 1;
   }
 }

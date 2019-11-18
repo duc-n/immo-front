@@ -305,18 +305,18 @@ export class BienService {
   }
 
   rechercherBien(bienCritere: BienCritere) {
-    // return this.http.post<any[]>('/api/rechercherBien/', bienCritere);
-    return this.http.post<any[]>('http://localhost:8080/bien/rechercherBien', bienCritere)
-      .subscribe(
-        data => {
-          console.log("POST Request is successful ", data);
-        },
-        error => {
+    return this.http.get<any[]>('/api/rechercherBien/');
+    // return this.http.post<any[]>('http://localhost:8080/bien/rechercherBien', bienCritere)
+    //   .subscribe(
+    //     data => {
+    //       console.log("POST Request is successful ", data);
+    //     },
+    //     error => {
 
-          console.log("Error", error);
+    //       console.log("Error", error);
 
-        })
-      ;
+    //     })
+    //   ;
   }
 
 }
