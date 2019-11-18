@@ -79,5 +79,5 @@ kubectl get svc -n istio-system -l istio=ingressgateway
   github istio authen : https://github.com/rinormaloku/istio-auth0
 
  
-  Resize kubernetes cluster : gcloud container clusters resize immo-cluster --size=0 --zone europe-west3-a
-  
+  Resize kubernetes cluster : gcloud container clusters resize immo-cluster --num-nodes=0 --zone europe-west3-a
+  Active : gcloud container clusters resize immo-cluster --num-nodes=3 --zone europe-west3-a
