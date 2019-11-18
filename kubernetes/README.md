@@ -58,6 +58,8 @@ kubectl label namespace development istio-injection=enabled
 get istio service list : kubectl get svc -n istio-system
 or : kubectl get svc -n istio-system -l istio=ingressgateway
 
+ip : 34.89.180.199
+
 save the extenal ip in a variable by executing the command below:
 EXTERNAL_IP=$(kubectl get svc -n istio-system \
   -l app=istio-ingressgateway \
@@ -75,3 +77,7 @@ kubectl get svc -n istio-system -l istio=ingressgateway
  
   docker push eu.gcr.io/celeduc/immo-front:0.0.1-SNAPSHOT;
   github istio authen : https://github.com/rinormaloku/istio-auth0
+
+ 
+  Resize kubernetes cluster : gcloud container clusters resize immo-cluster --size=0 --zone europe-west3-a
+  
