@@ -305,7 +305,7 @@ export class BienService {
   }
 
   rechercherBien(bienCritere: BienCritere) {
-    return this.http.get<any[]>('/api/rechercherBien/');
+    return this.http.get<any>('/api/rechercherBien/');
     // return this.http.post<any[]>('http://localhost:8080/bien/rechercherBien', bienCritere)
     //   .subscribe(
     //     data => {

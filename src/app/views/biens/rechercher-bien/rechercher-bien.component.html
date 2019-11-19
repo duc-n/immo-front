@@ -274,30 +274,41 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card o-hidden">
-        <ngx-datatable style="height: calc(100vh - 270px); box-shadow: none" class="material fullscreen" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="60" [scrollbarV]="true" [limit]="10" [rows]="products$ | async">
-          <ngx-datatable-column name="photo" [width]="80" [maxWidth]="100">
+
+        <ngx-datatable style="height: calc(100vh - 270px); box-shadow: none" class="material fullscreen"
+          [columnMode]="'force'"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [rowHeight]="60"
+          [scrollbarV]="true"
+          [externalPaging]="true"
+          [count]="page.totalElements"
+          [offset]="page.pageNumber"
+          [limit]="page.size"
+          (page)="setPage($event)"
+          [rows]="rows">
+
+          <ngx-datatable-column name="id" [width]="80" [maxWidth]="100">
             <ng-template ngx-datatable-header-template>
-              Thumbnail
+              Adresse
             </ng-template>
-            <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+            <!-- <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
               <img height="32px" width="32px" style="border-radius: 4px" [src]="value" alt="">
-                  </ng-template>
+            </ng-template> -->
           </ngx-datatable-column>
-          <ngx-datatable-column name="name" [width]="300">
+
+          <ngx-datatable-column name="consultant.nom" [width]="300">
             <ng-template ngx-datatable-header-template>
-              Title
+              Consultant
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="category">
-            <ng-template ngx-datatable-header-template>
-              Category
+          
+          <ngx-datatable-column name="Actions" sortable="false" prop="id">
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                <button type="button" (click)="detail(value)" class="btn btn-outline-primary m-1">Detail</button>
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="subtitle">
-            <ng-template ngx-datatable-header-template>
-              Description
-            </ng-template>
-          </ngx-datatable-column>
+          
         </ngx-datatable>
       </div>
     </div>

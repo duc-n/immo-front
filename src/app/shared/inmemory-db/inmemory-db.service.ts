@@ -6,7 +6,8 @@ import { ChatDB } from './chat-db';
 import { InvoiceDB } from './invoices';
 import { ConsultantDB } from './consultants';
 import { ActiviteDB } from './activites';
-import { RechercherBienDB } from './rechercherBien';
+import { RechercherBienDB } from './rechercher-bien';
+
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
