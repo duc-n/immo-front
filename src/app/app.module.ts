@@ -24,7 +24,7 @@ import { AgmCoreModule } from '@agm/core';
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService, { passThruUnknownUrl: true }),
+    //InMemoryWebApiModule.forRoot(InMemoryDataService, { passThruUnknownUrl: true }),
     AppRoutingModule,
     BiensModule,
     AcquereursModule

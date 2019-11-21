@@ -86,6 +86,8 @@ export class RechercherBienComponent implements OnInit {
 
   rechercherBien() {
     this.page = new Page();
+    console.log('rechercherBien called');
+    console.log(this.page);
     this.rows = new Array<Bien>();
     this.viewMode = 'result';
   }
@@ -95,7 +97,8 @@ export class RechercherBienComponent implements OnInit {
    * @param page The page to select
    */
   setPage(pageInfo) {
-
+    console.log('Set page called');
+    console.log(pageInfo);
     this.page.pageNumber = pageInfo.offset;
     const rechercherBienCritere = this.rechercherBienForm.value;
     rechercherBienCritere.page = this.page;
