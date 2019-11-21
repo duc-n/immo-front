@@ -288,7 +288,7 @@
           (page)="setPage($event)"
           [rows]="rows">
 
-          <ngx-datatable-column name="id" [width]="80" [maxWidth]="100">
+          <ngx-datatable-column name="adresse" sortable="false" [width]="200" [maxWidth]="250">
             <ng-template ngx-datatable-header-template>
               Adresse
             </ng-template>
@@ -297,9 +297,9 @@
             </ng-template> -->
           </ngx-datatable-column>
 
-          <ngx-datatable-column name="consultant.nom" [width]="300">
+          <ngx-datatable-column name="codePostal" [width]="20">
             <ng-template ngx-datatable-header-template>
-              Consultant
+              Code Postal
             </ng-template>
           </ngx-datatable-column>
           

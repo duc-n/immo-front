@@ -81,3 +81,5 @@ kubectl get svc -n istio-system -l istio=ingressgateway
  
   Resize kubernetes cluster : gcloud container clusters resize immo-cluster --num-nodes=0 --zone europe-west3-a
   Active : gcloud container clusters resize immo-cluster --num-nodes=3 --zone europe-west3-a
+
+  kubectl get all --all-namespaces
