@@ -78,8 +78,33 @@ kubectl get svc -n istio-system -l istio=ingressgateway
   docker push eu.gcr.io/celeduc/immo-front:0.0.1-SNAPSHOT;
   github istio authen : https://github.com/rinormaloku/istio-auth0
 
+
+ export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+ export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].port}')
+ export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].port}')
  
   Resize kubernetes cluster : gcloud container clusters resize immo-cluster --num-nodes=0 --zone europe-west3-a
   Active : gcloud container clusters resize immo-cluster --num-nodes=3 --zone europe-west3-a
 
   kubectl get all --all-namespaces
+  kubectl logs cert-manager-6b5d76bf77-vwqsq -n cert-manager
+
+  Get label of namespace : kubectl get namespace -L istio-injection
+kubectl delete serviceaccount/build-robot
+
+  kubectl get pods/<podname> -o yaml
+  kubectl describe gateway httpbin-gateway
+
+  kubectl delete gateway httpbin-gateway
+  kubectl delete virtualservice httpbin
+  kubectl delete --ignore-not-found=true -f https://raw.githubusercontent.com/istio/istio/release-1.4/samples/httpbin/httpbin.yaml
+
+
+  openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -subj '/O=cele Inc./CN=cele.app' -keyout cele.app.key -out cele.app.crt
+
+  openssl req -out immo-front.cele.app.csr -newkey rsa:2048 -nodes -keyout immo-front.cele.app.key -subj "/CN=immo-front.cele.app/O=cele organization"
+
+  openssl x509 -req -days 365 -CA cele.app.crt -CAkey cele.app.key -set_serial 0 -in immo-front.cele.app.csr -out immo-front.cele.app.crt
+
+  kubectl create -n istio-system secret tls istio-ingressgateway-certs --key immo-front.cele.app.key --cert immo-front.cele.app.crt
+  Verify that tls.crt and tls.key have been mounted in the ingress gateway pod:  kubectl exec -it -n istio-system $(kubectl -n istio-system get pods -l istio=ingressgateway -o jsonpath='{.items[0].metadata.name}') -- ls -al /etc/istio/ingressgateway-certs

@@ -1,3 +1,8 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: immo-front
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,6 +19,7 @@ spec:
       labels:
         app: immo-front
     spec:
+      serviceAccountName: immo-front
       containers:
       - name: immo-front
         image: eu.gcr.io/celeduc/immo-front:0.0.1-SNAPSHOT
