@@ -21,7 +21,12 @@ export class BienComponent implements OnInit {
     console.log('Init bien form');
   }
 
-  onSubmit(value) {
-    console.log(value);
+  enregistrer() {
+
+    this.bienForm$.subscribe(bienForm => {
+      console.log(bienForm.value);
+      this.bienService.saveBien(bienForm.value);
+    });
+
   }
 }

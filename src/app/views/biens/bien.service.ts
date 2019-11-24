@@ -321,4 +321,9 @@ export class BienService {
     //   ;
   }
 
+  saveBien(bien: Bien) {
+    console.log('Save Bien');
+    return this.http.post<any>('http://localhost:8080/bien/updateBien', bien);
+  }
+
 }

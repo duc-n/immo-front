@@ -13,6 +13,7 @@ import { Consultant } from 'src/app/shared/models/consultant';
 import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
 
 export interface Bien {
+    id?: string;
     consultant?: Consultant;
     consultantsAssocies?: Consultant[];
     detailBien?: DetailBien;
