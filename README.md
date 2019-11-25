@@ -29,5 +29,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Build your image using the production configuration (the default), e.g.:
 docker build -t immo-front:prod .
 
+Build with 
+ng serve -c ws
+
 Build your image using the development environment (no configuration), e.g.:
 docker build -t immo-front:dev --build-arg configuration="" .
+
+
+

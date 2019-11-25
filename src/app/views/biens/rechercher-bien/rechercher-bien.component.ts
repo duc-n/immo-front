@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { BienService } from '../bien.service';
 import { Page } from 'src/app/shared/models/page';
 import { Bien } from '../models/bien';
+import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 
 @Component({
   selector: 'app-rechercher-bien',
@@ -19,7 +20,8 @@ export class RechercherBienComponent implements OnInit {
   rechercherBienForm: FormGroup;
   constructor(
     private fb: FormBuilder,
-    private bienService: BienService
+    private bienService: BienService,
+    private dataLayerService: DataLayerService
   ) {
     this.page.pageNumber = 0;
   }
@@ -86,8 +88,6 @@ export class RechercherBienComponent implements OnInit {
 
   rechercherBien() {
     this.page = new Page();
-    console.log('rechercherBien called');
-    console.log(this.page);
     this.rows = new Array<Bien>();
     this.viewMode = 'result';
   }
@@ -97,7 +97,6 @@ export class RechercherBienComponent implements OnInit {
    * @param page The page to select
    */
   setPage(pageInfo) {
-    console.log('Set page called');
     console.log(pageInfo);
     this.page.pageNumber = pageInfo.offset;
     const rechercherBienCritere = this.rechercherBienForm.value;
@@ -106,7 +105,7 @@ export class RechercherBienComponent implements OnInit {
     // cache results
     // if(this.cache[this.page.pageNumber]) return;
 
-    this.bienService.rechercherBien(rechercherBienCritere).subscribe(pagedData => {
+    this.dataLayerService.rechercherBien(rechercherBienCritere).subscribe(pagedData => {
       this.page.size = pagedData.size;
       this.page.totalElements = pagedData.totalElements;
       this.page.totalPages = pagedData.totalPages;

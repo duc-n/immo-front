@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  mock_ws: true,
-  api_url: '/api/'
+  mock_ws: false,
+  api_url: 'http://localhost:8080/api/'
 };
 
 /*

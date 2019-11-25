@@ -3,6 +3,7 @@ import { SharedAnimations } from 'src/app/shared/animations/shared-animations';
 import { BienService } from '../bien.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 
 @Component({
   selector: 'app-bien',
@@ -15,7 +16,10 @@ export class BienComponent implements OnInit {
 
   bienForm$: Observable<FormGroup> = this.bienService.getBienForm();
 
-  constructor(private readonly fb: FormBuilder, private readonly bienService: BienService) {
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly bienService: BienService
+  ) {
   }
   ngOnInit() {
     console.log('Init bien form');

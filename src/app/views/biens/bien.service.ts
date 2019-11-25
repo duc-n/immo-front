@@ -20,6 +20,7 @@ import { Client } from 'src/app/shared/models/client';
 import { Consultant } from 'src/app/shared/models/consultant';
 import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
 import { BienCritere } from './models/search/bien-critere';
+import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 
 const companyData = [];
 
@@ -30,7 +31,8 @@ export class BienService {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly http: HttpClient
+    private readonly http: HttpClient,
+    private readonly dataLayerService: DataLayerService
   ) { }
 
   getBienForm() {
@@ -266,9 +268,9 @@ export class BienService {
     });
   }
 
-  private getBien(): Observable<any> {
+  private getBien(): Observable<Bien> {
     // Call the mock webService
-    return this.http.get('/assets/bien.json');
+    return this.dataLayerService.getBien();
 
     // Call the real webservice
     //return this.http.get('http://immo-backend.eu-west-3.elasticbeanstalk.com/bien/5da784a39f14661eaf69684b');
@@ -308,7 +310,7 @@ export class BienService {
 
     console.log(bienCritere);
     //return this.http.get<any>('/api/rechercherBien/');
-    return this.http.post<any>('http://localhost:8080/bien/rechercherBien', bienCritere);
+    return this.dataLayerService.rechercherBien(bienCritere);
     //  .subscribe(
     //     data => {
     //       console.log("POST Request is successful ", data);

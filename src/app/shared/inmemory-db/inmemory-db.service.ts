@@ -7,6 +7,7 @@ import { InvoiceDB } from './invoices';
 import { ConsultantDB } from './consultants';
 import { ActiviteDB } from './activites';
 import { RechercherBienDB } from './rechercher-bien';
+import { BienDB } from './bien';
 
 
 export class InMemoryDataService implements InMemoryDbService {
@@ -21,6 +22,7 @@ export class InMemoryDataService implements InMemoryDbService {
       'chat-user': ChatDB.user,
       'consultants': ConsultantDB.consultants,
       'activites': ActiviteDB.activites,
+      'bien': BienDB.bien,
       'rechercherBien': RechercherBienDB.rechercherBien
     };
   }

@@ -10,6 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { BiensModule } from './views/biens/biens.module';
 import { AcquereursModule } from './views/acquereurs/acquereurs.module';
 import { AgmCoreModule } from '@agm/core';
+import { environment } from 'src/environments/environment';
+
+const DevProfileModule = [];
+
+// In Dev mode, uses data mock
+if (environment.mock_ws) {
+  DevProfileModule.push(InMemoryWebApiModule.forRoot(InMemoryDataService, { passThruUnknownUrl: true }));
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +33,7 @@ import { AgmCoreModule } from '@agm/core';
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService, { passThruUnknownUrl: true }),
+    DevProfileModule,
     AppRoutingModule,
     BiensModule,
     AcquereursModule
