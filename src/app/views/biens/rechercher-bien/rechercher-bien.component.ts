@@ -104,8 +104,10 @@ export class RechercherBienComponent implements OnInit {
 
     // cache results
     // if(this.cache[this.page.pageNumber]) return;
-
+    let i = 0;
     this.dataLayerService.rechercherBien(rechercherBienCritere).subscribe(pagedData => {
+      i = i + 1;
+      console.log('Subcribe counted ' + i);
       this.page.size = pagedData.size;
       this.page.totalElements = pagedData.totalElements;
       this.page.totalPages = pagedData.totalPages;

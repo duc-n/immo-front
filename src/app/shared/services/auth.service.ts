@@ -1,17 +1,20 @@
-import { Injectable } from "@angular/core";
-import { LocalStoreService } from "./local-store.service";
-import { Router } from "@angular/router";
-import { of } from "rxjs";
-import { delay } from "rxjs/operators";
+import { Injectable } from '@angular/core';
+import { LocalStoreService } from './local-store.service';
+import { Router } from '@angular/router';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { DataLayerService } from './data-layer.service';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class AuthService {
-  //Only for demo purpose
+  // Only for demo purpose
   authenticated = true;
 
-  constructor(private store: LocalStoreService, private router: Router) {
+  constructor(private store: LocalStoreService, private router: Router,
+    private dataLayerService: DataLayerService
+  ) {
     this.checkAuth();
   }
 
@@ -24,13 +27,19 @@ export class AuthService {
   }
 
   signin(credentials) {
+
+    this.dataLayerService.login(credentials).subscribe(result => {
+      console.log("User is logged in");
+      this.router.navigateByUrl('/');
+    });
+
     this.authenticated = true;
-    this.store.setItem("demo_login_status", true);
+    this.store.setItem('demo_login_status', true);
     return of({}).pipe(delay(1500));
   }
   signout() {
     this.authenticated = false;
-    this.store.setItem("demo_login_status", false);
-    this.router.navigateByUrl("/sessions/signin");
+    this.store.setItem('demo_login_status', false);
+    this.router.navigateByUrl('/sessions/signin');
   }
 }
