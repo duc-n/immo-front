@@ -33,8 +33,8 @@ export class SigninComponent implements OnInit {
         });
 
         this.signinForm = this.fb.group({
-            username: ['test@example.com', Validators.required],
-            password: ['1234', Validators.required]
+            username: ['admin@gmail.com', Validators.required],
+            password: ['admin', Validators.required]
         });
     }
 

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   mock_ws: false,
-  api_url: 'http://localhost:8080/api/'
+  api_url: 'http://localhost:8080/'
 };
 
 /*

@@ -11,14 +11,16 @@ import { BiensModule } from './views/biens/biens.module';
 import { AcquereursModule } from './views/acquereurs/acquereurs.module';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
-
+import { JwtModule } from '@auth0/angular-jwt';
 const DevProfileModule = [];
 
 // In Dev mode, uses data mock
 if (environment.mock_ws) {
   DevProfileModule.push(InMemoryWebApiModule.forRoot(InMemoryDataService, { passThruUnknownUrl: true }));
 }
-
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,14 @@ if (environment.mock_ws) {
     BrowserModule,
     SharedModule,
     HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:8080'],
+        blacklistedRoutes: [],
+        skipWhenExpired: true
+      }
+    }),
     BrowserAnimationsModule,
     DevProfileModule,
     AppRoutingModule,

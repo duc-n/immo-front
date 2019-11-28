@@ -10,7 +10,13 @@ export class LocalStoreService {
 
   public setItem(key, value) {
     value = JSON.stringify(value);
+    console.log('Token local:' + value);
     this.ls.setItem(key, value);
+    return true;
+  }
+
+  public setToken(value) {
+    this.ls.setItem('access_token', value);
     return true;
   }
 

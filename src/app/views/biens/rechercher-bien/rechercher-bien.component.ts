@@ -13,7 +13,7 @@ import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 export class RechercherBienComponent implements OnInit {
   loading: boolean;
   viewMode: 'search' | 'result' = 'search';
-
+  i = 0;
   page = new Page();
   rows = new Array<Bien>();
   cache: any = {};
@@ -104,10 +104,10 @@ export class RechercherBienComponent implements OnInit {
 
     // cache results
     // if(this.cache[this.page.pageNumber]) return;
-    let i = 0;
+
     this.dataLayerService.rechercherBien(rechercherBienCritere).subscribe(pagedData => {
-      i = i + 1;
-      console.log('Subcribe counted ' + i);
+      this.i = this.i + 1;
+      console.log('Subcribe counted ' + this.i);
       this.page.size = pagedData.size;
       this.page.totalElements = pagedData.totalElements;
       this.page.totalPages = pagedData.totalPages;
