@@ -3,6 +3,7 @@ import { FormGroup, FormArray } from '@angular/forms';
 import { AcquereurService } from '../../acquereur.service';
 import { ActiviteService } from 'src/app/shared/services/activite.service';
 import { Activite } from 'src/app/shared/models/activite';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-activite',
@@ -16,6 +17,7 @@ export class ActiviteComponent implements OnInit, AfterViewInit {
 
 
   constructor(
+    private logger: NGXLogger,
     private acquereurService: AcquereurService,
     public activitetService: ActiviteService,
   ) { }
@@ -28,6 +30,8 @@ export class ActiviteComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     console.log(this.activitesleForm);
+
+    this.logger.debug('activitesForm ' + this.activitesleForm);
   }
   get activitesArray(): FormArray {
     return this.activitesleForm.get('activites') as FormArray;

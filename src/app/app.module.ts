@@ -12,6 +12,7 @@ import { AcquereursModule } from './views/acquereurs/acquereurs.module';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
 import { JwtModule } from '@auth0/angular-jwt';
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 const DevProfileModule = [];
 
 // In Dev mode, uses data mock
@@ -42,6 +43,7 @@ export function tokenGetter() {
         skipWhenExpired: true
       }
     }),
+    LoggerModule.forRoot({ level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR }),
     BrowserAnimationsModule,
     DevProfileModule,
     AppRoutingModule,

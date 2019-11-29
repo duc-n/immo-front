@@ -5,6 +5,7 @@ import { ConsultantService } from 'src/app/shared/services/consultant.service';
 import { Consultant } from 'src/app/shared/models/consultant';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommercialFormModalComponent } from 'src/app/shared/components/commercial-form-modal/commercial-form-modal.component';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-consultant-responsable',
@@ -14,6 +15,7 @@ import { CommercialFormModalComponent } from 'src/app/shared/components/commerci
 export class ConsultantResponsableComponent implements OnInit, AfterViewInit {
   @Input() public consultantResponsableForm: FormGroup;
   constructor(
+    private logger: NGXLogger,
     private bienService: BienService,
     public consultantService: ConsultantService,
     private modalService: NgbModal,
@@ -21,12 +23,12 @@ export class ConsultantResponsableComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
-    console.log('Consultant init');
+    this.logger.debug('Consultant init');
     this.consultantService.fetchConsultants();
   }
 
   ngAfterViewInit(): void {
-    console.log(this.consultantResponsableForm);
+    this.logger.debug('consultantResponsableForm form:' + this.consultantResponsableForm);
   }
   get consultantsAssociesArray(): FormArray {
     return this.consultantResponsableForm.get('consultantsAssocies') as FormArray;
@@ -63,7 +65,7 @@ export class ConsultantResponsableComponent implements OnInit, AfterViewInit {
       this.associerConsultant(consultant);
 
     }).catch((error) => {
-      console.log('Error' + error);
+      this.logger.error('Error' + error);
     });
   }
 
