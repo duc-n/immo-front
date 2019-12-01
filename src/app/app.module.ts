@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/inmemory-db/inmemory-db.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BiensModule } from './views/biens/biens.module';
 import { AcquereursModule } from './views/acquereurs/acquereurs.module';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
 const DevProfileModule = [];
 
 // In Dev mode, uses data mock
@@ -39,7 +40,7 @@ export function tokenGetter() {
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ['localhost:8080'],
-        blacklistedRoutes: [],
+        blacklistedRoutes: ['http://localhost:8080/login'],
         skipWhenExpired: true
       }
     }),
@@ -50,7 +51,9 @@ export function tokenGetter() {
     BiensModule,
     AcquereursModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
   exports: []
 })

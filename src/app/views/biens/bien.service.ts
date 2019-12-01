@@ -277,12 +277,16 @@ export class BienService {
 
   }
 
+  getBiensEtatCreation(): Observable<any> {
+    return this.dataLayerService.getBiensEtatCreation();
+  }
+
   /**
      * A method that mocks a paged server response
      * @param page The selected page
      * @returns {any} An observable containing the employee data
      */
-  public getResults(page: Page): Observable<PagedData<Bien>> {
+  getResults(page: Page): Observable<PagedData<Bien>> {
     return of(companyData).pipe(map(d => this.getPagedData(page)));
   }
 

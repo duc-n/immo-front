@@ -86,6 +86,9 @@ export class RechercherBienComponent implements OnInit {
     });
   }
 
+  // convenience getter for easy access to form fields
+  get f() { return this.rechercherBienForm.controls; }
+
   rechercherBien() {
     this.page = new Page();
     this.rows = new Array<Bien>();

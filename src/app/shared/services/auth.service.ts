@@ -35,6 +35,6 @@ export class AuthService {
   signout() {
     this.authenticated = false;
     this.store.clear();
-    this.router.navigateByUrl('/sessions/signin');
+    //this.router.navigateByUrl('/sessions/signin');
   }
 }
