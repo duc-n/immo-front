@@ -14,12 +14,17 @@ import { environment } from 'src/environments/environment';
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
+import { FakeBackendInterceptor } from './shared/interceptors/fake-backend.interceptor';
+import { HttpRequestInterceptor } from './shared/interceptors/http.interceptor';
 const DevProfileModule = [];
 
 // In Dev mode, uses data mock
 if (environment.mock_ws) {
   DevProfileModule.push(InMemoryWebApiModule.forRoot(InMemoryDataService, { passThruUnknownUrl: true }));
 }
+
+export const isMock = environment.mock_ws;
+
 export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
@@ -46,13 +51,14 @@ export function tokenGetter() {
     }),
     LoggerModule.forRoot({ level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR }),
     BrowserAnimationsModule,
-    DevProfileModule,
+    // DevProfileModule,
     AppRoutingModule,
     BiensModule,
     AcquereursModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: isMock ? FakeBackendInterceptor : HttpRequestInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
   exports: []
