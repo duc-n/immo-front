@@ -2,9 +2,30 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
+import { REST_URLS } from '../constants/rest-urls';
+import * as bien from '../../../assets/mock-objects/bien.json';
+import * as biens from '../../../assets/mock-objects/biensDTO.json';
+import * as consultants from '../../../assets/mock-objects/consultants.json';
+
 
 // array in local storage for registered users
 let users = JSON.parse(localStorage.getItem('users')) || [];
+
+const urls = [
+  {
+    url: '/bien/1',
+    json: bien
+  },
+  {
+    url: REST_URLS.BIEN_RECHERCHER_BIEN,
+    json: biens
+  },
+  {
+    url: REST_URLS.CONSULTANTS,
+    json: consultants
+  }
+];
+
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -23,7 +44,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       switch (true) {
         case url.endsWith('/register') && method === 'POST':
           return register();
-        case url.endsWith('/login') && method === 'POST':
+        case url.endsWith(REST_URLS.LOGIN) && method === 'POST':
 
           return signin();
         case url.endsWith('/users') && method === 'GET':
@@ -33,6 +54,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         case url.match(/\/users\/\d+$/) && method === 'DELETE':
           return deleteUser();
         default:
+          for (const element of urls) {
+            if (url.endsWith(element.url)) {
+              console.log('Loaded from json : ' + request.url);
+              return of(new HttpResponse({ status: 200, body: ((element.json) as any).default }));
+            }
+          }
+
           // pass through any requests not handled above
           return next.handle(request);
       }
@@ -63,7 +91,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         return error('Username or password is incorrect');
       }
       return ok({
-        token: 'fake-jwt-token'
+        token: 'yJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfQURNSU4iXSwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNTc1NDk3MDMyLCJleHAiOjE1NzU1MjU4MzJ9.9KpI2SX5nOFrpQAwx43EvuM55aFhw83GrKiz0kFeHVGyXs00W3AfMGKOz4A62eaZzr1Ho7T4dFD_jp_31BBpAQ'
       });
     }
 

@@ -52,7 +52,7 @@ export class DataLayerService {
     }
 
     getBien(): Observable<Bien> {
-        return this.http.get<Bien>(this.apiUrl + REST_URLS.BIEN_GET_BIEN_ETAT_CREATION.replace(':id', '1'));
+        return this.http.get<Bien>(this.apiUrl + REST_URLS.BIEN_GET_BIEN.replace(':id', '1'));
     }
 
     getBiensEtatCreation(): Observable<any> {
@@ -71,7 +71,7 @@ export class DataLayerService {
     }
 
     getConsultants() {
-        return this.http.get<Consultant[]>('api/consultants');
+        return this.http.get<Consultant[]>(this.apiUrl + REST_URLS.CONSULTANTS);
     }
     getActivites() {
         return this.http.get<Activite[]>('api/activites');
