@@ -16,6 +16,7 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
 import { FakeBackendInterceptor } from './shared/interceptors/fake-backend.interceptor';
 import { HttpRequestInterceptor } from './shared/interceptors/http.interceptor';
+import { CONSTANTS } from './shared/constants/constant';
 const DevProfileModule = [];
 
 // In Dev mode, uses data mock
@@ -26,7 +27,7 @@ if (environment.mock_ws) {
 export const isMock = environment.mock_ws;
 
 export function tokenGetter() {
-  return localStorage.getItem('access_token');
+  return localStorage.getItem(CONSTANTS.TOKEN);
 }
 @NgModule({
   declarations: [

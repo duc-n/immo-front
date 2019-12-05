@@ -16,13 +16,19 @@ export class SigninComponent implements OnInit {
     loadingText: string;
     signinForm: FormGroup;
     returnUrl: string;
-    error = '';
+    error: string;
     constructor(
         private fb: FormBuilder,
         private auth: AuthService,
         private router: Router,
         private route: ActivatedRoute
-    ) { }
+    ) {
+        // redirect to home if already logged in
+        if (this.auth.currentUserValue) {
+            this.router.navigate(['/']);
+        }
+
+    }
 
     ngOnInit() {
         this.router.events.subscribe(event => {
@@ -43,15 +49,18 @@ export class SigninComponent implements OnInit {
 
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+        if (this.auth.authenticated) {
+            this.router.navigate([this.returnUrl]);
+        }
     }
 
     signin() {
         this.loading = true;
-        this.loadingText = 'Sigining in...';
+        this.loadingText = 'Authentification en cours...';
         this.auth.signin(this.signinForm.value)
             .pipe(first())
             .subscribe(res => {
-                // this.router.navigateByUrl('/biens/creer-bien');
                 this.router.navigate([this.returnUrl]);
                 this.loading = false;
             },

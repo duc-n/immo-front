@@ -6,6 +6,7 @@
           <img src="assets/images/logo.png" alt="">
           </div>
           <h1 class="mb-3 text-18">Sign In</h1>
+          <h1 class="mb-6 text-18 text-danger" *ngIf="error">{{error}}</h1>
           <form [formGroup]="signinForm" (ngSubmit)="signin()">
             <div class="form-group">
               <label for="username">Email address</label>

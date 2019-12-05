@@ -6,7 +6,7 @@ import { REST_URLS } from '../constants/rest-urls';
 import * as bien from '../../../assets/mock-objects/bien.json';
 import * as biens from '../../../assets/mock-objects/biensDTO.json';
 import * as consultants from '../../../assets/mock-objects/consultants.json';
-
+import * as user from '../../../assets/mock-objects/user.json';
 
 // array in local storage for registered users
 let users = JSON.parse(localStorage.getItem('users')) || [];
@@ -87,12 +87,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       // const user = users.find(x => x.username === username && x.password === password);
       // if (!user) { return error('Username or password is incorrect'); }
 
-      if (username !== 'admin@gmail.com' && password !== 'admin') {
-        return error('Username or password is incorrect');
+      if (username !== 'admin@gmail.com' || password !== 'admin') {
+        return error('Nom d\'utilisateur ou mot de passe n\'est pas correct');
       }
-      return ok({
-        token: 'yJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfQURNSU4iXSwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNTc1NDk3MDMyLCJleHAiOjE1NzU1MjU4MzJ9.9KpI2SX5nOFrpQAwx43EvuM55aFhw83GrKiz0kFeHVGyXs00W3AfMGKOz4A62eaZzr1Ho7T4dFD_jp_31BBpAQ'
-      });
+      return ok((user as any).default);
     }
 
     function getUsers() {

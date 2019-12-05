@@ -41,19 +41,6 @@
     <div class="header-part-right">
       <i class="i-Magnifi-Glass1 header-icon" role="button" (click)="searchService.searchOpen = true"></i>
       <i fullScreenWindow class="i-Full-Screen header-icon d-none d-sm-inline-block" role="button"></i>
-      <div ngbDropdown [placement]="'bottom-right'" class="d-none d-sm-inline-block">
-        <i ngbDropdownToggle class="i-Gear text-muted header-icon" role="button"></i>
-        <div ngbDropdownMenu class="menu-icon-grid-dropdown">
-          <div class="menu-icon-grid">
-            <a href="#"><i class="i-Shop-4"></i> Home</a>
-            <a href="#"><i class="i-Library"></i> UI Kits</a>
-            <a href="#"><i class="i-Drop"></i> Apps</a>
-            <a href="#"><i class="i-File-Clipboard-File--Text"></i> Forms</a>
-            <a href="#"><i class="i-Checked-User"></i> Sessions</a>
-            <a href="#"><i class="i-Ambulance"></i> Support</a>
-          </div>
-        </div>
-      </div>
 
       <div ngbDropdown [placement]="'bottom-right'">
         <div class="badge-top-container">
@@ -77,19 +64,17 @@
           </div>
         </div>
       </div>
-      <!-- 
-      <div ngbDropdown [placement]="'bottom-right'" class="user col align-self-end">
-        <img src="./assets/images/faces/1.jpg" id="userDropdown" ngbDropdownToggle alt="">
 
+      <div *ngIf="currentUser" ngbDropdown [placement]="'bottom-right'" class="user col align-self-end">
+        <i ngbDropdownToggle class="i-Gear text-muted header-icon" role="button"></i>
         <div ngbDropdownMenu aria-labelledby="userDropdown" class="header-account-dropdown">
           <div class="dropdown-header">
-            <i class="i-Lock-User mr-1"></i> Timothy Carlson
+            <i class="i-Lock-User mr-1"></i> {{currentUser.nom + ' ' + currentUser.prenom}}
           </div>
-          <button class="dropdown-item">Account settings</button>
-          <button class="dropdown-item">Billing history</button>
-          <button class="dropdown-item" (click)="signout()">Sign out</button>
+
+          <button class="dropdown-item" (click)="signout()">Déconnecter</button>
         </div>
-      </div> -->
+      </div>
 
     </div>
 
