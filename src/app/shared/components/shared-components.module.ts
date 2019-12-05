@@ -14,6 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommercialFormModalComponent } from './commercial-form-modal/commercial-form-modal.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FilePickerModule } from 'ngx-awesome-uploader';
+import { BienDatatableComponent } from './bien-datatable/bien-datatable.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   imports: [
@@ -28,10 +31,12 @@ import { FilePickerModule } from 'ngx-awesome-uploader';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    FilePickerModule
+    FilePickerModule,
+    NgxPaginationModule,
+    NgxDatatableModule,
   ],
-  declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, CommercialFormModalComponent, FileUploadComponent],
-  exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule, FileUploadComponent],
+  declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, CommercialFormModalComponent, FileUploadComponent, BienDatatableComponent],
+  exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule, FileUploadComponent, BienDatatableComponent],
   entryComponents: [ClientFormModalComponent, CommercialFormModalComponent]
 })
 export class SharedComponentsModule { }

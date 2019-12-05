@@ -5,6 +5,7 @@ import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { REST_URLS } from '../constants/rest-urls';
 import * as bien from '../../../assets/mock-objects/bien.json';
 import * as biens from '../../../assets/mock-objects/biensDTO.json';
+import * as biensEtatCreation from '../../../assets/mock-objects/biens-etat-creation.json';
 import * as consultants from '../../../assets/mock-objects/consultants.json';
 import * as user from '../../../assets/mock-objects/user.json';
 
@@ -19,6 +20,10 @@ const urls = [
   {
     url: REST_URLS.BIEN_RECHERCHER_BIEN,
     json: biens
+  },
+  {
+    url: REST_URLS.BIEN_GET_BIEN_ETAT_CREATION,
+    json: biensEtatCreation
   },
   {
     url: REST_URLS.CONSULTANTS,

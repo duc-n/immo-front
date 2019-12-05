@@ -4,6 +4,7 @@ import { BienService } from '../bien.service';
 import { Page } from 'src/app/shared/models/page';
 import { Bien } from '../models/bien';
 import { DataLayerService } from 'src/app/shared/services/data-layer.service';
+import { BienResume } from 'src/app/shared/models/bien-resume';
 
 @Component({
   selector: 'app-rechercher-bien',
@@ -13,17 +14,12 @@ import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 export class RechercherBienComponent implements OnInit {
   loading: boolean;
   viewMode: 'search' | 'result' = 'search';
-  i = 0;
-  page = new Page();
-  rows = new Array<Bien>();
-  cache: any = {};
+
   rechercherBienForm: FormGroup;
+  critere: any;
   constructor(
     private fb: FormBuilder,
-    private bienService: BienService,
-    private dataLayerService: DataLayerService
   ) {
-    this.page.pageNumber = 0;
   }
 
   ngOnInit() {
@@ -90,51 +86,8 @@ export class RechercherBienComponent implements OnInit {
   get f() { return this.rechercherBienForm.controls; }
 
   rechercherBien() {
-    this.page = new Page();
-    this.rows = new Array<Bien>();
     this.viewMode = 'result';
-  }
-
-  /**
-   * Populate the table with new data based on the page number
-   * @param page The page to select
-   */
-  setPage(pageInfo) {
-    console.log(pageInfo);
-    this.page.pageNumber = pageInfo.offset;
-    const rechercherBienCritere = this.rechercherBienForm.value;
-    rechercherBienCritere.page = this.page;
-
-    // cache results
-    // if(this.cache[this.page.pageNumber]) return;
-
-    this.dataLayerService.rechercherBien(rechercherBienCritere).subscribe(pagedData => {
-      this.i = this.i + 1;
-      console.log('Subcribe counted ' + this.i);
-      this.page.size = pagedData.size;
-      this.page.totalElements = pagedData.totalElements;
-      this.page.totalPages = pagedData.totalPages;
-      this.page.pageNumber = pagedData.number;
-
-      // calc start
-      const start = this.page.pageNumber * this.page.size;
-
-      // copy rows
-      const rows = [...this.rows];
-
-      // insert rows into new position
-      rows.splice(start, 0, ...pagedData.content);
-
-      // set rows to our new rows
-      this.rows = rows;
-
-      // add flag for results
-      this.cache[this.page.pageNumber] = true;
-    });
-  }
-
-  detail(id) {
-    console.log(id);
+    this.critere = this.rechercherBienForm.value;
   }
 
 }
