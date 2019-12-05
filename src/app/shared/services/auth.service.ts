@@ -25,6 +25,7 @@ export class AuthService {
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
+  // check if the user is stored in localStorage in order to redirect to homepage
   public get currentUserValue(): User {
     return this.currentUserSubject.value;
   }

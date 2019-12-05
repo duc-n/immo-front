@@ -66,6 +66,7 @@ export class HeaderSidebarLargeComponent implements OnInit {
   }
 
   ngOnInit() {
+    // retrieve the user object when the login is successeful
     this.auth.currentUser.subscribe(user => this.currentUser = user);
   }
 
