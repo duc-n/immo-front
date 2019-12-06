@@ -12,24 +12,24 @@ import { PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
 })
 export class AdminLayoutSidebarLargeComponent implements OnInit {
 
-    moduleLoading: boolean;
-    @ViewChild(PerfectScrollbarDirective, { static: true }) perfectScrollbar: PerfectScrollbarDirective;
-  
-    constructor(
-      public navService: NavigationService,
-      public searchService: SearchService,
-      private router: Router
-    ) { }
-  
-    ngOnInit() {
-      this.router.events.subscribe(event => {
-        if (event instanceof RouteConfigLoadStart || event instanceof ResolveStart) {
-          this.moduleLoading = true;
-        }
-        if (event instanceof RouteConfigLoadEnd || event instanceof ResolveEnd) {
-          this.moduleLoading = false;
-        }
-      });
-    }
+  moduleLoading: boolean;
+  @ViewChild(PerfectScrollbarDirective, { static: true }) perfectScrollbar: PerfectScrollbarDirective;
+
+  constructor(
+    public navService: NavigationService,
+    public searchService: SearchService,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof RouteConfigLoadStart || event instanceof ResolveStart) {
+        this.moduleLoading = true;
+      }
+      if (event instanceof RouteConfigLoadEnd || event instanceof ResolveEnd) {
+        this.moduleLoading = false;
+      }
+    });
+  }
 
 }

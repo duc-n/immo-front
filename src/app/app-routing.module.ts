@@ -60,7 +60,8 @@ const adminRoutes: Routes = [
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'biens/creer-bien',
+    // redirectTo: 'biens/creer-bien',
+    redirectTo: 'dashboard/v1',
     pathMatch: 'full'
   },
   {

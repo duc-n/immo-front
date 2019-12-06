@@ -20,11 +20,6 @@ const routes: Routes = [
     path: 'rechercher-bien',
     canActivate: [AuthGaurd],
     component: RechercherBienComponent
-  },
-  {
-    path: 'rechercher-bien-result',
-    canActivate: [AuthGaurd],
-    component: RechercherBienResultComponent
   }
 ];
 
