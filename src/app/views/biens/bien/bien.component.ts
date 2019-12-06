@@ -4,6 +4,8 @@ import { BienService } from '../bien.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DataLayerService } from 'src/app/shared/services/data-layer.service';
+import { ActivatedRoute } from '@angular/router';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-bien',
@@ -14,21 +16,24 @@ import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 })
 export class BienComponent implements OnInit {
 
-  bienForm$: Observable<FormGroup> = this.bienService.getBienForm();
-
+  bienForm$: Observable<FormGroup>;
+  id: string;
   constructor(
+    private readonly logger: NGXLogger,
+    private readonly route: ActivatedRoute,
     private readonly fb: FormBuilder,
     private readonly bienService: BienService
   ) {
   }
   ngOnInit() {
-    console.log('Init bien form');
+    this.id = this.route.snapshot.params['id'];
+    this.bienForm$ = this.bienService.getBienForm(this.id);
   }
 
   enregistrer() {
 
     this.bienForm$.subscribe(bienForm => {
-      console.log(bienForm.value);
+      this.logger.debug('Bien form value ' + bienForm.value);
       this.bienService.saveBien(bienForm.value);
     });
 

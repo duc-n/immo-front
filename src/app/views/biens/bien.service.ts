@@ -21,6 +21,8 @@ import { Consultant } from 'src/app/shared/models/consultant';
 import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
 import { BienCritere } from './models/search/bien-critere';
 import { DataLayerService } from 'src/app/shared/services/data-layer.service';
+import { NGXLogger } from 'ngx-logger';
+import { REST_URLS } from 'src/app/shared/constants/rest-urls';
 
 const companyData = [];
 
@@ -30,13 +32,15 @@ const companyData = [];
 export class BienService {
 
   constructor(
+    private readonly logger: NGXLogger,
     private readonly fb: FormBuilder,
     private readonly http: HttpClient,
     private readonly dataLayerService: DataLayerService
   ) { }
 
-  getBienForm() {
-    return this.getBien().pipe(
+  getBienForm(id: string) {
+    this.logger.debug('Get bien form. id =' + id);
+    return this.getBien(id).pipe(
       map((bien: Bien) => this.fb.group({
         consultants: this.generateConsultants(bien.consultant, bien.consultantsAssocies),
         detailBien: this.fb.group({
@@ -268,9 +272,9 @@ export class BienService {
     });
   }
 
-  private getBien(): Observable<Bien> {
+  private getBien(id: string): Observable<Bien> {
     // Call the mock webService
-    return this.dataLayerService.getBien();
+    return this.dataLayerService.getBien(id);
 
     // Call the real webservice
     //return this.http.get('http://immo-backend.eu-west-3.elasticbeanstalk.com/bien/5da784a39f14661eaf69684b');
@@ -328,8 +332,9 @@ export class BienService {
   }
 
   saveBien(bien: Bien) {
-    console.log('Save Bien');
-    return this.http.post<any>('http://localhost:8080/bien/updateBien', bien);
+    this.dataLayerService.update(REST_URLS.BIEN_UPDATE_BIEN, bien).subscribe(result => {
+      console.log('Bien updated !!!');
+    });
   }
 
 }

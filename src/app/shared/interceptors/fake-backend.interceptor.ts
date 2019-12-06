@@ -14,10 +14,6 @@ let users = JSON.parse(localStorage.getItem('users')) || [];
 
 const urls = [
   {
-    url: '/bien/1',
-    json: bien
-  },
-  {
     url: REST_URLS.BIEN_RECHERCHER_BIEN,
     json: biens
   },
@@ -50,7 +46,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         case url.endsWith('/register') && method === 'POST':
           return register();
         case url.endsWith(REST_URLS.LOGIN) && method === 'POST':
-
           return signin();
         case url.endsWith('/users') && method === 'GET':
           return getUsers();
@@ -58,9 +53,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return getUserById();
         case url.match(/\/users\/\d+$/) && method === 'DELETE':
           return deleteUser();
+        case url.match(/\/bien\/\d+$/) && method === 'GET':
+          return getBienById();
+        case url.endsWith('/bien') && method === 'PUT':
+          return updateBien();
         default:
           for (const element of urls) {
-            if (url.endsWith(element.url)) {
+            if (url.includes(element.url)) {
               console.log('Loaded from json : ' + request.url);
               return of(new HttpResponse({ status: 200, body: ((element.json) as any).default }));
             }
@@ -115,6 +114,15 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
       users = users.filter(x => x.id !== idFromUrl());
       localStorage.setItem('users', JSON.stringify(users));
+      return ok();
+    }
+
+    function getBienById() {
+      return ok((bien as any).default);
+    }
+
+    function updateBien() {
+      console.log('Update bien');
       return ok();
     }
 
