@@ -68,7 +68,7 @@ export class DataLayerService {
     }
 
     getConsultants() {
-        return this.http.get<Consultant[]>(this.apiUrl + REST_URLS.CONSULTANTS);
+        return this.http.get<Consultant[]>(this.apiUrl + REST_URLS.USERS);
     }
     getActivites() {
         return this.http.get<Activite[]>('api/activites');

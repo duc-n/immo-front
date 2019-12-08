@@ -22,7 +22,7 @@ const urls = [
     json: biensEtatCreation
   },
   {
-    url: REST_URLS.CONSULTANTS,
+    url: REST_URLS.USERS,
     json: consultants
   }
 ];

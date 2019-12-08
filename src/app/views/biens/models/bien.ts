@@ -11,11 +11,12 @@ import { Communication } from './communication';
 import { Client } from 'src/app/shared/models/client';
 import { Consultant } from 'src/app/shared/models/consultant';
 import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
+import { ConsultantAssocie } from 'src/app/shared/models/consultantAssocie';
 
 export interface Bien {
     id?: string;
     consultant?: Consultant;
-    consultantsAssocies?: Consultant[];
+    consultantsAssocies?: ConsultantAssocie[];
     detailBien?: DetailBien;
     mandat?: Mandat;
     bail?: Bail;

@@ -23,6 +23,7 @@ import { BienCritere } from './models/search/bien-critere';
 import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 import { NGXLogger } from 'ngx-logger';
 import { REST_URLS } from 'src/app/shared/constants/rest-urls';
+import { ConsultantAssocie } from 'src/app/shared/models/consultantAssocie';
 
 const companyData = [];
 
@@ -65,36 +66,36 @@ export class BienService {
       )
     );
   }
-  private generateConsultants(consultant: Consultant, consultantsAssocies: Consultant[]) {
+  private generateConsultants(consultant: Consultant, consultantsAssocies: ConsultantAssocie[]) {
     return this.fb.group({
       id: [consultant.id],
       nom: [consultant.nom],
       prenom: [consultant.prenom],
-      tel: [consultant.tel],
-      email: [consultant.email],
+      telephone: [consultant.telephone],
+      username: [consultant.username],
       consultantsAssocies: this.generateConsultantsAssocies(consultantsAssocies)
     });
   }
 
-  private generateConsultantsAssocies(consultants: Consultant[]) {
+  private generateConsultantsAssocies(consultantsAssocies: ConsultantAssocie[]) {
 
     const consultantForm = this.fb.array((() => {
-      if (!consultants) {
+      if (!consultantsAssocies) {
         return [];
       }
-      return consultants.map((consultant) => this.createConsultant(consultant));
+      return consultantsAssocies.map((consultantAssocie) => this.createConsultant(consultantAssocie));
     })());
 
     return consultantForm;
   }
-  createConsultant(consultant: Consultant) {
+  createConsultant(consultantAssocie: ConsultantAssocie) {
     return this.fb.group({
-      id: [consultant.id],
-      nom: [consultant.nom],
-      prenom: [consultant.prenom],
-      tel: [consultant.tel],
-      email: [consultant.email],
-      commission: [consultant.commission]
+      id: [consultantAssocie.consultant.id],
+      nom: [consultantAssocie.consultant.nom],
+      prenom: [consultantAssocie.consultant.prenom],
+      telephone: [consultantAssocie.consultant.telephone],
+      username: [consultantAssocie.consultant.username],
+      commission: [consultantAssocie.commission]
     });
   }
 

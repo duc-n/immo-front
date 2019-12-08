@@ -6,6 +6,7 @@ import { Consultant } from 'src/app/shared/models/consultant';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommercialFormModalComponent } from 'src/app/shared/components/commercial-form-modal/commercial-form-modal.component';
 import { NGXLogger } from 'ngx-logger';
+import { ConsultantAssocie } from 'src/app/shared/models/consultantAssocie';
 
 @Component({
   selector: 'app-consultant-responsable',
@@ -44,10 +45,10 @@ export class ConsultantResponsableComponent implements OnInit, AfterViewInit {
     this.consultantService.add(consultantForm.value);
   }
 
-  associerConsultant(consultant: Consultant) {
-    if (consultant) {
-      this.consultantsAssociesArray.push(this.bienService.createConsultant(consultant));
-      this.consultantService.remove(consultant);
+  associerConsultant(consultantAssocie: ConsultantAssocie) {
+    if (consultantAssocie) {
+      this.consultantsAssociesArray.push(this.bienService.createConsultant(consultantAssocie));
+      this.consultantService.remove(consultantAssocie);
       // when adding the consultant object manually, just tell Angular the change by calling this.cdRef.detectChanges();
       this.cdRef.detectChanges();
     }
@@ -60,9 +61,8 @@ export class ConsultantResponsableComponent implements OnInit, AfterViewInit {
     modalRef.componentInstance.consultants$ = this.consultantService.consultants$;
 
     modalRef.result.then((result) => {
-      const consultant: Consultant = result.consultantAssocie;
-      consultant.commission = result.commission;
-      this.associerConsultant(consultant);
+      const consultantAssocie: ConsultantAssocie = result;
+      this.associerConsultant(consultantAssocie);
 
     }).catch((error) => {
       this.logger.error('Error' + error);

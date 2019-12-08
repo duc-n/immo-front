@@ -6,5 +6,5 @@ export class REST_URLS {
     public static BIEN_GET_BIEN_ETAT_CREATION = 'bien/getBiensEtatCreation';
     public static BIEN_RECHERCHER_BIEN = 'bien/rechercherBien';
     public static CLIENT_CLIENT_LOOKUP = 'client/clientLookup';
-    public static CONSULTANTS = 'consultants';
+    public static USERS = 'user';
 }
