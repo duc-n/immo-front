@@ -11,7 +11,7 @@ export class UploadFilePickerAdapter extends FilePickerAdapter {
     public uploadFile(fileItem: FilePreviewModel) {
         const form = new FormData();
         form.append('fileParts', fileItem.file);
-        const api = 'http://localhost:8080/multipart';
+        const api = 'http://localhost:8080/multipart/fs';
         const req = new HttpRequest('POST', api, form, { reportProgress: true });
         return this.http.request(req)
             .pipe(
