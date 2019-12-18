@@ -5,10 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 import { ActivatedRoute } from '@angular/router';
-<<<<<<< HEAD
-=======
 import { NGXLogger } from 'ngx-logger';
->>>>>>> a1e372f03ed7932fae0886d2e13320f0359d87b5
 
 @Component({
   selector: 'app-bien',
@@ -26,7 +23,6 @@ export class BienComponent implements OnInit {
     private readonly route: ActivatedRoute,
     private readonly fb: FormBuilder,
     private readonly bienService: BienService,
-    private route: ActivatedRoute
   ) {
   }
   ngOnInit() {

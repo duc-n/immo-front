@@ -22,11 +22,8 @@ import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
 import { BienCritere } from './models/search/bien-critere';
 import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 import { NGXLogger } from 'ngx-logger';
-<<<<<<< HEAD
-=======
 import { REST_URLS } from 'src/app/shared/constants/rest-urls';
 import { ConsultantAssocie } from 'src/app/shared/models/consultantAssocie';
->>>>>>> a1e372f03ed7932fae0886d2e13320f0359d87b5
 
 const companyData = [];
 
@@ -36,24 +33,15 @@ const companyData = [];
 export class BienService {
 
   constructor(
-<<<<<<< HEAD
-    private logger: NGXLogger,
-=======
     private readonly logger: NGXLogger,
->>>>>>> a1e372f03ed7932fae0886d2e13320f0359d87b5
     private readonly fb: FormBuilder,
     private readonly http: HttpClient,
     private readonly dataLayerService: DataLayerService
   ) { }
 
   getBienForm(id: string) {
-<<<<<<< HEAD
-
-    return this.getBien().pipe(
-=======
     this.logger.debug('Get bien form. id =' + id);
     return this.getBien(id).pipe(
->>>>>>> a1e372f03ed7932fae0886d2e13320f0359d87b5
       map((bien: Bien) => this.fb.group({
         consultants: this.generateConsultants(bien.consultant, bien.consultantsAssocies),
         detailBien: this.fb.group({
