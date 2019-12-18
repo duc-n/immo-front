@@ -26,12 +26,6 @@ if (environment.mock_ws) {
 
 export const isMock = environment.mock_ws;
 
-export function tokenGetter() {
-  return localStorage.getItem(CONSTANTS.TOKEN);
-}
-
-
-
 export function getToken() { return localStorage.getItem(CONSTANTS.TOKEN); }
 export const whitelistedDomains = [new RegExp('[\s\S]*')] as RegExp[];
 export function jwtOptionsFactory() { return { tokenGetter: getToken, whitelistedDomains: whitelistedDomains }; }
