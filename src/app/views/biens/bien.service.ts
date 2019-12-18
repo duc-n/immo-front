@@ -21,6 +21,7 @@ import { Consultant } from 'src/app/shared/models/consultant';
 import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
 import { BienCritere } from './models/search/bien-critere';
 import { DataLayerService } from 'src/app/shared/services/data-layer.service';
+import { NGXLogger } from 'ngx-logger';
 
 const companyData = [];
 
@@ -30,12 +31,14 @@ const companyData = [];
 export class BienService {
 
   constructor(
+    private logger: NGXLogger,
     private readonly fb: FormBuilder,
     private readonly http: HttpClient,
     private readonly dataLayerService: DataLayerService
   ) { }
 
-  getBienForm() {
+  getBienForm(id: string) {
+
     return this.getBien().pipe(
       map((bien: Bien) => this.fb.group({
         consultants: this.generateConsultants(bien.consultant, bien.consultantsAssocies),
