@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Consultant } from '../../models/consultant';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-commercial-form-modal',
@@ -17,8 +18,9 @@ export class CommercialFormModalComponent implements OnInit {
   commercialForm: FormGroup;
 
   constructor(
+    private readonly logger: NGXLogger,
     public activeModal: NgbActiveModal,
-    private fb: FormBuilder
+    private readonly fb: FormBuilder
   ) {
     this.createClientForm();
   }
@@ -28,12 +30,13 @@ export class CommercialFormModalComponent implements OnInit {
 
   createClientForm() {
     this.commercialForm = this.fb.group({
-      consultantAssocie: [, [Validators.required]],
+      consultant: [, [Validators.required]],
       commission: []
     });
   }
 
   onSubmit() {
+    this.logger.debug('Consultant associé : ' + this.commercialForm.value);
     this.activeModal.close(this.commercialForm.value);
   }
 

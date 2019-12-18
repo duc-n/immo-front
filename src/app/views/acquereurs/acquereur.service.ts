@@ -85,8 +85,8 @@ export class AcquereurService {
       id: [consultant.id],
       nom: [consultant.nom],
       prenom: [consultant.prenom],
-      tel: [consultant.tel],
-      email: [consultant.email],
+      telephone: [consultant.telephone],
+      username: [consultant.username],
       consultantAssocie: [],
       consultantsAssocies: this.generateConsultantsAssocies(consultantsAssocies)
     });
@@ -109,8 +109,8 @@ export class AcquereurService {
       id: [consultant.id],
       nom: [consultant.nom],
       prenom: [consultant.prenom],
-      tel: [consultant.tel],
-      email: [consultant.email]
+      telephone: [consultant.telephone],
+      username: [consultant.username]
     });
   }
 

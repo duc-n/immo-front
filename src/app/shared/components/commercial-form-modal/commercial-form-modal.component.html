@@ -9,9 +9,9 @@
   <div class=" modal-body">
 
     <div class="form-group row">
-      <label for="consultantAssocie" class="col-sm-5 col-form-label">Ajouter un consulant associé<em class="text-danger">*</em></label>
+      <label for="consultant" class="col-sm-5 col-form-label">Ajouter un consulant associé<em class="text-danger">*</em></label>
       <div class="col-sm-7">
-        <select formControlName="consultantAssocie" class="form-control" id="consultantAssocie">
+        <select formControlName="consultant" class="form-control" id="consultant">
           <option [ngValue]="null" disabled>Selectionner un consultant</option>
           <option *ngFor="let consultant of (consultants$ | async)" [ngValue]="consultant">{{ consultant.nom + ' ' + consultant.prenom }}</option>
         </select>

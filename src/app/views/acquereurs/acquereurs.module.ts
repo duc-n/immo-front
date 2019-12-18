@@ -13,10 +13,9 @@ import { SharedComponentsModule } from 'src/app/shared/components/shared-compone
 import { ConsultantComponent } from './acquereur/consultant/consultant.component';
 import { ActiviteComponent } from './acquereur/activite/activite.component';
 import { DetailAcquereurComponent } from './acquereur/detail-acquereur/detail-acquereur.component';
-import { ConsultantResponsableComponent } from './acquereur/consultant-responsable/consultant-responsable.component';
 
 @NgModule({
-  declarations: [AcquereurComponent, ClientComponent, ConsultantComponent, ActiviteComponent, DetailAcquereurComponent, ConsultantResponsableComponent],
+  declarations: [AcquereurComponent, ClientComponent, ConsultantComponent, ActiviteComponent, DetailAcquereurComponent],
   imports: [
     CommonModule,
     SharedComponentsModule,
@@ -27,6 +26,6 @@ import { ConsultantResponsableComponent } from './acquereur/consultant-responsab
     NgxDatatableModule,
     AcquereursRoutingModule
   ],
-  exports: [AcquereurComponent, ClientComponent, ConsultantComponent, ActiviteComponent, DetailAcquereurComponent, ConsultantResponsableComponent]
+  exports: [AcquereurComponent, ClientComponent, ConsultantComponent, ActiviteComponent, DetailAcquereurComponent]
 })
 export class AcquereursModule { }

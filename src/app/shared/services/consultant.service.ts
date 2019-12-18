@@ -4,6 +4,7 @@ import { Consultant } from '../models/consultant';
 import { DataLayerService } from './data-layer.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { isUndefined } from 'util';
+import { ConsultantAssocie } from '../models/consultantAssocie';
 
 @Injectable({
   providedIn: 'root'
@@ -34,15 +35,15 @@ export class ConsultantService {
     return this._consultants$.asObservable();
   }
 
-  remove(consultant: Consultant) {
-    this.consultants = this.consultants.filter(item => item.id !== consultant.id);
+  remove(consultantAssocie: ConsultantAssocie) {
+    this.consultants = this.consultants.filter(item => item.id !== consultantAssocie.consultant.id);
     this._consultants$.next(this.consultants);
   }
 
-  add(consultant: Consultant) {
-    const index = this.consultants.findIndex(item => item.id === consultant.id);
+  add(consultantAssocie: ConsultantAssocie) {
+    const index = this.consultants.findIndex(item => item.id === consultantAssocie.consultant.id);
     if (isUndefined(this.consultants[index])) {
-      this.consultants.push(consultant);
+      this.consultants.push(consultantAssocie.consultant);
     }
 
     // Notify rest of application.

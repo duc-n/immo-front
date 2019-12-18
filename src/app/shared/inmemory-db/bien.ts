@@ -10,19 +10,23 @@ export class BienDB {
                 'email': 'laurent.mignot@gmail.com'
             },
             'consultantsAssocies': [{
-                'id': '01',
-                'nom': 'NGUYEN',
-                'prenom': 'Léo',
-                'tel': '0686090909',
-                'email': 'leo.nguyen@gmail.com',
+                'consultant': {
+                    'id': '01',
+                    'nom': 'NGUYEN',
+                    'prenom': 'Léo',
+                    'tel': '0686090909',
+                    'email': 'leo.nguyen@gmail.com'
+                },
                 'commission': 25
             },
             {
-                'id': '02',
-                'nom': 'GUIBER',
-                'prenom': 'Lucas',
-                'tel': '0645678934',
-                'email': 'lucas.guiber@gmail.com',
+                'consultant': {
+                    'id': '02',
+                    'nom': 'GUIBER',
+                    'prenom': 'Lucas',
+                    'tel': '0645678934',
+                    'email': 'lucas.guiber@gmail.com'
+                },
                 'commission': 25
             }
             ],

@@ -5,6 +5,10 @@ import { Observable } from 'rxjs/internal/Observable';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 import { ActivatedRoute } from '@angular/router';
+<<<<<<< HEAD
+=======
+import { NGXLogger } from 'ngx-logger';
+>>>>>>> a1e372f03ed7932fae0886d2e13320f0359d87b5
 
 @Component({
   selector: 'app-bien',
@@ -18,6 +22,8 @@ export class BienComponent implements OnInit {
   bienForm$: Observable<FormGroup>;
   id: string;
   constructor(
+    private readonly logger: NGXLogger,
+    private readonly route: ActivatedRoute,
     private readonly fb: FormBuilder,
     private readonly bienService: BienService,
     private route: ActivatedRoute
@@ -31,7 +37,7 @@ export class BienComponent implements OnInit {
   enregistrer() {
 
     this.bienForm$.subscribe(bienForm => {
-      console.log(bienForm.value);
+      this.logger.debug('Bien form value ' + bienForm.value);
       this.bienService.saveBien(bienForm.value);
     });
 

@@ -22,6 +22,11 @@ import { ConsultantDB } from 'src/app/shared/inmemory-db/consultants';
 import { BienCritere } from './models/search/bien-critere';
 import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 import { NGXLogger } from 'ngx-logger';
+<<<<<<< HEAD
+=======
+import { REST_URLS } from 'src/app/shared/constants/rest-urls';
+import { ConsultantAssocie } from 'src/app/shared/models/consultantAssocie';
+>>>>>>> a1e372f03ed7932fae0886d2e13320f0359d87b5
 
 const companyData = [];
 
@@ -31,15 +36,24 @@ const companyData = [];
 export class BienService {
 
   constructor(
+<<<<<<< HEAD
     private logger: NGXLogger,
+=======
+    private readonly logger: NGXLogger,
+>>>>>>> a1e372f03ed7932fae0886d2e13320f0359d87b5
     private readonly fb: FormBuilder,
     private readonly http: HttpClient,
     private readonly dataLayerService: DataLayerService
   ) { }
 
   getBienForm(id: string) {
+<<<<<<< HEAD
 
     return this.getBien().pipe(
+=======
+    this.logger.debug('Get bien form. id =' + id);
+    return this.getBien(id).pipe(
+>>>>>>> a1e372f03ed7932fae0886d2e13320f0359d87b5
       map((bien: Bien) => this.fb.group({
         consultants: this.generateConsultants(bien.consultant, bien.consultantsAssocies),
         detailBien: this.fb.group({
@@ -64,36 +78,36 @@ export class BienService {
       )
     );
   }
-  private generateConsultants(consultant: Consultant, consultantsAssocies: Consultant[]) {
+  private generateConsultants(consultant: Consultant, consultantsAssocies: ConsultantAssocie[]) {
     return this.fb.group({
       id: [consultant.id],
       nom: [consultant.nom],
       prenom: [consultant.prenom],
-      tel: [consultant.tel],
-      email: [consultant.email],
+      telephone: [consultant.telephone],
+      username: [consultant.username],
       consultantsAssocies: this.generateConsultantsAssocies(consultantsAssocies)
     });
   }
 
-  private generateConsultantsAssocies(consultants: Consultant[]) {
+  private generateConsultantsAssocies(consultantsAssocies: ConsultantAssocie[]) {
 
     const consultantForm = this.fb.array((() => {
-      if (!consultants) {
+      if (!consultantsAssocies) {
         return [];
       }
-      return consultants.map((consultant) => this.createConsultant(consultant));
+      return consultantsAssocies.map((consultantAssocie) => this.createConsultant(consultantAssocie));
     })());
 
     return consultantForm;
   }
-  createConsultant(consultant: Consultant) {
+  createConsultant(consultantAssocie: ConsultantAssocie) {
     return this.fb.group({
-      id: [consultant.id],
-      nom: [consultant.nom],
-      prenom: [consultant.prenom],
-      tel: [consultant.tel],
-      email: [consultant.email],
-      commission: [consultant.commission]
+      id: [consultantAssocie.consultant.id],
+      nom: [consultantAssocie.consultant.nom],
+      prenom: [consultantAssocie.consultant.prenom],
+      telephone: [consultantAssocie.consultant.telephone],
+      username: [consultantAssocie.consultant.username],
+      commission: [consultantAssocie.commission]
     });
   }
 
@@ -271,9 +285,9 @@ export class BienService {
     });
   }
 
-  private getBien(): Observable<Bien> {
+  private getBien(id: string): Observable<Bien> {
     // Call the mock webService
-    return this.dataLayerService.getBien();
+    return this.dataLayerService.getBien(id);
 
     // Call the real webservice
     //return this.http.get('http://immo-backend.eu-west-3.elasticbeanstalk.com/bien/5da784a39f14661eaf69684b');
@@ -331,8 +345,9 @@ export class BienService {
   }
 
   saveBien(bien: Bien) {
-    console.log('Save Bien');
-    return this.http.post<any>('http://localhost:8080/bien/updateBien', bien);
+    this.dataLayerService.update(REST_URLS.BIEN_UPDATE_BIEN, bien).subscribe(result => {
+      console.log('Bien updated !!!');
+    });
   }
 
 }

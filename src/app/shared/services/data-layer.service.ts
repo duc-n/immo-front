@@ -51,27 +51,24 @@ export class DataLayerService {
         return this.http.post<any>(this.apiUrl + REST_URLS.LOGIN, credentials);
     }
 
-    getBien(): Observable<Bien> {
-        return this.http.get<Bien>(this.apiUrl + REST_URLS.BIEN_GET_BIEN.replace(':id', '1'));
+    getBien(id: string): Observable<Bien> {
+        return this.http.get<Bien>(this.apiUrl + REST_URLS.BIEN_GET_BIEN.replace(':id', id));
     }
 
     getBiensEtatCreation(): Observable<any> {
         return this.http.get<any>(this.apiUrl + REST_URLS.BIEN_GET_BIEN_ETAT_CREATION);
     }
+
     rechercherBien(bienCritere: BienCritere): Observable<any> {
         return this.http.post<any>(this.apiUrl + REST_URLS.BIEN_RECHERCHER_BIEN, bienCritere);
     }
 
-    saveBien(bien: Bien): Observable<any> {
-        return this.http.post<any>(this.apiUrl + REST_URLS.BIEN_UPDATE_BIEN, bien);
-    }
-
-    update<T>(url: string, id?: number, itemToUpdate?: any): Observable<T> {
-        return this.http.put<T>(this.apiUrl + url + id, JSON.stringify(itemToUpdate));
+    update<T>(url: string, itemToUpdate: any): Observable<T> {
+        return this.http.put<T>(this.apiUrl + url, itemToUpdate);
     }
 
     getConsultants() {
-        return this.http.get<Consultant[]>(this.apiUrl + REST_URLS.CONSULTANTS);
+        return this.http.get<Consultant[]>(this.apiUrl + REST_URLS.USERS);
     }
     getActivites() {
         return this.http.get<Activite[]>('api/activites');

@@ -4,36 +4,36 @@ export class ConsultantDB {
       id: '03',
       nom: 'DEJARDIN',
       prenom: 'David',
-      tel: '0645678954',
-      email: 'david.dejardin@gmail.com'
+      telephone: '0645678954',
+      username: 'david.dejardin@gmail.com'
     },
     {
       id: '04',
       nom: 'WYSOCKIE',
       prenom: 'David',
-      tel: '06456435968',
-      email: 'david.wysockie@gmail.com'
+      telephone: '06456435968',
+      username: 'david.wysockie@gmail.com'
     },
     {
       id: '05',
       nom: 'LUDO',
       prenom: 'Loan',
-      tel: '06456430068',
-      email: 'david.ludos@gmail.com'
+      telephone: '06456430068',
+      username: 'david.ludos@gmail.com'
     },
     {
       id: '06',
       nom: 'SINIS',
       prenom: 'Jean-Carlos',
-      tel: '06006435968',
-      email: 'sinis.jean-carlos@gmail.com'
+      telephone: '06006435968',
+      username: 'sinis.jean-carlos@gmail.com'
     },
     {
       id: '07',
       nom: 'CARLIER',
       prenom: 'Jean-Christrop',
-      tel: '06006455968',
-      email: 'carlier.jean-christrop@gmail.com'
+      telephone: '06006455968',
+      username: 'carlier.jean-christrop@gmail.com'
     }
   ];
 }
