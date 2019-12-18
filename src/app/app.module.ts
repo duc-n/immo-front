@@ -11,7 +11,7 @@ import { BiensModule } from './views/biens/biens.module';
 import { AcquereursModule } from './views/acquereurs/acquereurs.module';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
-import { JwtModule } from '@auth0/angular-jwt';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
 import { FakeBackendInterceptor } from './shared/interceptors/fake-backend.interceptor';
@@ -29,6 +29,13 @@ export const isMock = environment.mock_ws;
 export function tokenGetter() {
   return localStorage.getItem(CONSTANTS.TOKEN);
 }
+
+
+
+export function getToken() { return localStorage.getItem(CONSTANTS.TOKEN); }
+export const whitelistedDomains = [new RegExp('[\s\S]*')] as RegExp[];
+export function jwtOptionsFactory() { return { tokenGetter: getToken, whitelistedDomains: whitelistedDomains }; }
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,11 +50,9 @@ export function tokenGetter() {
     SharedModule,
     HttpClientModule,
     JwtModule.forRoot({
-      config: {
-        tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:8080', 'https://immo-ws.herokuapp.com'],
-        blacklistedRoutes: ['http://localhost:8080/login', 'https://immo-ws.herokuapp.com/login'],
-        skipWhenExpired: true
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory
       }
     }),
     LoggerModule.forRoot({ level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR }),

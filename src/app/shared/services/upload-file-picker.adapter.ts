@@ -3,15 +3,20 @@ import { HttpRequest, HttpClient, HttpEvent, HttpEventType } from '@angular/comm
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { FilePickerAdapter } from 'ngx-awesome-uploader';
+import { environment } from 'src/environments/environment';
+import { REST_URLS } from '../constants/rest-urls';
 
 export class UploadFilePickerAdapter extends FilePickerAdapter {
+
+    private apiUrl: string;
     constructor(private http: HttpClient) {
         super();
+        this.apiUrl = environment.api_url;
     }
     public uploadFile(fileItem: FilePreviewModel) {
         const form = new FormData();
         form.append('fileParts', fileItem.file);
-        const api = 'http://localhost:8080/multipart/fs';
+        const api = this.apiUrl + REST_URLS.FILE_UPLOAD;
         const req = new HttpRequest('POST', api, form, { reportProgress: true });
         return this.http.request(req)
             .pipe(
