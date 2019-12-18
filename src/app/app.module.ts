@@ -45,8 +45,8 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:8080'],
-        blacklistedRoutes: ['http://localhost:8080/login'],
+        whitelistedDomains: ['localhost:8080', 'https://immo-ws.herokuapp.com'],
+        blacklistedRoutes: ['http://localhost:8080/login', 'https://immo-ws.herokuapp.com/login'],
         skipWhenExpired: true
       }
     }),
