@@ -1,9 +1,11 @@
 /*
  *
- *   GULL - Angular Bootstrap Admin Template
+ *   Angular Bootstrap Admin Template
  *
  *
 */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.4.3/cropper.min.css');
 
 @import '~perfect-scrollbar/css/perfect-scrollbar.css';
 @import '~@swimlane/ngx-datatable/release/index.css';
@@ -23,3 +25,10 @@
 @import '../vendor/bootstrap/bootstrap.scss';
 @import "bootstrap-rtl.scss";
 @import 'globals/globals';
+
+
+.uploader-wrapper {
+  #dropzone {
+    max-width: 50px;
+  }
+}

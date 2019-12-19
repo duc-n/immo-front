@@ -9,4 +9,5 @@ export class REST_URLS {
     public static CLIENT_CLIENT_LOOKUP = 'client/clientLookup';
     public static USERS = 'user';
     public static FILE_UPLOAD = 'multipart/fs';
+    public static FILE_REMOVE = 'multipart/remove';
 }
