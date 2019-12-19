@@ -31,9 +31,9 @@ export class UploadFilePickerAdapter extends FilePickerAdapter {
                 })
             );
     }
-    public removeFile(fileItem): Observable<any> {
-        const removeApi = this.apiUrl + REST_URLS.FILE_REMOVE;
+    public removeFile(fileItem: FilePreviewModel): Observable<any> {
+        const removeApi = this.apiUrl + REST_URLS.FILE_DELETE;
 
-        return this.http.post(removeApi, { 'fileName': fileItem });
+        return this.http.post(removeApi, fileItem);
     }
 }

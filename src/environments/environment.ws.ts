@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   mock_ws: false,
-  // api_url: 'http://localhost:8080/'
-  api_url: 'https://immo-ws.herokuapp.com/'
+  api_url: 'http://localhost:8080/'
+  // api_url: 'https://immo-ws.herokuapp.com/'
 };
 
 /*
