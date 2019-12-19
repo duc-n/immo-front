@@ -39,33 +39,45 @@ export class BienService {
     private readonly dataLayerService: DataLayerService
   ) { }
 
-  getBienForm(id: string) {
-    this.logger.debug('Get bien form. id =' + id);
-    return this.getBien(id).pipe(
-      map((bien: Bien) => this.fb.group({
-        consultants: this.generateConsultants(bien.consultant, bien.consultantsAssocies),
-        detailBien: this.fb.group({
-          'typeBien': [bien.detailBien.typeBien],
-          'activite': [bien.detailBien.activite],
-          'nomMagasin': [bien.detailBien.nomMagasin],
-          'enseigneProximite': [bien.detailBien.enseigneProximite],
-          'activites': this.generateActivitesForm(bien.detailBien.activites),
-          'adresseBien': this.generateAdresseBienForm(bien.detailBien.adresseBien)
-        }),
-        bail: this.generateBailForm(bien.bail),
-        conditionsFinancieres: this.generateConditionsFinancieres(bien.conditionsFinancieres),
-        visite: this.generateVisite(bien.visite),
-        descriptif: this.generateDescriptif(bien.descriptif),
-        communication: this.generateCommunication(bien.communication),
-        surface: this.generateSurface(bien.surface),
-        contacts: this.fb.group({
-          'clientName': [],
-          'contacts': this.generateContacts(bien.contacts)
-        })
-      })
+  createBienForm() {
+    return this.createBien().pipe(
+      map((bien: Bien) => this.generateBien(bien)
       )
     );
   }
+
+  getBienForm(id: string) {
+    this.logger.debug('Get bien form. id =', id);
+    return this.getBien(id).pipe(
+      map((bien: Bien) => this.generateBien(bien)
+      )
+    );
+  }
+
+  private generateBien(bien: Bien) {
+    return this.fb.group({
+      consultants: this.generateConsultants(bien.consultant, bien.consultantsAssocies),
+      detailBien: this.fb.group({
+        'typeBien': [bien.detailBien.typeBien],
+        'activite': [bien.detailBien.activite],
+        'nomMagasin': [bien.detailBien.nomMagasin],
+        'enseigneProximite': [bien.detailBien.enseigneProximite],
+        'activites': this.generateActivitesForm(bien.detailBien.activites),
+        'adresseBien': this.generateAdresseBienForm(bien.detailBien.adresseBien)
+      }),
+      bail: this.generateBailForm(bien.bail),
+      conditionsFinancieres: this.generateConditionsFinancieres(bien.conditionsFinancieres),
+      visite: this.generateVisite(bien.visite),
+      descriptif: this.generateDescriptif(bien.descriptif),
+      communication: this.generateCommunication(bien.communication),
+      surface: this.generateSurface(bien.surface),
+      contacts: this.fb.group({
+        'clientName': [],
+        'contacts': this.generateContacts(bien.contacts)
+      })
+    });
+  }
+
   private generateConsultants(consultant: Consultant, consultantsAssocies: ConsultantAssocie[]) {
     return this.fb.group({
       id: [consultant.id],
@@ -332,8 +344,12 @@ export class BienService {
     //   ;
   }
 
+  private createBien() {
+    return this.dataLayerService.create(REST_URLS.BIEN_CREATE);
+  }
+
   saveBien(bien: Bien) {
-    this.dataLayerService.update(REST_URLS.BIEN_UPDATE_BIEN, bien).subscribe(result => {
+    this.dataLayerService.update(REST_URLS.BIEN_UPDATE, bien).subscribe(result => {
       console.log('Bien updated !!!');
     });
   }

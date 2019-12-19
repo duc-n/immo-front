@@ -21,14 +21,14 @@ export class BienComponent implements OnInit {
   constructor(
     private readonly logger: NGXLogger,
     private readonly route: ActivatedRoute,
-    private readonly fb: FormBuilder,
     private readonly bienService: BienService,
   ) {
   }
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
-    this.bienForm$ = this.bienService.getBienForm(this.id);
+    this.bienForm$ = this.id ? this.bienService.getBienForm(this.id) : this.bienService.createBienForm();
   }
+
 
   enregistrer() {
 

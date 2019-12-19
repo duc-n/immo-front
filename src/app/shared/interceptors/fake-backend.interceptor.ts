@@ -4,6 +4,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { REST_URLS } from '../constants/rest-urls';
 import * as bien from '../../../assets/mock-objects/bien.json';
+import * as bienCreation from '../../../assets/mock-objects/bien-creation.json';
 import * as biens from '../../../assets/mock-objects/biensDTO.json';
 import * as biensEtatCreation from '../../../assets/mock-objects/biens-etat-creation.json';
 import * as consultants from '../../../assets/mock-objects/consultants.json';
@@ -14,7 +15,11 @@ let users = JSON.parse(localStorage.getItem('users')) || [];
 
 const urls = [
   {
-    url: REST_URLS.BIEN_RECHERCHER_BIEN,
+    url: REST_URLS.BIEN_CREATE,
+    json: bienCreation
+  },
+  {
+    url: REST_URLS.BIEN_RECHERCHE,
     json: biens
   },
   {
