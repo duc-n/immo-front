@@ -5,18 +5,25 @@ import { Observable } from 'rxjs';
 import { FilePickerAdapter } from 'ngx-awesome-uploader';
 import { environment } from 'src/environments/environment';
 import { REST_URLS } from '../constants/rest-urls';
+import { ActivatedRoute } from '@angular/router';
+import { RouteStateService } from './route-state.service';
 
 export class UploadFilePickerAdapter extends FilePickerAdapter {
 
     private apiUrl: string;
-    constructor(private http: HttpClient) {
+
+    constructor(private http: HttpClient,
+        private routeStateService: RouteStateService) {
         super();
         this.apiUrl = environment.api_url;
+
     }
     public uploadFile(fileItem: FilePreviewModel) {
         const form = new FormData();
+        const id = this.routeStateService.idBienValue;
+
         form.append('fileParts', fileItem.file);
-        const api = this.apiUrl + REST_URLS.FILE_UPLOAD;
+        const api = this.apiUrl + REST_URLS.FILE_UPLOAD.replace(':id', id);
         const req = new HttpRequest('POST', api, form, { reportProgress: true });
         return this.http.request(req)
             .pipe(

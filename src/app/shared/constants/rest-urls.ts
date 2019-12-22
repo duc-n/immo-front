@@ -8,6 +8,6 @@ export class REST_URLS {
     public static BIEN_RECHERCHE = 'bien/rechercherBien';
     public static CLIENT_CLIENT_LOOKUP = 'client/clientLookup';
     public static USERS = 'user';
-    public static FILE_UPLOAD = 'multipart/fs';
+    public static FILE_UPLOAD = 'multipart/fs/:id';
     public static FILE_DELETE = 'multipart/delete';
 }
