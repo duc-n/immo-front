@@ -17,6 +17,7 @@ import { FilePickerModule } from 'ngx-awesome-uploader';
 import { BienDatatableComponent } from './bien-datatable/bien-datatable.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 @NgModule({
   imports: [
@@ -34,9 +35,10 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     FilePickerModule,
     NgxPaginationModule,
     NgxDatatableModule,
+    NgxGalleryModule
   ],
   declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, CommercialFormModalComponent, FileUploadComponent, BienDatatableComponent],
-  exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule, FileUploadComponent, BienDatatableComponent],
+  exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule, FileUploadComponent, BienDatatableComponent, NgxGalleryModule],
   entryComponents: [ClientFormModalComponent, CommercialFormModalComponent]
 })
 export class SharedComponentsModule { }
