@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { FormGroup, FormArray, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-photos',
@@ -8,8 +9,10 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
 })
 export class PhotosComponent implements OnInit {
 
+  @Input() public photosForm: FormArray;
+
   galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
+  galleryImages: NgxGalleryImage[] = [];
   constructor() { }
 
   ngOnInit() {
@@ -37,19 +40,16 @@ export class PhotosComponent implements OnInit {
       }
     ];
 
-    this.galleryImages = [
-      {
-        small: 'https://cele-immo-sandbox.s3.eu-west-2.amazonaws.com/admin%40gmail.com/5dffde8ed5952a28235b28be/memoire1.png',
-        medium: 'https://cele-immo-sandbox.s3.eu-west-2.amazonaws.com/admin%40gmail.com/5dffde8ed5952a28235b28be/memoire1.png',
-        big: 'https://cele-immo-sandbox.s3.eu-west-2.amazonaws.com/admin%40gmail.com/5dffde8ed5952a28235b28be/memoire1.png'
-      },
-      {
-        small: 'https://cele-immo-sandbox.s3.eu-west-2.amazonaws.com/admin%40gmail.com/5dffde8ed5952a28235b28be/memoire1.png',
-        medium: 'https://cele-immo-sandbox.s3.eu-west-2.amazonaws.com/admin%40gmail.com/5dffde8ed5952a28235b28be/memoire1.png',
-        big: 'https://cele-immo-sandbox.s3.eu-west-2.amazonaws.com/admin%40gmail.com/5dffde8ed5952a28235b28be/memoire1.png'
-      }
-    ];
+    this.photosForm.value.forEach(key =>
 
+      this.galleryImages.push(
+        {
+          small: key.url,
+          medium: key.url,
+          big: key.url
+        }
+      )
+    );
   }
 
 }

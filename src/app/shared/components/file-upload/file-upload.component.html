@@ -1,4 +1,12 @@
 <div class="uploader-wrapper">
-  <ngx-file-picker [adapter]="adapter" [enableCropper]="false" [fileExtensions]="['jpg', 'jpeg', 'png']">
+  <ngx-file-picker
+    [adapter]="adapter"
+    [captions]="captions"
+    [enableCropper]="false"
+    [fileExtensions]="['jpg', 'jpeg', 'png']"
+    (uploadSuccess)="onUploadSuccess($event)"
+    (removeSuccess)="onRemoveSuccess($event)"
+    (fileAdded)="onFileAdded($event)"
+    >
   </ngx-file-picker>
 </div>

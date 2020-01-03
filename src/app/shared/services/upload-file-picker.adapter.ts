@@ -29,7 +29,7 @@ export class UploadFilePickerAdapter extends FilePickerAdapter {
             .pipe(
                 map((res: HttpEvent<any>) => {
                     if (res.type === HttpEventType.Response) {
-                        return res.body.id.toString();
+                        return res.body.fileUrl;
                     } else if (res.type === HttpEventType.UploadProgress) {
                         // Compute and show the % done:
                         const UploadProgress = +Math.round((100 * res.loaded) / res.total);

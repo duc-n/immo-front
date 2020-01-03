@@ -9,6 +9,7 @@ import * as biens from '../../../assets/mock-objects/biensDTO.json';
 import * as biensEtatCreation from '../../../assets/mock-objects/biens-etat-creation.json';
 import * as consultants from '../../../assets/mock-objects/consultants.json';
 import * as user from '../../../assets/mock-objects/user.json';
+import * as uploadFile from '../../../assets/mock-objects/uploadFile.json';
 
 // array in local storage for registered users
 let users = JSON.parse(localStorage.getItem('users')) || [];
@@ -29,6 +30,10 @@ const urls = [
   {
     url: REST_URLS.USERS,
     json: consultants
+  },
+  {
+    url: REST_URLS.FILE_UPLOAD.replace(':id', ''),
+    json: uploadFile
   }
 ];
 
@@ -64,7 +69,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return updateBien();
         default:
           for (const element of urls) {
-            if (url.includes(element.url)) {
+            const reg = '/\/' + element.url + '\/\d+$/';
+            if (url.includes(element.url) || url.match(reg)) {
               console.log('Loaded from json : ' + request.url);
               return of(new HttpResponse({ status: 200, body: ((element.json) as any).default }));
             }

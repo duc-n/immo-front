@@ -24,6 +24,7 @@ import { DataLayerService } from 'src/app/shared/services/data-layer.service';
 import { NGXLogger } from 'ngx-logger';
 import { REST_URLS } from 'src/app/shared/constants/rest-urls';
 import { ConsultantAssocie } from 'src/app/shared/models/consultantAssocie';
+import { Photo } from './models/photo';
 
 const companyData = [];
 
@@ -74,7 +75,8 @@ export class BienService {
       contacts: this.fb.group({
         'clientName': [],
         'contacts': this.generateContacts(bien.contacts)
-      })
+      }),
+      photos: this.generatePhotos(bien.photos)
     });
   }
 
@@ -264,6 +266,24 @@ export class BienService {
 
     });
     return surfaceForm;
+  }
+
+  private generatePhotos(photos: Photo[]) {
+
+    const photosForm = this.fb.array((() => {
+      if (!photos) {
+        return [];
+      }
+      return photos.map((photo) => this.createPhoto(photo));
+    })());
+
+    return photosForm;
+  }
+
+  createPhoto(photo: Photo) {
+    return this.fb.group({
+      url: [photo.url]
+    });
   }
 
   private generateContacts(contacts: Client[]) {

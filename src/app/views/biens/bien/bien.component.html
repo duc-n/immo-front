@@ -122,7 +122,7 @@
         </ng-template>
         <ng-template ngbPanelContent>
           <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
-            <app-photos></app-photos>
+            <app-photos [photosForm]="bienForm.controls['photos']"></app-photos>
           </div>
         </ng-template>
       </ngb-panel>
