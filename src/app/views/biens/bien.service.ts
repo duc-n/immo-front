@@ -57,6 +57,7 @@ export class BienService {
 
   private generateBien(bien: Bien) {
     return this.fb.group({
+      id: bien.id,
       consultants: this.generateConsultants(bien.consultant, bien.consultantsAssocies),
       detailBien: this.fb.group({
         'typeBien': [bien.detailBien.typeBien],

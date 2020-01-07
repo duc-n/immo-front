@@ -44,13 +44,8 @@ export class BienComponent implements OnInit, OnDestroy {
   }
 
 
-  enregistrer() {
-
-    this.bienForm$.subscribe(bienForm => {
-      this.logger.debug('Bien form value ' + bienForm.value);
-      this.bienService.saveBien(bienForm.value);
-    });
-
+  enregistrer(bienForm: FormGroup) {
+    this.bienService.saveBien(bienForm.value);
   }
 
   ngOnDestroy(): void {
