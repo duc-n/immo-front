@@ -12,5 +12,5 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-loadScript('https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.1/cropper.js');
+//loadScript('https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.1/cropper.js');
 
