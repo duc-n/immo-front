@@ -25,6 +25,7 @@ import { NGXLogger } from 'ngx-logger';
 import { REST_URLS } from 'src/app/shared/constants/rest-urls';
 import { ConsultantAssocie } from 'src/app/shared/models/consultantAssocie';
 import { Photo } from './models/photo';
+import { DetailBien } from './models/detail-bien';
 
 const companyData = [];
 
@@ -59,14 +60,7 @@ export class BienService {
     return this.fb.group({
       id: bien.id,
       consultants: this.generateConsultants(bien.consultant, bien.consultantsAssocies),
-      detailBien: this.fb.group({
-        'typeBien': [bien.detailBien.typeBien],
-        'activite': [bien.detailBien.activite],
-        'nomMagasin': [bien.detailBien.nomMagasin],
-        'enseigneProximite': [bien.detailBien.enseigneProximite],
-        'activites': this.generateActivitesForm(bien.detailBien.activites),
-        'adresseBien': this.generateAdresseBienForm(bien.detailBien.adresseBien)
-      }),
+      detailBien: this.generateDetailBienForm(bien.detailBien),
       bail: this.generateBailForm(bien.bail),
       conditionsFinancieres: this.generateConditionsFinancieres(bien.conditionsFinancieres),
       visite: this.generateVisite(bien.visite),
@@ -184,6 +178,20 @@ export class BienService {
     return bailForm;
   }
 
+  private generateDetailBienForm(detailBien: DetailBien) {
+
+    const detailBienForm = this.fb.group({
+      'typeBien': [detailBien.typeBien],
+      'activite': [detailBien.activite],
+      'nomMagasin': [detailBien.nomMagasin],
+      'enseigneProximite': [detailBien.enseigneProximite],
+      'activites': this.generateActivitesForm(detailBien.activites),
+      'adresseBien': this.generateAdresseBienForm(detailBien.adresseBien)
+    });
+
+    return detailBienForm;
+  }
+
 
   private generateConditionsFinancieres(conditionsFinancieres: ConditionsFinancieres) {
 
@@ -252,7 +260,6 @@ export class BienService {
   private generateSurface(surface: Surface) {
 
     const surfaceForm = this.fb.group({
-
       'surfaceRDC': [surface.surfaceRDC],
       'surfaceRDCFonderee': [surface.surfaceRDCFonderee],
       'surfaceVente': [surface.surfaceVente],
