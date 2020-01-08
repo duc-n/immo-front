@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth.service';
 import { Router, RouteConfigLoadStart, ResolveStart, RouteConfigLoadEnd, ResolveEnd, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/internal/operators/first';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
     selector: 'app-signin',
@@ -21,7 +22,8 @@ export class SigninComponent implements OnInit {
         private fb: FormBuilder,
         private auth: AuthService,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private logger: NGXLogger
     ) {
         // redirect to home if already logged in
         if (this.auth.currentUserValue) {
@@ -50,7 +52,7 @@ export class SigninComponent implements OnInit {
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 
-        if (this.auth.authenticated) {
+        if (this.auth.isAuthenticated()) {
             this.router.navigate([this.returnUrl]);
         }
     }
@@ -61,6 +63,7 @@ export class SigninComponent implements OnInit {
         this.auth.signin(this.signinForm.value)
             .pipe(first())
             .subscribe(res => {
+                this.logger.debug('Signin Ok, redirect url :', this.returnUrl);
                 this.router.navigate([this.returnUrl]);
                 this.loading = false;
             },

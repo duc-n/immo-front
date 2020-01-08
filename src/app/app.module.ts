@@ -19,12 +19,11 @@ import { HttpRequestInterceptor } from './shared/interceptors/http.interceptor';
 import { CONSTANTS } from './shared/constants/constant';
 const DevProfileModule = [];
 
+export const isMock = environment.mock_ws;
 // In Dev mode, uses data mock
-if (environment.mock_ws) {
+if (isMock) {
   DevProfileModule.push(InMemoryWebApiModule.forRoot(InMemoryDataService, { passThruUnknownUrl: true }));
 }
-
-export const isMock = environment.mock_ws;
 
 export function getToken() { return localStorage.getItem(CONSTANTS.TOKEN); }
 export const whitelistedDomains = [new RegExp('[\s\S]*')] as RegExp[];

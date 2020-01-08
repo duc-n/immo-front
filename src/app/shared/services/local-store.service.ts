@@ -10,7 +10,6 @@ export class LocalStoreService {
 
   public setItem(key, value) {
     value = JSON.stringify(value);
-    console.log('Token local:' + value);
     this.ls.setItem(key, value);
     return true;
   }
@@ -21,13 +20,13 @@ export class LocalStoreService {
   }
 
   public getItem(key) {
-    const value = this.ls.getItem(key);
-    try {
-      return JSON.parse(value);
-    } catch (e) {
-      // console.log(e)
-      return null;
-    }
+    return this.ls.getItem(key);
+    // try {
+    //   return JSON.parse(value);
+    // } catch (e) {
+    //   // console.log(e)
+    //   return null;
+    // }
   }
   public clear() {
     this.ls.clear();

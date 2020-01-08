@@ -29,7 +29,7 @@ export class ConsultantResponsableComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.logger.debug('consultantResponsableForm form:' + this.consultantResponsableForm);
+    this.logger.debug('consultantResponsableForm form:', this.consultantResponsableForm);
   }
   get consultantsAssociesArray(): FormArray {
     return this.consultantResponsableForm.get('consultantsAssocies') as FormArray;
