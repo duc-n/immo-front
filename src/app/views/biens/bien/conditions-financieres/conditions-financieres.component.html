@@ -50,13 +50,13 @@
               <label for="tvaLoyer" class="col-sm-4 col-form-label">TVA sur Loyer</label>
               <div class="col-sm-8">
                 <div class="form-check">
-                  <input formControlName="tvaLoyer" class="form-check-input" type="radio" name="tvaLoyer" id="tvaLoyer1" value="true">
+                  <input formControlName="tvaLoyer" class="form-check-input" type="radio" name="tvaLoyer" id="tvaLoyer1" [value]="true">
                   <label class="form-check-label" for="tvaLoyer">
                     Oui
                   </label>
                 </div>
                 <div class="form-check">
-                  <input formControlName="tvaLoyer" class="form-check-input" type="radio" name="tvaLoyer" id="tvaLoyer2" value="false">
+                  <input formControlName="tvaLoyer" class="form-check-input" type="radio" name="tvaLoyer" id="tvaLoyer2" [value]="false">
                   <label class="form-check-label" for="tvaLoyer">
                     Non
                   </label>

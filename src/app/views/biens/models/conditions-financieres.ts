@@ -1,6 +1,6 @@
 export interface ConditionsFinancieres {
     conditionsFinancieres: string;
     honorairesAgence: number;
-    paiementHonoraires: number;
+    paiementHonoraires: string;
     tvaLoyer: boolean;
 }
