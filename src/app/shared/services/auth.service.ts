@@ -52,4 +52,14 @@ export class AuthService {
     this.currentUserSubject.next(null);
     this.router.navigate(['/sessions/signin']);
   }
+
+  isAdmin() {
+    const token = this.store.getItem(CONSTANTS.TOKEN);
+    const decodedToken = this.jwtHelper.decodeToken(token);
+
+    const role: Array<string> = decodedToken.role;
+    return role.includes(CONSTANTS.ROLE_ADMIN);
+
+  }
+
 }
