@@ -34,6 +34,10 @@ const urls = [
   {
     url: REST_URLS.FILE_UPLOAD.replace(':id', ''),
     json: uploadFile
+  },
+  {
+    url: REST_URLS.SIGNUP,
+    json: consultants
   }
 ];
 

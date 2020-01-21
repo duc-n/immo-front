@@ -51,6 +51,10 @@ export class DataLayerService {
         return this.http.post<any>(this.apiUrl + REST_URLS.LOGIN, credentials);
     }
 
+    signup(user: any): Observable<any> {
+        return this.http.post<any>(this.apiUrl + REST_URLS.SIGNUP, user);
+    }
+
     getBien(id: string): Observable<Bien> {
         return this.http.get<Bien>(this.apiUrl + REST_URLS.BIEN_GET.replace(':id', id));
     }

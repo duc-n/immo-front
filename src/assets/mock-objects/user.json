@@ -3,6 +3,7 @@
   "user": {
     "username": "admin@gmail.com",
     "nom": "GUIBER",
-    "prenom": "Lucas"
+    "prenom": "Lucas",
+    "admin": true
   }
 }

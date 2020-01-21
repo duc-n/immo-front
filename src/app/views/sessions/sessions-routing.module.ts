@@ -5,12 +5,18 @@ import { SigninComponent } from './signin/signin.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { AuthGaurd } from 'src/app/shared/services/auth.gaurd';
 import { AdminGaurd } from 'src/app/shared/services/admin.gaurd';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
     canActivate: [AuthGaurd, AdminGaurd],
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGaurd],
   },
   {
     path: 'signin',

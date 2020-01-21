@@ -72,7 +72,10 @@
             <i class="i-Lock-User mr-1"></i> {{currentUser.nom + ' ' + currentUser.prenom}}
           </div>
 
-          <button class="dropdown-item" (click)="signout()">Déconnecter</button>
+          <a *ngIf="currentUser.admin" class="dropdown-item" routerLink="/sessions/signup">Créer un compte utilisateur</a>
+          <a class="dropdown-item" routerLink="/sessions/profile">Profile</a>
+          <a class="dropdown-item" href="#" (click)="signout()">Déconnecter</a>
+
         </div>
       </div>
 
