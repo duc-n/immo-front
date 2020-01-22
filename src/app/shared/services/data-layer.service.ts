@@ -9,6 +9,7 @@ import { BienCritere } from 'src/app/views/biens/models/search/bien-critere';
 import { REST_URLS } from '../constants/rest-urls';
 import { Observable } from 'rxjs/internal/Observable';
 import { Bien } from 'src/app/views/biens/models/bien';
+import { UserProfile } from '../models/user-profile';
 
 @Injectable({
     providedIn: 'root'
@@ -84,5 +85,8 @@ export class DataLayerService {
     clientLookup(nom) {
         const params = new HttpParams().set('nom', nom);
         return this.http.get<Client[]>(this.apiUrl + REST_URLS.CLIENT_CLIENT_LOOKUP, { params: params });
+    }
+    getUserProfile(): Observable<UserProfile> {
+        return this.http.get<UserProfile>(this.apiUrl + REST_URLS.USER_PROFILE);
     }
 }

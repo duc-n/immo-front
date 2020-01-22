@@ -9,6 +9,7 @@ import * as biens from '../../../assets/mock-objects/biensDTO.json';
 import * as biensEtatCreation from '../../../assets/mock-objects/biens-etat-creation.json';
 import * as consultants from '../../../assets/mock-objects/consultants.json';
 import * as user from '../../../assets/mock-objects/user.json';
+import * as userProfile from '../../../assets/mock-objects/user-profile.json';
 import * as uploadFile from '../../../assets/mock-objects/uploadFile.json';
 
 // array in local storage for registered users
@@ -28,6 +29,10 @@ const urls = [
     json: biensEtatCreation
   },
   {
+    url: REST_URLS.USER_PROFILE,
+    json: userProfile
+  },
+  {
     url: REST_URLS.USERS,
     json: consultants
   },
@@ -39,6 +44,7 @@ const urls = [
     url: REST_URLS.SIGNUP,
     json: consultants
   }
+
 ];
 
 
@@ -75,7 +81,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           for (const element of urls) {
             const reg = '/\/' + element.url + '\/\d+$/';
             if (url.includes(element.url) || url.match(reg)) {
-              console.log('Loaded from json : ' + request.url);
+              console.log('Loaded from json : ' + request.url + ' . Element url :', element.url);
               return of(new HttpResponse({ status: 200, body: ((element.json) as any).default }));
             }
           }
