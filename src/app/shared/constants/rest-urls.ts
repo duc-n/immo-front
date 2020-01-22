@@ -1,7 +1,7 @@
 // tslint:disable-next-line: class-name
 export class REST_URLS {
     public static LOGIN = 'login';
-    public static SIGNUP = 'signup';
+    public static SIGNUP = 'user/signup';
     public static BIEN_CREATE = 'bien/create';
     public static BIEN_GET = 'bien/:id';
     public static BIEN_UPDATE = 'bien';
