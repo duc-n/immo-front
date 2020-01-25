@@ -29,7 +29,7 @@
 
           <h1 class="mb-3 text-18">Paramètres</h1>
           <!-- <p class="mb-4 text-muted font-small">Lorem ipsum dolor sit amet.</p> -->
-          <form *ngIf="userProfile | async; else loading" [formGroup]="profileForm">
+          <form *ngIf="userProfile | async; else loading" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="nom">Votre nom</label>
               <input id="nom" formControlName="nom" class="form-control form-control-rounded" type="text">

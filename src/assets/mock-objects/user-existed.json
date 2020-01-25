@@ -1,0 +1,9 @@
+{
+  "timestamp": 1579872029380,
+  "path": "/user/signup",
+  "status": 400,
+  "error": "Bad Request",
+  "message": "Utilisateur s'est inscrit",
+  "requestId": "3aa944c2",
+  "traceId": "13d7a9d0ee4adfd5"
+}

@@ -49,4 +49,9 @@ export class ProfileComponent implements OnInit {
     this.router.navigate([previousPage]);
   }
 
+  onSubmit() {
+    this.dataLayerService.updateUserProfile(this.profileForm.value);
+  }
+
+
 }
