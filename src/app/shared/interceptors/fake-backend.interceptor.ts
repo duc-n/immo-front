@@ -71,6 +71,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return getUsers();
         case url.match(/\/users\/\d+$/) && method === 'GET':
           return getUserById();
+        case url.endsWith(REST_URLS.USER_PROFILE) && method === 'GET':
+          return getUserProfile();
+        case url.endsWith(REST_URLS.USER_PROFILE) && method === 'PUT':
+          return updateUserProfile();
         case url.match(/\/users\/\d+$/) && method === 'DELETE':
           return deleteUser();
         case url.match(/\/bien\/\d+$/) && method === 'GET':
@@ -128,6 +132,15 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
       const user = users.find(x => x.id === idFromUrl());
       return ok(user);
+    }
+
+    function getUserProfile() {
+      console.log('Get user profile.');
+      return ok((userProfile as any).default);
+    }
+
+    function updateUserProfile() {
+      return ok(userProfile);
     }
 
     function deleteUser() {
