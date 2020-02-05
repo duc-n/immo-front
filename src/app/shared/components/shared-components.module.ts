@@ -18,6 +18,7 @@ import { BienDatatableComponent } from './bien-datatable/bien-datatable.componen
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 
 @NgModule({
   imports: [
@@ -31,11 +32,11 @@ import { NgxGalleryModule } from 'ngx-gallery';
     PerfectScrollbarModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule,
     FilePickerModule,
     NgxPaginationModule,
     NgxDatatableModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    RxReactiveFormsModule
   ],
   declarations: [BtnLoadingComponent, FeatherIconComponent, ClientFormModalComponent, CommercialFormModalComponent, FileUploadComponent, BienDatatableComponent],
   exports: [BtnLoadingComponent, FeatherIconComponent, ReactiveFormsModule, FileUploadComponent, BienDatatableComponent, NgxGalleryModule],

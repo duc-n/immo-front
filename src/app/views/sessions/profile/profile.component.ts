@@ -46,10 +46,10 @@ export class ProfileComponent implements OnInit {
       }));
   }
 
-  submit() {
+  onSubmit() {
     this.dataLayerService.update(REST_URLS.USERS, this.profileForm.value)
       .subscribe(res => {
-        this.toastr.success('Votre profil est à jour', 'Success!', { timeOut: 3000 });
+        this.toastr.success('Votre profil est à jour', 'Terminer!', { timeOut: 3000 });
       }, reason => {
 
       }
@@ -58,13 +58,10 @@ export class ProfileComponent implements OnInit {
 
   goToPreviousPage() {
     const previousPage = this.routeStateService.getPreviousUrl();
-    this.logger.debug('Profile - Go to the previous page :', previousPage);
-    this.router.navigate([previousPage]);
+    const currentPage = this.routeStateService.getCurrentUrl();
+    this.logger.debug('Profile - Go to the previous page : , current page ', previousPage, currentPage);
+
+    const pageToGo = previousPage === currentPage ? '/' : previousPage;
+    this.router.navigate([pageToGo]);
   }
-
-  onSubmit() {
-    this.dataLayerService.updateUserProfile(this.profileForm.value);
-  }
-
-
 }
