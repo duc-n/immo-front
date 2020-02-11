@@ -1,0 +1,208 @@
+<div [formGroup]="clientForm">
+  <div class="container">
+    <div class="row vdivide">
+      <div class="col-sm-6">
+        <div class="card mb-5">
+          <div class="card-body">
+            <!-- Civilité -->
+            <div class="form-group row">
+              <label for="inputCivilite" class="col-sm-4 col-form-label">Civilité<em class="text-danger">*</em></label>
+              <div class="col-sm-8">
+                <select formControlName="civilite" class="form-control" id="inputCivilite">
+                  <option>Option 1</option>
+                  <option>Option 1</option>
+                  <option>Option 1</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Civilité-->
+            <!-- Nom du client -->
+            <div class="form-group row">
+              <label for="nom" class="col-sm-4 col-form-label">Nom du client</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="nom" class="form-control" id="nom" placeholder="Nom">
+              </div>
+            </div>
+            <!-- /Nom du client -->
+            <!-- Prenom du client -->
+            <div class="form-group row">
+              <label for="prenom" class="col-sm-4 col-form-label">Prénom du client</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="prenom" class="form-control" id="prenom" placeholder="Prénom du magasin">
+              </div>
+            </div>
+            <!-- /Prenom du client -->
+            <!-- Société en création -->
+            <div class="form-group row">
+              <label for="inputsocieteEnCreation" class="col-sm-4 col-form-label">Société en création<em class="text-danger">*</em></label>
+              <div class="col-sm-8">
+                <select formControlName="societeEnCreation" class="form-control" id="inputsocieteEnCreation">
+                  <option>Option 1</option>
+                  <option>Option 1</option>
+                  <option>Option 1</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Société en création-->
+            <!-- Societe -->
+            <div class="form-group row">
+              <label for="societe" class="col-sm-4 col-form-label">Société</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="societe" class="form-control" id="societe" placeholder="Prénom du magasin">
+              </div>
+            </div>
+            <!-- /Societe -->
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-6 border-left">
+        <div class="card mb-5">
+          <div class="card-body">
+
+            <!-- Tel -->
+            <div class="form-group row">
+              <label for="tel" class="col-sm-4 col-form-label">Téléphone</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="tel" class="form-control" id="tel" placeholder="Téléphone">
+              </div>
+            </div>
+            <!-- /Tel -->
+            <!-- Email -->
+            <div class="form-group row">
+              <label for="email" class="col-sm-4 col-form-label">Email</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="email" class="form-control" id="email" placeholder="Email">
+              </div>
+            </div>
+            <!-- /Email -->
+            <!-- Email Sup -->
+            <div class="form-group row">
+              <label for="emailSup" class="col-sm-4 col-form-label">Email Supp.</label>
+              <div class="col-sm-8">
+                <input type="emailSup" formControlName="emailSup" class="form-control" id="emailSup" placeholder="Email Supplémentaire">
+              </div>
+            </div>
+            <!-- /Email Sup -->
+            <!-- Activite -->
+            <div class="form-group row">
+              <label for="inputActivite" class="col-sm-4 col-form-label">Activité<em class="text-danger">*</em></label>
+              <div class="col-sm-8">
+                <select formControlName="activite" class="form-control" id="inputActivite">
+                  <option>Option 1</option>
+                  <option>Option 1</option>
+                  <option>Option 1</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Activite-->
+            <!-- Origine -->
+            <div class="form-group row">
+              <label for="inputOrigine" class="col-sm-4 col-form-label">Civilité<em class="text-danger">*</em></label>
+              <div class="col-sm-8">
+                <select formControlName="origine" class="form-control" id="inputOrigine">
+                  <option value="notaire">Notaire</option>
+                  <option value="confrere">Confrère 1</option>
+                  <option value="agence">Agence 1</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Origine-->
+            <!-- /Top acquéreur-->
+            <div class="form-group row">
+              <label for="topAcquereur" class="col-sm-4 col-form-label">Top Acquéreur</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <input formControlName="topAcquereur" class="form-check-input" type="radio" name="topAcquereur" id="topAcquereur1" value="true">
+                      <label class="form-check-label" for="topAcquereur">
+                        Oui
+                      </label>
+                    </div>
+                    <div class="col-sm-9">
+                      <input formControlName="topAcquereur" class="form-check-input" type="radio" name="topAcquereur" id="topAcquereur2" value="false">
+                      <label class="form-check-label" for="topAcquereur">
+                        Non
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Top acquéreur-->
+            <!-- Demande de RDV-->
+            <div class="form-group row">
+              <label for="demandeRDV" class="col-sm-4 col-form-label">Demande de RDV</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <input formControlName="demandeRDV" class="form-check-input" type="radio" name="demandeRDV" id="demandeRDV1" value="true">
+                      <label class="form-check-label" for="demandeRDV">
+                        Oui
+                      </label>
+                    </div>
+                    <div class="col-sm-9">
+                      <input formControlName="demandeRDV" class="form-check-input" type="radio" name="demandeRDV" id="demandeRDV2" value="false">
+                      <label class="form-check-label" for="demandeRDV">
+                        Non
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Demande de RDV-->
+            <!-- New Letter-->
+            <div class="form-group row">
+              <label for="newsLetter" class="col-sm-4 col-form-label">NewsLetter</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <input formControlName="newsLetter" class="form-check-input" type="radio" name="newsLetter" id="newsLetter1" value="true">
+                      <label class="form-check-label" for="newsLetter">
+                        Oui
+                      </label>
+                    </div>
+                    <div class="col-sm-9">
+                      <input formControlName="newsLetter" class="form-check-input" type="radio" name="newsLetter" id="newsLetter2" value="false">
+                      <label class="form-check-label" for="newsLetter">
+                        Non
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /New Letter-->
+            <!-- /Consentement RGPD-->
+            <div class="form-group row">
+              <label for="consentementRGPD" class="col-sm-4 col-form-label">Consentement RGPD</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <input formControlName="consentementRGPD" class="form-check-input" type="radio" name="consentementRGPD" id="consentementRGPD1" value="true" ngModel>
+                      <label class="form-check-label" for="consentementRGPD">
+                        Oui
+                      </label>
+                    </div>
+                    <div class="col-sm-9">
+                      <input formControlName="consentementRGPD" class="form-check-input" type="radio" name="consentementRGPD" id="consentementRGPD2" value="false" ngModel>
+                      <label class="form-check-label" for="consentementRGPD">
+                        Non
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Consentement RGPD-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

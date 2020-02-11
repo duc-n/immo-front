@@ -1,0 +1,145 @@
+<div [formGroup]="communicationForm">
+  <div class="container">
+    <div class="row vdivide">
+      <div class="col-sm-12">
+        <div class="card mb-5">
+          <div class="card-body">
+
+            <!-- Site Web -->
+            <div class="form-group row">
+              <label for="siteWeb" class="col-sm-4 col-form-label">Site Web</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <input formControlName="siteWeb" class="form-check-input" type="radio" name="siteWeb" id="siteWeb1" value="true">
+                  <label class="form-check-label" for="siteWeb">
+                    Oui
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input formControlName="siteWeb" class="form-check-input" type="radio" name="siteWeb" id="siteWeb2" value="false">
+                  <label class="form-check-label" for="siteWeb">
+                    Non
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /Site Web-->
+
+            <!-- Passrelle -->
+            <div class="form-group row">
+              <label for="parselle" class="col-sm-4 col-form-label">Parselle</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <input formControlName="parselle" class="form-check-input" type="radio" name="parselle" id="parselle1" value="true">
+                  <label class="form-check-label" for="parselle">
+                    Oui
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input formControlName="parselle" class="form-check-input" type="radio" name="parselle" id="parselle2" value="false">
+                  <label class="form-check-label" for="parselle">
+                    Non
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /Passerelle-->
+
+            <!-- Passerelle -->
+            <div class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Passerelle</legend>
+              <div class="col-sm-8">
+
+                <!-- Espace extérieur -->
+                <div class="form-check">
+                  <input formControlName="bureauLocal" class="form-check-input" type="checkbox" name="bureauLocal" id="bureauLocal">
+                  <label class="form-check-label" for="bureauLocal">
+                    Bureaux Locaux
+                  </label>
+                </div>
+                <!-- /Espace extérieur -->
+
+
+                <!-- groupeSeloger -->
+                <div class="form-check">
+                  <input formControlName="groupeSeloger" class="form-check-input" type="checkbox" name="groupeSeloger" id="groupeSeloger">
+                  <label class="form-check-label" for="groupeSeloger">
+                    Groupe Seloger
+                  </label>
+                </div>
+                <!-- /groupeSeloger -->
+
+                <!-- lebonCoin -->
+                <div class="form-check">
+                  <input formControlName="lebonCoin" class="form-check-input" type="checkbox" name="lebonCoin" id="lebonCoin">
+                  <label class="form-check-label" for="lebonCoin">
+                    Le Bon Coin
+                  </label>
+                </div>
+                <!-- /lebonCoin -->
+
+                <!-- territoireMaking  -->
+                <div class="form-check">
+                  <input formControlName="territoireMaking" class="form-check-input" type="checkbox" name="territoireMaking" id="territoireMaking">
+                  <label class="form-check-label" for="territoireMaking">
+                    Territoires Maketing
+                  </label>
+                </div>
+                <!-- /territoireMaking -->
+                <!-- transactionCommerce  -->
+                <div class="form-check">
+                  <input formControlName="transactionCommerce" class="form-check-input" type="checkbox" name="transactionCommerce" id="transactionCommerce">
+                  <label class="form-check-label" for="transactionCommerce">
+                    Transactions Commerces
+                  </label>
+                </div>
+                <!-- /transactionCommerce -->
+              </div>
+            </div>
+            <!-- / Passerelle-->
+            <!-- alertesEmailRapprochement -->
+            <div class="form-group row">
+              <label for="alertesEmailRapprochement" class="col-sm-4 col-form-label">Alertes emails et rapprochements automatiques</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <input formControlName="alertesEmailRapprochement" class="form-check-input" type="radio" name="alertesEmailRapprochement" id="alertesEmailRapprochement1" value="true">
+                  <label class="form-check-label" for="alertesEmailRapprochement">
+                    Oui
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input formControlName="alertesEmailRapprochement" class="form-check-input" type="radio" name="alertesEmailRapprochement" id="alertesEmailRapprochement2" value="false">
+                  <label class="form-check-label" for="alertesEmailRapprochement">
+                    Non
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /alertesEmailRapprochement-->
+            <!-- informationsMandats -->
+            <div class="form-group row">
+              <label for="informationsMandats" class="col-sm-4 col-form-label">Informations mandant automatiques</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <input formControlName="informationsMandats" class="form-check-input" type="radio" name="informationsMandats" id="informationsMandats1" value="true">
+                  <label class="form-check-label" for="informationsMandats">
+                    Oui
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input formControlName="informationsMandats" class="form-check-input" type="radio" name="informationsMandats" id="informationsMandats2" value="false">
+                  <label class="form-check-label" for="informationsMandats">
+                    Non
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /informationsMandats-->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

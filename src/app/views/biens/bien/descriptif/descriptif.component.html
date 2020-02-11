@@ -1,0 +1,143 @@
+<div [formGroup]="descriptifForm">
+  <div class="container">
+    <div class="row vdivide">
+      <div class="col-sm-6">
+        <div class="card mb-5">
+          <div class="card-body">
+
+            <!-- Local Idéal -->
+            <div class="form-group row">
+              <label for="localIdealPour" class="col-sm-4 col-form-label">Local idéal pour</label>
+              <div class="col-sm-8">
+                <textarea formControlName="localIdealPour" name="localIdealPour" id="conditionsFinancieres" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+            <!-- /Local Idéal-->
+
+            <!-- /Longeur Facade-->
+            <div class="form-group row">
+              <label for="longueurFacade" class="col-sm-4 col-form-label">Longuer Façade</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="longueurFacade" class="form-control" id="longueurFacade" placeholder="Longueur Façade">
+              </div>
+            </div>
+            <!-- /Longeur Facade-->
+
+            <!-- /Facade angle-->
+            <div class="form-group row">
+              <label for="facadeAngle" class="col-sm-4 col-form-label">Façade angle</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <input formControlName="facadeAngle" class="form-check-input" type="radio" name="facadeAngle" id="facadeAngle1" [value]="true">
+                  <label class="form-check-label" for="facadeAngle">
+                    Oui
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input formControlName="facadeAngle" class="form-check-input" type="radio" name="facadeAngle" id="facadeAngle2" [value]="false">
+                  <label class="form-check-label" for="facadeAngle">
+                    Non
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /Facade angle-->
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-6 border-left">
+        <div class="card mb-5">
+          <div class="card-body">
+
+            <div class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Caractéristiques</legend>
+              <div class="col-sm-8">
+
+                <!-- Espace extérieur -->
+                <div class="form-check">
+                  <input formControlName="espaceExterieur" class="form-check-input" type="checkbox" name="espaceExterieur" id="espaceExterieur">
+                  <label class="form-check-label" for="espaceExterieur">
+                    Espace extérieur
+                  </label>
+                </div>
+                <!-- /Espace extérieur -->
+
+                <!-- HSP -->
+                <div class="form-check">
+                  <input formControlName="hsp2m80" class="form-check-input" type="checkbox" name="hsp2m80" id="hsp2m80">
+                  <label class="form-check-label" for="hsp2m80">
+                    HSP > 2m80
+                  </label>
+                </div>
+                <!-- /HSP -->
+
+                <!-- Point Eau -->
+                <div class="form-check">
+                  <input formControlName="pointEau" class="form-check-input" type="checkbox" name="pointEau" id="pointEau">
+                  <label class="form-check-label" for="pointEau">
+                    Point d'eau
+                  </label>
+                </div>
+                <!-- /Point Eau -->
+
+                <!-- WC  -->
+                <div class="form-check">
+                  <input formControlName="wc" class="form-check-input" type="checkbox" name="wc" id="wc">
+                  <label class="form-check-label" for="wc">
+                    WC
+                  </label>
+                </div>
+                <!-- /WC -->
+              </div>
+            </div>
+
+            <!-- /Disponible-->
+            <div class="form-group row">
+              <label for="disponible" class="col-sm-4 col-form-label">Disponible immédialement</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <input formControlName="disponible" class="form-check-input" type="radio" name="disponible" id="disponible1" [value]="true">
+                  <label class="form-check-label" for="disponible">
+                    Oui
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input formControlName="disponible" class="form-check-input" type="radio" name="disponible" id="disponible2" [value]="false">
+                  <label class="form-check-label" for="disponible">
+                    Non
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /Disponible-->
+
+            <!-- Notes confidentielles -->
+            <div class="form-group row">
+              <label for="noteConfidentielle" class="col-sm-4 col-form-label">Notes confidentielles</label>
+              <div class="col-sm-8">
+                <textarea formControlName="noteConfidentielle" name="noteConfidentielle" id="noteConfidentielle" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+            <!-- /Notes confidentielles -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- /Description -->
+    <br>
+    <div class="row vdivide">
+      <div class="col-sm-12">
+        <div class="form-group row">
+          <label for="disponible" class="col-sm-4 col-form-label">Description</label>
+          <div class="col-sm-8">
+            <textarea formControlName="description" name="description" id="description" cols="80" rows="5"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Description -->
+
+  </div>
+</div>

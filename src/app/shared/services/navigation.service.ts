@@ -53,8 +53,8 @@ export class NavigationService {
             type: 'dropDown',
             icon: 'i-Bar-Chart',
             sub: [
-                { icon: 'i-Home1', name: 'Créer un bien', state: '/dashboard/v1', type: 'link' },
-                { icon: 'i-Building', name: 'Rechercher un bien', state: '/dashboard/v2', type: 'link' },
+                { icon: 'i-Home1', name: 'Créer un bien', state: '/biens/creer-bien', type: 'link' },
+                { icon: 'i-Building', name: 'Rechercher un bien', state: '/biens/rechercher-bien', type: 'link' },
                 { icon: 'i-MaleFemale', name: 'Déclarer une visite', state: '/dashboard/v3', type: 'link' },
                 { icon: 'i-Edit', name: 'Déclarer une offre', state: '/dashboard/v4', type: 'link' },
                 { icon: 'i-Data-Search', name: 'Rechercher une offre', state: '/dashboard/v4', type: 'link' },
@@ -99,7 +99,7 @@ export class NavigationService {
 
 
     defaultMenu_old: IMenuItem[] = [
-        {   
+        {
             name: 'Dashboard',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
             type: 'dropDown',

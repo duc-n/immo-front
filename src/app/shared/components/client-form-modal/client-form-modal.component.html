@@ -1,0 +1,103 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Contact</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+  <div class="modal-body">
+    <div class="container">
+      <div class="row vdivide">
+        <div class="col-sm-6">
+          <!-- Civilite -->
+          <div class="form-group row">
+            <label class="col-sm-5 col-form-label">Civilité</label>
+            <div class="col-sm-7">
+              <label class="radio-inline">
+                <input formControlName="civilite" type="radio" id="civiliteM" value="M">
+                <span>M.</span>
+              </label>
+              <label class="radio-inline">
+                <input formControlName="civilite" type="radio" id="civiliteMme" value="MME">
+                <span>Mme</span>
+              </label>
+            </div>
+          </div>
+          <!-- /Civilite -->
+          <!-- Nom -->
+          <div class="form-group row">
+            <label for="nom" class="col-sm-5 col-form-label">Nom<em class="text-danger">*</em></label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" formControlName="nom" id="nom" />
+            </div>
+          </div>
+          <!-- /Nom -->
+          <!-- Prenom -->
+          <div class="form-group row">
+            <label for="prenom" class="col-sm-5 col-form-label">Prenom<em class="text-danger">*</em></label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" formControlName="prenom" id="prenom" />
+            </div>
+          </div>
+          <!-- /Prenom -->
+          <!-- Societe en creation -->
+          <div class="form-group row">
+            <label for="societeEnCreation" class="col-sm-5 col-form-label">Societe en création</label>
+            <div class="col-sm-7">
+              <label class="radio-inline">
+                <input formControlName="societeEnCreation" type="radio" id="societeEnCreationY" value="true">
+                <span>Oui</span>
+              </label>
+              <label class="radio-inline">
+                <input formControlName="societeEnCreation" type="radio" id="societeEnCreationN" value="false">
+                <span>Non</span>
+              </label>
+            </div>
+          </div>
+          <!-- /Societe en creation -->
+          <!-- Societe -->
+          <div class="form-group row">
+            <label for="societe" class="col-sm-5 col-form-label">Societe<em class="text-danger">*</em></label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" formControlName="societe" id="societe" />
+            </div>
+          </div>
+          <!-- /Societe -->
+        </div>
+
+        <div class="col-sm-6 border-left">
+          <!-- Tel -->
+          <div class="form-group row">
+            <label for="tel" class="col-sm-5 col-form-label">Tel<em class="text-danger">*</em></label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" formControlName="tel" id="tel" />
+            </div>
+          </div>
+          <!-- /Tel -->
+          <!-- Email -->
+          <div class="form-group row">
+            <label for="email" class="col-sm-5 col-form-label">Email<em class="text-danger">*</em></label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" formControlName="email" id="email" />
+            </div>
+          </div>
+          <!-- /Email -->
+          <!-- Email Supp-->
+          <div class="form-group row">
+            <label for="emailSupp" class="col-sm-5 col-form-label">Email Supp</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" formControlName="emailSupp" id="emailSupp" />
+            </div>
+          </div>
+          <!-- /Email Supp-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success" [disabled]="!clientForm.valid">
+      Submit Form
+    </button>
+  </div>
+</form>

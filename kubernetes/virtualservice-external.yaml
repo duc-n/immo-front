@@ -1,0 +1,27 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: immo-external-services
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - http-gateway
+  http:
+  - match:
+    - uri:
+        exact: /
+    - uri:
+        prefix: /biens
+    - uri:
+        prefix: /assets
+    - uri:
+        prefix: /static
+    - uri:
+        regex: '^.*\.(ico|png|jpg|css|js|woff|ttf)$'
+    route:
+    - destination:
+        host: immo-front
+        port:
+          number: 80
+  

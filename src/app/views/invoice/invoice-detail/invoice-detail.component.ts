@@ -81,6 +81,7 @@ export class InvoiceDetailComponent implements OnInit {
         return this.fb.group({
             name: [item.name],
             unit: [item.unit],
+
             unitPrice: [item.unitPrice]
         });
     }
@@ -102,8 +103,8 @@ export class InvoiceDetailComponent implements OnInit {
                 this.viewMode = 'print';
                 this.saving = false;
                 this.toastr.success('Invoice Saved!', 'Success!', { timeOut: 3000 });
-                if(this.isNew) {
-                    this.router.navigateByUrl('/invoice/edit/'+savedInvoice.id);
+                if (this.isNew) {
+                    this.router.navigateByUrl('/invoice/edit/' + savedInvoice.id);
                 }
             });
     }
