@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Demo site
 
-Wanna test ? [Click here](https://immo-front.firebaseapp).
+Wanna test ? [Click here](https://immo-front.firebaseapp.com).
 
 ## Development server
 
