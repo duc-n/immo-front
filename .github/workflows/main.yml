@@ -26,8 +26,9 @@ jobs:
           npm i
           #npm run build:prod
           npm run build
-      - name: Push Build to Releases
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "dist/angular-githubaction/*"
-          token: ${{ secrets.TOKEN }}
+      # Use this task when runing 'git tag v1.0' then 'git push origin v1.0'
+      #- name: Push Build to Releases
+        #uses: ncipollo/release-action@v1
+        #with:
+          #artifacts: "dist/angular-githubaction/*"
+          #token: ${{ secrets.TOKEN }}
