@@ -1,0 +1,37 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Ajouter un consultant:</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Close modal')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="commercialForm" (ngSubmit)="onSubmit()">
+
+  <div class=" modal-body">
+
+    <div class="form-group row">
+      <label for="consultant" class="col-sm-5 col-form-label">Ajouter un consulant associé<em class="text-danger">*</em></label>
+      <div class="col-sm-7">
+        <select formControlName="consultant" class="form-control" id="consultant">
+          <option [ngValue]="null" disabled>Selectionner un consultant</option>
+          <option *ngFor="let consultant of (consultants$ | async)" [ngValue]="consultant">{{ consultant.nom + ' ' + consultant.prenom }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <!-- Pourcentage -->
+      <div class="form-group row">
+        <label for="commission" class="col-sm-5 col-form-label">Pourcentage</label>
+        <div class="col-sm-3">
+          <input type="text" formControlName="commission" id="commission" name="commission" class="form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-success" [disabled]="!commercialForm.valid">
+      Ajouter Consultant associé
+    </button>
+  </div>
+</form>

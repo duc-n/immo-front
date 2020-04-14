@@ -1,0 +1,197 @@
+<form *ngIf="bienForm$ | async as bienForm else loading" [formGroup]="bienForm" novalidate>
+
+  <div class="d-flex align-items-baseline border-bottom justify-content-between">
+    <div>
+      <h3 class="text-secondary font-weight-bold">Edition d'un bien</h3>
+    </div>
+    <div>
+      <button type="button" (click)="enregistrer(bienForm)" class="btn btn-outline-info m-2">Enregistrer comme brouillon</button>
+      <button type="button" class="btn btn-outline-primary">Valider</button>
+    </div>
+  </div>
+  <div class="border-top mb-4"></div>
+
+
+  <div>
+    <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" [destroyOnHide]="false" activeIds="ngb-panel-0">
+      <!-- Consultant Responsable Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold" >Consultants Responsables</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-consultant-responsable [consultantResponsableForm]="bienForm.controls['consultants']"></app-consultant-responsable>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Consultant Responsable Accordion -->
+
+      <!-- Detail Bien Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Detail Bien</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-detail-bien [detailBienForm]="bienForm.controls['detailBien']"></app-detail-bien>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Detail Bien Accordion -->
+
+      <!-- Mandat Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold" >Mandat</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-mandat></app-mandat>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Mandat Accordion -->
+
+      <!-- Bail Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Bail</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-bail [bailForm]="bienForm.controls['bail']"></app-bail>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Bail Accordion -->
+
+      <!-- Conditions financieres Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Condition financières</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-conditions-financieres [conditionsFinancieresForm]="bienForm.controls['conditionsFinancieres']"></app-conditions-financieres>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Conditions financieres Accordion -->
+
+      <!-- Acces/Visite Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Accès/Visite</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-visite [visiteForm]="bienForm.controls['visite']"></app-visite>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Acces/Visite Accordion -->
+
+      <!-- Surface Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Surface</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-surface [surfaceForm]="bienForm.controls['surface']"></app-surface>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Surface Accordion -->
+
+      <!-- Descritif Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Descritif</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-descriptif [descriptifForm]="bienForm.controls['descriptif']"></app-descriptif>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Descritif Accordion -->
+
+      <!-- Photos Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Photos</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-photos [photosForm]="bienForm.controls['photos']"></app-photos>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Photos Accordion -->
+
+      <!-- Videos Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Videos</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-mandat></app-mandat>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Videos Accordion -->
+
+      <!-- Contacts Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Contacts</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-contacts [contactsForm]="bienForm.controls['contacts']"></app-contacts>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Contacts Accordion -->
+
+      <!-- Communication Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Communication</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-commnunication [communicationForm]="bienForm.controls['communication']"></app-commnunication>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Communication Accordion -->
+
+      <!-- Documents Accordion -->
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span class="font-weight-bold">Documents</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div [@animate]="{value:'*',params:{y:'20px',opacity:'0',delay:'0ms', duration: '400ms'}}">
+            <app-mandat></app-mandat>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <!-- /Documents Accordion -->
+
+    </ngb-accordion>
+
+  </div>
+
+  <div class="mt-3">
+    <button type="submit" class="btn btn-primary" [disabled]="!bienForm.valid">Submit</button>
+  </div>
+</form>
+
+<ng-template #loading>
+  Chargement du bien...
+</ng-template>

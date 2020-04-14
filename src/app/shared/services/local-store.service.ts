@@ -14,14 +14,19 @@ export class LocalStoreService {
     return true;
   }
 
+  public setToken(value) {
+    this.ls.setItem('access_token', value);
+    return true;
+  }
+
   public getItem(key) {
-    const value = this.ls.getItem(key);
-    try {
-      return JSON.parse(value);
-    } catch (e) {
-      // console.log(e)
-      return null;
-    }
+    return this.ls.getItem(key);
+    // try {
+    //   return JSON.parse(value);
+    // } catch (e) {
+    //   // console.log(e)
+    //   return null;
+    // }
   }
   public clear() {
     this.ls.clear();

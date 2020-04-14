@@ -1,0 +1,78 @@
+{
+  "content": [{
+      "id": "1",
+      "adresse": "Rue Blanchard 0",
+      "codePostal": "75013"
+    },
+    {
+      "id": "2",
+      "adresse": "Rue Blanchard 1",
+      "codePostal": "75013"
+    },
+    {
+      "id": "3",
+      "adresse": "Rue Blanchard 2",
+      "codePostal": "75013"
+    },
+    {
+      "id": "4",
+      "adresse": "Rue Blanchard 3",
+      "codePostal": "75013"
+    },
+    {
+      "id": "5",
+      "adresse": "Rue Blanchard 4",
+      "codePostal": "75013"
+    },
+    {
+      "id": "6",
+      "adresse": "Rue Blanchard 5",
+      "codePostal": "75013"
+    },
+    {
+      "id": "7",
+      "adresse": "Rue Blanchard 6",
+      "codePostal": "75013"
+    },
+    {
+      "id": "8",
+      "adresse": "Rue Blanchard 7",
+      "codePostal": "75013"
+    },
+    {
+      "id": "9",
+      "adresse": "Rue Blanchard 8",
+      "codePostal": "75013"
+    },
+    {
+      "id": "10",
+      "adresse": "Rue Blanchard 9",
+      "codePostal": "75013"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "unsorted": true,
+      "sorted": false,
+      "empty": true
+    },
+    "offset": 0,
+    "pageSize": 10,
+    "pageNumber": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 1,
+  "totalElements": 10,
+  "last": true,
+  "sort": {
+    "unsorted": true,
+    "sorted": false,
+    "empty": true
+  },
+  "numberOfElements": 10,
+  "first": true,
+  "size": 10,
+  "number": 0,
+  "empty": false
+}

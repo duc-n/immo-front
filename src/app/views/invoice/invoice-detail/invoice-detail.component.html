@@ -5,7 +5,7 @@
                 <div class="d-flex mb-5" *ngIf="viewMode === 'edit'">
                     <span class="m-auto"></span>
                     <button class="btn btn-outline-secondary mr-3" (click)="viewMode = 'print'">Cancel</button>
-                    <btn-loading btnClass="btn-primary" [loading]="saving" (click)="saveInvoice()">Save</btn-loading>
+                    <app-btn-loading btnClass="btn-primary" [loading]="saving" (click)="saveInvoice()">Save</app-btn-loading>
                 </div>
                 <div class="d-sm-flex mb-5" *ngIf="viewMode !== 'edit'">
                     <span class="m-auto"></span>

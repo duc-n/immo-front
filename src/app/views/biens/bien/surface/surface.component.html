@@ -1,0 +1,132 @@
+<div [formGroup]="surfaceForm">
+  <div class="container">
+    <div class="row vdivide">
+      <div class="col-sm-6">
+        <div class="card mb-5">
+          <div class="card-body">
+
+            <!-- /Surface RDC-->
+            <div class="form-group row">
+              <label for="surfaceRDC" class="col-sm-4 col-form-label">Surface RDC</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="surfaceRDC" class="form-control" id="surfaceRDC" placeholder="Surface RDC">
+              </div>
+            </div>
+            <!-- /Surface RDC -->
+
+            <!-- /surfaceRDCFonderee-->
+            <div class="form-group row">
+              <label for="surfaceRDCFonderee" class="col-sm-4 col-form-label">Surface RDC Pondérée</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="surfaceRDCFonderee" class="form-control" id="surfaceRDCFonderee" placeholder="Surface RDC Pondérée">
+              </div>
+            </div>
+            <!-- /surfaceRDCFonderee-->
+
+            <!-- /Surface de vente-->
+            <div class="form-group row">
+              <label for="surfaceVente" class="col-sm-4 col-form-label">Surface de vente</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <input formControlName="surfaceVente" class="form-check-input" type="radio" name="surfaceVente" id="surfaceVente1" [value]="true">
+                  <label class="form-check-label" for="surfaceVente">
+                    Oui
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input formControlName="surfaceVente" class="form-check-input" type="radio" name="surfaceVente" id="surfaceVente2" [value]="false">
+                  <label class="form-check-label" for="surfaceVente">
+                    Non
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /Surface de vente-->
+
+            <!-- /Surface Sous sol-->
+            <div class="form-group row">
+              <label for="surfaceSousSol" class="col-sm-4 col-form-label">Surface sous-sol</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="surfaceSousSol" class="form-control" id="surfaceSousSol" placeholder="Surface sous-sol">
+              </div>
+            </div>
+            <!-- /Surface Sous sol -->
+
+            <!-- /Surface sous sol ponderee-->
+            <div class="form-group row">
+              <label for="surfaceSousSolFonderee" class="col-sm-4 col-form-label">Surface sous-sol Pondérée</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="surfaceSousSolFonderee" class="form-control" id="surfaceSousSolFonderee" placeholder="Surface Sous-sol Pondérée">
+              </div>
+            </div>
+            <!-- /Surface sous sol ponderee-->
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-6 border-left">
+        <div class="card mb-5">
+          <div class="card-body">
+
+
+            <!-- /Surface 1 etage-->
+            <div class="form-group row">
+              <label for="surface1Etage" class="col-sm-4 col-form-label">Surface 1er étage</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="surface1Etage" class="form-control" id="surface1Etage" placeholder="Surface 1er étage">
+              </div>
+            </div>
+            <!-- /Surface 1 etage -->
+
+            <!-- /Surface sous sol ponderee-->
+            <div class="form-group row">
+              <label for="surface1Fonderee" class="col-sm-4 col-form-label">Surface 1er étage Pondérée</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="surface1Fonderee" class="form-control" id="surface1Fonderee" placeholder="Surface 1er étage Pondérée">
+              </div>
+            </div>
+            <!-- /Surface sous sol ponderee-->
+
+            <!-- /surfaceAutre-->
+            <div class="form-group row">
+              <label for="surfaceAutre" class="col-sm-4 col-form-label">Surface autre</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="surfaceAutre" class="form-control" id="surfaceAutre" placeholder="Surface autre">
+              </div>
+            </div>
+            <!-- /surfaceAutre -->
+
+            <!-- /Surface totale-->
+            <div class="form-group row">
+              <label for="surfaceTotale" class="col-sm-4 col-form-label">Surface totale</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="surfaceTotale" class="form-control" id="surfaceTotale" placeholder="Surface totale">
+              </div>
+            </div>
+            <!-- /Surface sous sol ponderee-->
+
+            <!-- /surfaceFonderee-->
+            <div class="form-group row">
+              <label for="surfaceFonderee" class="col-sm-4 col-form-label">Surface pondétée</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="surfaceFonderee" class="form-control" id="surfaceFonderee" placeholder="Surface pondérée">
+              </div>
+            </div>
+            <!-- /surfaceFonderee -->
+
+            <!-- /nouvelleSurfaceFonderee-->
+            <div class="form-group row">
+              <label for="nouvelleSurfaceFonderee" class="col-sm-4 col-form-label">(Nouvelle) Surface pondérée</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="nouvelleSurfaceFonderee" class="form-control" id="nouvelleSurfaceFonderee" placeholder="(Nouvelle) Surface pondérée">
+              </div>
+            </div>
+            <!-- /nouvelleSurfaceFonderee-->
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>

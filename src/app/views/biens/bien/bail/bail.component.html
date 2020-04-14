@@ -1,0 +1,132 @@
+<div [formGroup]="bailForm">
+  <div class="container">
+    <div class="row vdivide">
+      <div class="col-sm-6">
+        <div class="card mb-5">
+          <div class="card-body">
+
+            <!-- Type de bail -->
+            <div class="form-group row">
+              <label for="typeBail" class="col-sm-4 col-form-label">Type de Bail</label>
+              <div class="col-sm-8">
+                <select formControlName="typeBail" class="form-control" id="typeBail" name="typeBail">
+                  <option [ngValue]="null" disabled>Selectionner type de bien</option>
+                  <option value="Commerce">Commerce</option>
+                  <option>bail</option>
+                  <option>Option</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Type de bail -->
+            <!-- Acte notarié -->
+            <div class="form-group row">
+              <label for="bailNotarie" class="col-sm-4 col-form-label">Bail notarié</label>
+              <div class="col-sm-8">
+                <div class="form-check">
+                  <input formControlName="bailNotarie" class="form-check-input" type="radio" name="bailNotarie" id="bailNotarie1" [value]="true">
+                  <label class="form-check-label" for="bailNotarie">
+                    Oui
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input formControlName="bailNotarie" class="form-check-input" type="radio" name="bailNotarie" id="bailNotarie2" [value]="false">
+                  <label class="form-check-label" for="bailNotarie">
+                    Non
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /Acte notarié -->
+            <!-- Charges Mensuelles -->
+            <div class="form-group row">
+              <label for="chargeMensuel" class="col-sm-4 col-form-label">Charges mensuelles<em class="text-danger">*</em></label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="chargeMensuel" class="form-control" id="chargeMensuel" placeholder="Charges mensuelles">
+              </div>
+            </div>
+            <!-- /Charges Mensuelles -->
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-6 border-left">
+        <div class="card mb-5">
+          <div class="card-body">
+            <!-- Période de loyer -->
+            <div class="form-group row">
+              <label for="periodLoyer" class="col-sm-4 col-form-label">Période de loyer</label>
+              <div class="col-sm-8">
+                <select formControlName="periodLoyer" class="form-control" id="periodLoyer" name="periodLoyer">
+                  <option value="1">Chaque mois</option>
+                  <option value="3">3 mois</option>
+                  <option value="6">6 mois</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Période de loyer -->
+
+            <!-- Dépôt de garantie -->
+            <div class="form-group row">
+              <label for="depotGarantie" class="col-sm-4 col-form-label">Dépôt de garantie<em class="text-danger">*</em></label>
+              <div class="col-sm-8">
+                <select formControlName="depotGarantie" class="form-control" id="depotGarantie" name="depotGarantie">
+                  <option value="3">3 mois</option>
+                  <option value="6">6 mois</option>
+                  <option value="12">1 an</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Dépôt de garantie -->
+
+            <!-- Caution supplémentaire -->
+            <div class="form-group row">
+              <label for="cautionSup" class="col-sm-4 col-form-label">Caution supplémentaire</label>
+              <div class="col-sm-8">
+                <select formControlName="cautionSup" class="form-control" id="cautionSup" name="cautionSup">
+                  <option value="3">3 mois</option>
+                  <option value="6">6 mois</option>
+                  <option value="12">1 an</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Caution supplémentaire -->
+
+            <!-- Taxe foncière -->
+            <div class="form-group row">
+              <label for="taxFonctiere" class="col-sm-4 col-form-label">Taxe foncière</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="taxFonctiere" class="form-control" id="taxFonctiere" placeholder="Taxe foncière">
+              </div>
+            </div>
+            <!-- /Taxe foncière -->
+
+            <!-- Paiement Taxe foncière -->
+            <div class="form-group row">
+              <label for="paiementTaxFonctiere" class="col-sm-4 col-form-label">Paiement taxe foncière</label>
+              <div class="col-sm-8">
+                <select formControlName="paiementTaxFonctiere" class="form-control" id="paiementTaxFonctiere" name="paiementTaxFonctiere">
+                  <option value="locataire">Locataire</option>
+                  <option value="propriete">Propriétaire</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Paiement Taxe foncière -->
+
+            <!-- Paiement 606 -->
+            <div class="form-group row">
+              <label for="paiement606" class="col-sm-4 col-form-label">Paiement 606</label>
+              <div class="col-sm-8">
+                <select formControlName="paiement606" class="form-control" id="paiement606" name="paiement606">
+                  <option value="locataire">Locataire</option>
+                  <option value="propriete">Propriétaire</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Paiement 606 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
