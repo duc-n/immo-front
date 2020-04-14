@@ -1,6 +1,10 @@
-# Gull
+# <img src="src/assets/images/screenshots/Immo_bien.png"> Immo Front Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
+
+## Demo site
+
+Wanna test ? [Click here](https://immo-front.firebaseapp.com).
 
 ## Development server
 
@@ -25,15 +29,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# immo-front
+
+## Build with data mock
+
+ng serve
+
+## Docker Immo-front image build
+
 Build your image using the production configuration (the default), e.g.:
 docker build -t immo-front:prod .
 
-Build with 
-ng serve -c ws
+Build with ng serve -c ws
 
 Build your image using the development environment (no configuration), e.g.:
 docker build -t immo-front:dev --build-arg configuration="" .
-
-
-

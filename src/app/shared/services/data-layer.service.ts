@@ -89,7 +89,5 @@ export class DataLayerService {
     getUserProfile(): Observable<UserProfile> {
         return this.http.get<UserProfile>(this.apiUrl + REST_URLS.USER_PROFILE);
     }
-    updateUserProfile(userProfile: UserProfile): Observable<UserProfile> {
-        return this.http.put<UserProfile>(this.apiUrl + REST_URLS.USER_PROFILE, userProfile);
-    }
+
 }

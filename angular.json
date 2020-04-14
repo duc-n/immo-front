@@ -39,6 +39,12 @@
             ]
           },
           "configurations": {
+            "dev": {
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.ts"
+              }]
+            },
             "ws": {
               "fileReplacements": [{
                 "replace": "src/environments/environment.ts",
