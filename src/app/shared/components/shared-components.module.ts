@@ -17,8 +17,8 @@ import { FilePickerModule } from 'ngx-awesome-uploader';
 import { BienDatatableComponent } from './bien-datatable/bien-datatable.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { NgxGalleryModule } from 'ngx-gallery';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
+import { NgxGalleryModule } from 'ngx-gallery-9/lib/ngx-gallery.module';
 
 @NgModule({
   imports: [

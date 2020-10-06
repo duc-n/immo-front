@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 import { FormGroup, FormArray, FormControl } from '@angular/forms';
+import { NgxGalleryAnimation } from 'ngx-gallery-9/lib/ngx-gallery-animation.model';
+import { NgxGalleryOptions, NgxGalleryImage } from 'ngx-gallery-9/public-api';
 
 @Component({
   selector: 'app-photos',
