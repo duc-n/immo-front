@@ -21,10 +21,10 @@ export class ChatContentsComponent implements OnInit, OnDestroy {
   chatSelectSub: Subscription;
 
   @Input('matSidenav') matSidenav;
-  @ViewChild(PerfectScrollbarDirective, { static: false }) psContainer: PerfectScrollbarDirective;
+  @ViewChild(PerfectScrollbarDirective) psContainer: PerfectScrollbarDirective;
 
   @ViewChildren('msgInput') msgInput;
-  @ViewChild('msgForm', { static: false }) msgForm: NgForm;
+  @ViewChild('msgForm') msgForm: NgForm;
 
   constructor(public chatService: ChatService) {}
 

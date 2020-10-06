@@ -12,7 +12,7 @@ export class DetailBienComponent implements OnInit {
 
   @Input() public detailBienForm: FormGroup;
 
-  @ViewChild('search', { static: false }) public searchElementRef: ElementRef;
+  @ViewChild('search') public searchElementRef: ElementRef;
 
   constructor(private readonly fb: FormBuilder,
     private mapsAPILoader: MapsAPILoader,

@@ -18,7 +18,7 @@ import { UserRegister } from '../models/user-register';
 })
 export class SignupComponent implements OnInit, AfterViewInit {
   signupForm: FormGroup;
-  @ViewChild('inscriptionBtn', { static: false }) inscriptionBtn: ElementRef;
+  @ViewChild('inscriptionBtn') inscriptionBtn: ElementRef;
   constructor(private fb: FormBuilder,
     private dataLayerService: DataLayerService,
     private router: Router,
